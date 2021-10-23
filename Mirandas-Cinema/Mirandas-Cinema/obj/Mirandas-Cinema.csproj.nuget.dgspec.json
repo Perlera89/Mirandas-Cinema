@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Perlera\\Desktop\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema.csproj": {}
+    "C:\\Users\\Perlera\\Documents\\GitHub\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Perlera\\Desktop\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema.csproj": {
+    "C:\\Users\\Perlera\\Documents\\GitHub\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Perlera\\Desktop\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema.csproj",
+        "projectUniqueName": "C:\\Users\\Perlera\\Documents\\GitHub\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema.csproj",
         "projectName": "Mirandas-Cinema",
-        "projectPath": "C:\\Users\\Perlera\\Desktop\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema.csproj",
+        "projectPath": "C:\\Users\\Perlera\\Documents\\GitHub\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema.csproj",
         "packagesPath": "C:\\Users\\Perlera\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Perlera\\Desktop\\Mirandas-Cinema\\Mirandas-Cinema\\obj\\",
+        "outputPath": "C:\\Users\\Perlera\\Documents\\GitHub\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Perlera\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,6 +45,16 @@
               "version": "[5.0.11, )"
             },
             "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.11, )"
             }

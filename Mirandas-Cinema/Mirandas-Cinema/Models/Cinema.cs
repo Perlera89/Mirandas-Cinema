@@ -13,5 +13,8 @@ namespace Mirandas_Cinema.Models
         public string Logo { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+
+        //Relaciones
+        public List<Cinema> Cinemas { get; set; }
     }
 }
