@@ -58,6 +58,9 @@ namespace Mirandas_Cinema
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            //Modelos de semillas
+            AppDbInicializer.Seed(app);
         }
     }
 }

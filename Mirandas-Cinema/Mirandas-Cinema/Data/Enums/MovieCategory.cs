@@ -10,6 +10,7 @@ namespace Mirandas_Cinema.Data
         Action = 1,
         Comedy,
         Romance,
-        Documentary
+        Horror,
+        Cartoon
     }
 }

@@ -16,4 +16,11 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\rsc\Actors\" />
+    <Folder Include="wwwroot\rsc\Cinemas\" />
+    <Folder Include="wwwroot\rsc\Movies\" />
+    <Folder Include="wwwroot\rsc\Producers\" />
+  </ItemGroup>
+
 </Project>
