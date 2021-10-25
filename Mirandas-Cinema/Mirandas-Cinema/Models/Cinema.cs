@@ -10,11 +10,17 @@ namespace Mirandas_Cinema.Models
     {
         [Key]
         public int Id { get; set; }
+
+        [Display(Name = "Logo")]
         public string Logo { get; set; }
+
+        [Display(Name = "Nombre")]
         public string Name { get; set; }
+
+        [Display(Name = "Descripcion")]
         public string Description { get; set; }
 
         //Relaciones
-        public List<Cinema> Cinemas { get; set; }
+        public List<Movie> Movies { get; set; }
     }
 }

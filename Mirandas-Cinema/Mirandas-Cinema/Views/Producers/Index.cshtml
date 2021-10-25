@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Producer>
 
 @{
-    ViewData["Title"] = "Lista de Productores";
+    ViewData["Title"] = "Productores";
 }
 
 <div class="row container">
@@ -29,9 +29,9 @@
                             @Html.DisplayFor(model => producer.Bio)
                         </td>
                         <td class="aling-middle">
-                            <a class="btn btn-outline-primary"><i class="bi bi-pencil-square">Editar</i></a> |
-                            <a class="btn btn-outline-info"><i class="bi bi-eye">Detalles</i></a> |
-                            <a class="btn btn-outline-danger"><i class="bi bi-trash">Eliminar</i></a>
+                            <a class="btn btn-primary text-white"><i class="bi bi-pencil-square"> Editar</i></a> |
+                            <a class="btn btn-info text-white"><i class="bi bi-eye"> Detalles</i></a> |
+                            <a class="btn btn-danger text-white"><i class="bi bi-trash"> Eliminar</i></a>
                         </td>
                     </tr>
                 }

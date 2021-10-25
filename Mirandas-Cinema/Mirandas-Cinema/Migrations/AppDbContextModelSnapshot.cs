@@ -65,9 +65,6 @@ namespace Mirandas_Cinema.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CinemaId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
@@ -78,8 +75,6 @@ namespace Mirandas_Cinema.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CinemaId");
 
                     b.ToTable("Cinemas");
                 });
@@ -167,17 +162,10 @@ namespace Mirandas_Cinema.Migrations
                     b.Navigation("Movie");
                 });
 
-            modelBuilder.Entity("Mirandas_Cinema.Models.Cinema", b =>
-                {
-                    b.HasOne("Mirandas_Cinema.Models.Cinema", null)
-                        .WithMany("Cinemas")
-                        .HasForeignKey("CinemaId");
-                });
-
             modelBuilder.Entity("Mirandas_Cinema.Models.Movie", b =>
                 {
                     b.HasOne("Mirandas_Cinema.Models.Cinema", "Cinema")
-                        .WithMany()
+                        .WithMany("Movies")
                         .HasForeignKey("CinemaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -200,7 +188,7 @@ namespace Mirandas_Cinema.Migrations
 
             modelBuilder.Entity("Mirandas_Cinema.Models.Cinema", b =>
                 {
-                    b.Navigation("Cinemas");
+                    b.Navigation("Movies");
                 });
 
             modelBuilder.Entity("Mirandas_Cinema.Models.Movie", b =>

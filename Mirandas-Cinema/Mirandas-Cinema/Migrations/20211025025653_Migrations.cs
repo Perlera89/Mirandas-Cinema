@@ -30,18 +30,11 @@ namespace Mirandas_Cinema.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Logo = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CinemaId = table.Column<int>(type: "int", nullable: true)
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Cinemas", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Cinemas_Cinemas_CinemaId",
-                        column: x => x.CinemaId,
-                        principalTable: "Cinemas",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -121,11 +114,6 @@ namespace Mirandas_Cinema.Migrations
                 name: "IX_Actors_Movies_MovieId",
                 table: "Actors_Movies",
                 column: "MovieId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Cinemas_CinemaId",
-                table: "Cinemas",
-                column: "CinemaId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Movies_CinemaId",

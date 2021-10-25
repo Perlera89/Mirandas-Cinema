@@ -19,8 +19,8 @@ namespace Mirandas_Cinema.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var movies = appDb.Movies.ToListAsync();
-            return View();
+            var movies = await appDb.Movies.Include(c => c.Cinema).ToListAsync();
+            return View(movies);
         }
     }
 }
