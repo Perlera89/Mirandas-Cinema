@@ -10,8 +10,14 @@ namespace Mirandas_Cinema.Models
     {
         [Key]
         public int Id { get; set; }
+
+        [Display(Name = "Foto de perfil")]
         public string ProfilePictureURL { get; set; }
+
+        [Display(Name = "Nombre")]
         public string FullName { get; set; }
+
+        [Display(Name = "Biografia")]
         public string Bio { get; set; }
 
         //Relaciones

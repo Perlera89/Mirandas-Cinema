@@ -111,7 +111,7 @@ namespace Mirandas_Cinema.Data
                             FullName = "Timothée Chalamet",
                             Bio = "Timothée Hal Chalamet nació en Manhattan, de Nicole Flender, una corredora de bienes raíces y bailarina, y Marc Chalamet, " +
                             "un editor de UNICEF. Su madre, que es de Nueva York, es judía, de ascendencia judía rusa y judía austriaca.",
-                            ProfilePictureURL = "http://dotnethow.net/images/actors/actor-2.jpeghttps://fashion.hola.com/imagenes/lifestyle/2020022069037/timothee-chalamet-actor-quien-es-estilo/0-297-507/timotheechalamet-z.jpg"
+                            ProfilePictureURL = "https://th.bing.com/th/id/R.c00691ba9adbeb611b85cd2732486cdd?rik=FK6nGoEN2PlaZQ&pid=ImgRaw&r=0"
                         },
                         new Actor()
                         {

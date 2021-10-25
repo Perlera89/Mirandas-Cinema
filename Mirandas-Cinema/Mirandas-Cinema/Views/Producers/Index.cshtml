@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Producer>
+
+@{
+    ViewData["Title"] = "Lista de Productores";
+}
+
+<div class="row container">
+    <div class="col-md-12">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">@Html.DisplayNameFor(p => p.ProfilePictureURL)</th>
+                    <th scope="col">@Html.DisplayNameFor(p => p.FullName)</th>
+                    <th scope="col">@Html.DisplayNameFor(p => p.Bio)</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var producer in Model)
+                {
+                    <tr>
+                        <td class="aling-middle">
+                            <img class="rounded-circle" src="@producer.ProfilePictureURL" alt="@producer.FullName" style="max-width: 150px" />
+                        </td>
+                        <th class="aling-middle" scope="row">
+                            @Html.DisplayFor(model => producer.FullName)
+                        </th>
+                        <td class="aling-middle">
+                            @Html.DisplayFor(model => producer.Bio)
+                        </td>
+                        <td class="aling-middle">
+                            <a class="btn btn-outline-primary"><i class="bi bi-pencil-square">Editar</i></a> |
+                            <a class="btn btn-outline-info"><i class="bi bi-eye">Detalles</i></a> |
+                            <a class="btn btn-outline-danger"><i class="bi bi-trash">Eliminar</i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
