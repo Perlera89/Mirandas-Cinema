@@ -8,7 +8,7 @@
     @foreach (var movie in Model) 
      {
         <div class="col-md-4 col-xs-6 border-primary mb-3">
-            <div class="card mb-3" style="max-width: 500px">
+            <div class="card mb-3" style="max-width: 540px">
                 <div class="row g-0">
                     <div class="col-md-12">
                         <div class="card-header text-white bg-primary">
@@ -22,9 +22,9 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <img src="@movie.ImagenURL" width="100" alt="@movie.Name"/>
+                    <img src="@movie.ImagenURL" alt="@movie.Name" width="100%"/>
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-12 float-left">
                     <div class="card-body">
                         <p class="card-text">@movie.Description</p>
                         <p class="card-text"><b>Cine:</b> @movie.Cinema.Name</p>
@@ -51,7 +51,7 @@
                     <div class="card-footer">
                         <p class="card-text">
                             <a class="btn btn-primary text-white float-right"><i class="bi bi-eye-fill"></i> Detalles</a>
-                            <a class="btn btn-success text-white"><i class="bi bi-cart-plus"></i> Agregar ($@movie.Price.ToString("0.00"))</a>
+                            <a class="btn btn-success text-white"><i class="bi bi-cart-plus"></i> Agregar (@movie.Price.ToString("c"))</a>
                         </p>
                     </div>
                 </div>

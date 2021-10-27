@@ -147,7 +147,7 @@ namespace Mirandas_Cinema.Data
                             Name = "Dune",
                             Description = "El hijo de una familia noble trata de vengarse de la muerte de su padre al mismo tiempo" +
                             " que salva un planeta rico en especias que se le encomienda proteger. Nueva adaptación al cine de las " +
-                            "novelas de Frank Herbert, que ya fueron trasladadas a la gran pantalla por David Lynch en 1984.",
+                            "novelas de Frank Herbert.",
                             Price = 19.50,
                             ImagenURL = "https://image.tmdb.org/t/p/w185_and_h278_bestv2/ymTPj60S2T9HoQIsh4VBLu3jDM5.jpg",
                             StartDate = DateTime.Now.AddDays(-5),
@@ -173,7 +173,7 @@ namespace Mirandas_Cinema.Data
                         {
                             Name = "Finding You",
                             Description = "Finley, una talentosa aspirante a violinista, conoce a Beckett, una joven estrella de cine, cuando está en " +
-                            "Irlanda en su semestre de universidad fuera del país. Entre ellos surge un romance inesperado.",
+                            "Irlanda en su semestre de universidad fuera del país. Entre ellos surge un romance inesperado. Una pelicula llena de romance.",
                             Price = 39.50,
                             ImagenURL = "https://image.tmdb.org/t/p/w185_and_h278_bestv2/9uopgvuSrjnr9LaIEXeZOjG20Es.jpg",
                             StartDate = DateTime.Now,
@@ -187,10 +187,7 @@ namespace Mirandas_Cinema.Data
                             Name = "Cuñados",
                             Description = "Eduardo (Miguel de Lira) y su cuñado Sabonis (Xosé A. Touriñán) acaban de meter la pata en uno" +
                             " de sus negocios y necesitan dinero. Mucho dinero. Será Sabonis quien encuentre la solución al problema secuestrando" +
-                            " a Modesto (Federico Pérez Rey), cuñado de Alicia Zamora, la empresaria que les engañó y dejó tirados. Solo hay un pequeño " +
-                            "problema: Alicia no piensa pagar ni un euro por su cuñado. Sin embargo, es el propio Modesto quien urde un nuevo plan con " +
-                            "el que Eduardo y Sabonis podrán salvar la bodega familiar. Estos tres cuñados lo tienen todo para fracasar, pero como diría " +
-                            "Sabonis, malo será.",
+                            " a Modesto (Federico Pérez Rey).",
                             Price = 19.50,
                             ImagenURL = "https://image.tmdb.org/t/p/w185_and_h278_bestv2/34mk9BfGmIjERETs4JLBhS6ifxr.jpg",
                             StartDate = DateTime.Now.AddDays(-10),
