@@ -10,16 +10,16 @@ namespace Mirandas_Cinema.Controllers
 {
     public class MoviesController : Controller
     {
-        private readonly AppDbContext appDb;
+        private readonly AppDbContext context;
 
-        public MoviesController(AppDbContext _appDb)
+        public MoviesController(AppDbContext _context)
         {
-            appDb = _appDb;
+            context = _context;
         }
 
         public async Task<IActionResult> Index()
         {
-            var movies = await appDb.Movies.Include(c => c.Cinema).OrderBy(c => c.Name).ToListAsync();
+            var movies = await context.Movies.Include(c => c.Cinema).OrderBy(c => c.Name).ToListAsync();
             return View(movies);
         }
     }

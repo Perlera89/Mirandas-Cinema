@@ -12,12 +12,16 @@ namespace Mirandas_Cinema.Models
         public int Id { get; set; }
 
         [Display(Name = "Foto de perfil")]
+        [Required(ErrorMessage = "La foto de perfil es requerida")]
         public string ProfilePictureURL { get; set; }
 
         [Display(Name = "Nombre")]
+        [Required(ErrorMessage = "El nombre completo es requerido")]
+        [StringLength(50, MinimumLength = 3, ErrorMessage = "El nombre debe tener entre 3 y 50 catacteres")]
         public string FullName { get; set; }
 
         [Display(Name = "Biografia")]
+        [Required(ErrorMessage = "La biografia es requerida")]
         public string Bio { get; set; }
 
         //Relaciones

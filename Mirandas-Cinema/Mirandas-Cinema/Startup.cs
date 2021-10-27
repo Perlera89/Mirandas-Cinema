@@ -6,6 +6,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Mirandas_Cinema.Data;
+using Mirandas_Cinema.Data.Repository;
+using Mirandas_Cinema.Data.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +32,9 @@ namespace Mirandas_Cinema
             //Configuracion de DbContext
             services.AddDbContext<AppDbContext>(options => options.
             UseSqlServer(Configuration.GetConnectionString("DefaultConnectionString")));
+
+            //Configuracion de servicios
+            services.AddScoped<IActors, ActorsRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
