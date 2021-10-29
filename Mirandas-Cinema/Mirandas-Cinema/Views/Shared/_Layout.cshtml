@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="~/css/navBar.css" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="shortcut icon" href="~/rsc/MirandasLogos/icono.png" width="32px">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aleo:wght@300&family=Anton&display=swap" rel="stylesheet">
+    <link href="~/css/colores_fuentes.css" rel="stylesheet"/>
 </head>
 @section head{
     <style type="text/css">
@@ -40,8 +44,8 @@
                             </a>
 
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="padding: 10px;">
-                                <a class="dropdown-item" asp-controller="Cinemas" asp-action="Index"><i class="bi bi-camera-reels"></i> Cines</a>
                                 <a class="dropdown-item" asp-controller="Actors" asp-action="Index"><i class="bi bi-headset"></i> Actores</a>
+                                <a class="dropdown-item" asp-controller="Cinemas" asp-action="Index"><i class="bi bi-camera-reels"></i> Cines</a>
                                 <a class="dropdown-item" asp-controller="Producers" asp-action="Index"><i class="bi bi-person-square"></i> Productores</a>
                             </div>
                         </li>

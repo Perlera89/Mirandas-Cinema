@@ -28,18 +28,6 @@
         max-height: 400px;
     }
 
-    .container .box:nth-last-child(-n+2){
-        width: calc(33% - 10px);
-        background: #fff;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 20px 30px;
-        border-radius: 5px;
-        margin-bottom: 70px;
-        max-height: 400px;
-    }
 
 .box .quote i {
     margin-top: 10px;
@@ -109,8 +97,8 @@
         }
 
         .btn .btn-delete {
-            border: 2px solid #ff0000;
             color: #ff0000;
+            border: 2px solid #ff0000;
         }
 
         .btn .btn-details:hover {
@@ -118,20 +106,16 @@
             color: #fff;
         }
 
-        .btn .btn-details:hover a {
-            color: #fff;
-            text-decoration: none;
-        }
-
         .btn .btn-delete:hover {
             background: #ff0000;
             color: #fff;
         }
 
-        .btn .btn-delete:hover a {
+        .btn .btn-details, .btn-delete:hover a {
             color: #fff;
             text-decoration: none;
         }
+
 
 @media (max-width:1045px) {
     .container .box {

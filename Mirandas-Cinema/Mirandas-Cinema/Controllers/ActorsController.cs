@@ -94,7 +94,7 @@ namespace Mirandas_Cinema.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var actor = await service.GetById(id);
-            if (actor == null) return View("NoFound");
+            if (actor == null) return View("Error");
 
             await service.Delete(id);
             return RedirectToAction(nameof(Index));

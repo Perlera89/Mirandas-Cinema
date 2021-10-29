@@ -12,6 +12,6 @@ namespace Mirandas_Cinema.Data.Services
         Task<Actor> GetById(int id);
         Task Add(Actor actor);
         Task<Actor> Update(int id, Actor newActor);
-        Taks Delete(int id);
+        Task Delete(int id);
     }
 }
