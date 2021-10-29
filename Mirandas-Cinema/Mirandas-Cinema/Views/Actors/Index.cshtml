@@ -1,45 +1,33 @@
-﻿@model IEnumerable<Actor>
+﻿<link rel="stylesheet" href="~/css/styles-1/index.css" />
+<link rel="stylesheet" href="~/css/nav-bar.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+@model IEnumerable<Actor>
 
-@{ 
+@{
     ViewData["Title"] = "Actores";
 }
 
-<div class="row">
-    <div class="col-md-8" style="margin: auto;">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">@Html.DisplayNameFor(a => a.ProfilePictureURL)</th>
-                    <th scope="col">@Html.DisplayNameFor(a => a.FullName)</th>
-                    <th scope="col">@Html.DisplayNameFor(a => a.Bio)</th>
-                    <th scope="col">Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var actor in Model)
-                {
-                <tr>
-                    <td class="aling-middle">
-                        <img class="rounded-circle" src="@actor.ProfilePictureURL" alt="@actor.FullName" style="max-width: 150px"/>
-                    </td>
-                    <th class="aling-middle" scope="row">
-                        @Html.DisplayFor(model => actor.FullName)
-                    </th>
-                    <td class="aling-middle">
-                        @Html.DisplayFor(model => actor.Bio)
-                    </td>
-                    <td class="aling-middle">
-                        <a class="btn btn-primary text-white"><i class="bi bi-pencil-square"> Editar</i></a> |
-                        <a class="btn btn-info text-white"><i class="bi bi-eye"> Detalles</i></a> |
-                        <a class="btn btn-danger text-white"><i class="bi bi-trash"> Eliminar</i></a>
-                    </td>
-                </tr>
-                }
-            </tbody>
-        </table>
+<div class="card__circle card__circle1"></div>
+<div class="card__circle card__circle2"></div>
+
+
+    <div class="container">
+@foreach (var actor in Model)
+{
+        <div class="box">
+            <div class="image">
+                <img src="@actor.ProfilePictureURL">
+            </div>
+            <div class="name_actor">@actor.FullName</div>
+            <div class="bio"><p>@actor.Bio</p></div>
+            <div class="btn">
+                <button class="btn-details" asp-action="Details" asp-route-id="@actor.Id"><a asp-action="Details" asp-route-id="@actor.Id">Detalles</a></button>
+                <button class="btn-delete">Eliminar</button>
+            </div>
+        </div>
+}
     </div>
-</div>
 
 <div class="text-white" style="position: fixed; right: 25px; bottom: 25px">
-    <a asp-controller="Actors" asp-action="Create" class="btn btn-success"><i class="bi bi-plus-circle"> Nuevo</i></a>
+    <a asp-controller="Actors" asp-action="Create" class="btn btn-success"><i class="bi bi-plus-circle" style="border-radius: 50%;"> Nuevo</i></a>
 </div>

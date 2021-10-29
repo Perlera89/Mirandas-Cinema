@@ -1,13 +1,14 @@
-﻿@model IEnumerable<Movie>
+﻿<link rel="stylesheet" href="~/css/nav-bar.css" />
+@model IEnumerable<Movie>
 
 @{
     ViewData["Title"] = "Movies";
 }
 
-<div class="row">
+<div class="row nav-links" style="margin: 0 auto 50px; max-width: 1300px;">
     @foreach (var movie in Model) 
      {
-        <div class="col-md-4 col-xs-6 border-primary mb-3">
+        <div class="col-md-4 col-xs-6 border-primary mb-3 nav-links">
             <div class="card mb-3" style="max-width: 540px">
                 <div class="row g-0">
                     <div class="col-md-12">
@@ -21,14 +22,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <img src="@movie.ImagenURL" alt="@movie.Name" width="100%"/>
+                <div class="col-md-12">
+                    <img src="@movie.ImagenURL" alt="@movie.Name" width="100%" style="max-width: 200px"/>
                 </div>
                 <div class="col-md-12 float-left">
                     <div class="card-body">
-                        <p class="card-text">@movie.Description</p>
-                        <p class="card-text"><b>Cine:</b> @movie.Cinema.Name</p>
-                        <p class="card-text"><b>Categoria:</b> @movie.MovieCategory</p>
+                        @*<div style="max-height: 100px; overflow: hidden;"><p class="card-text">@movie.Description</p></div>*@
+                        @*<p class="card-text"><b>Cine:</b> @movie.Cinema.Name</p>
+                        <p class="card-text"><b>Categoria:</b> @movie.MovieCategory</p>*@
                         <p class="card-text"><b>Fecha de inicio:</b> @movie.StartDate.ToString("dd MMMM yy")</p>
                         <p class="card-text"><b>Fecha de finalizacion:</b> @movie.EndDate.ToString("dd MMMM yy")</p>
                         <p class="card-text">

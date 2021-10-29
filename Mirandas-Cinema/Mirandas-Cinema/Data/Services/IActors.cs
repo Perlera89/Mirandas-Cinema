@@ -9,9 +9,9 @@ namespace Mirandas_Cinema.Data.Services
     public interface IActors
     {
         Task<IEnumerable<Actor>> GetActors();
-        Actor GetById(int id);
-        void Add(Actor actor);
-        Actor Update(int id, Actor newActor);
-        void Delete(int id);
+        Task<Actor> GetById(int id);
+        Task Add(Actor actor);
+        Task<Actor> Update(int id, Actor newActor);
+        Taks Delete(int id);
     }
 }

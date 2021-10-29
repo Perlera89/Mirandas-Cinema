@@ -17,15 +17,18 @@ namespace Mirandas_Cinema.Data.Repository
             context = _context;
         }
 
-        public void Add(Actor actor)
+        public async Task Add(Actor actor)
         {
-            context.Actors.Add(actor);
-            context.SaveChanges();
+            await context.Actors.AddAsync(actor);
+            await context.SaveChangesAsync();
         }
 
-        public void Delete(int id)
+        public async Task Delete(int id)
         {
-            throw new NotImplementedException();
+            var actor = await context.Actors.FirstOrDefaultAsync(n => n.Id == id);
+            context.Actors.Remove(actor);
+            await context.SaveChangesAsync();
+
         }
 
         public async Task<IEnumerable<Actor>> GetActors()
@@ -34,14 +37,17 @@ namespace Mirandas_Cinema.Data.Repository
             return actors;
         }
 
-        public Actor GetById(int id)
+        public async Task<Actor> GetById(int id)
         {
-            throw new NotImplementedException();
+            var actor = await context.Actors.FirstOrDefaultAsync(n => n.Id == id);
+            return actor;
         }
 
-        public Actor Update(int id, Actor newActor)
+        public async Task<Actor> Update(int id, Actor newActor)
         {
-            throw new NotImplementedException();
+            context.Update(newActor);
+            await context.SaveChangesAsync();
+            return newActor;
         }
     }
 }
