@@ -11,18 +11,25 @@
     <link rel="shortcut icon" href="~/rsc/MirandasLogos/icono.png" width="32px">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Aleo:wght@300&family=Anton&display=swap" rel="stylesheet">
-    <link href="~/css/colores_fuentes.css" rel="stylesheet"/>
+    <link href="~/css/colores_fuentes.css" rel="stylesheet" />
+    <link href="~/css/estilos_generales.css" rel="stylesheet" />
+
+    <style type="text/css">
+        body {
+            background-image: radial-gradient(circle at 50% -20.71%, #a4d8ec 0, #a7d7ef 6.25%, #abd6f1 12.5%, #b0d5f3 18.75%, #b5d3f4 25%, #bbd2f4 31.25%, #c1d0f4 37.5%, #c7cff3 43.75%, #cdcdf2 50%, #d3cbf0 56.25%, #d9caed 62.5%, #dec8ea 68.75%, #e3c7e7 75%, #e8c6e3 81.25%, #ecc5df 87.5%, #efc4da 93.75%, #f2c4d6 100%);
+        }
+    </style>
 </head>
-@section head{
+<!--section head{
     <style type="text/css">
         body {
             background-image: url('~/wwwroot/rsc/Movies/dune.jpg');
             margin: 0;
         }
     </style>
-}
-<body style="background-image: radial-gradient(circle at 50% -20.71%, #a4d8ec 0, #a7d7ef 6.25%, #abd6f1 12.5%, #b0d5f3 18.75%, #b5d3f4 25%, #bbd2f4 31.25%, #c1d0f4 37.5%, #c7cff3 43.75%, #cdcdf2 50%, #d3cbf0 56.25%, #d9caed 62.5%, #dec8ea 68.75%, #e3c7e7 75%, #e8c6e3 81.25%, #ecc5df 87.5%, #efc4da 93.75%, #f2c4d6 100%); ">
+}-->
+
+<body >
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 nav-links justify-content-center" style="max-width: 1140px; margin: auto;">
             <div class="container-fluid">
@@ -48,6 +55,9 @@
                                 <a class="dropdown-item" asp-controller="Cinemas" asp-action="Index"><i class="bi bi-camera-reels"></i> Cines</a>
                                 <a class="dropdown-item" asp-controller="Producers" asp-action="Index"><i class="bi bi-person-square"></i> Productores</a>
                             </div>
+                        </li>
+                        <li class="nav-item forward">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Producers" asp-action="prueba">Pagina prueba</a>
                         </li>
                     </ul>
                     <div class="search">

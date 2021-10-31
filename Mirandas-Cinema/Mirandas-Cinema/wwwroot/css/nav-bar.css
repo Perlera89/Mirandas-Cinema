@@ -8,6 +8,7 @@
     font-family: 'Poppins', sans-serif;
     }
 
+    /*logo del menu*/
     .nav-links {
     display: flex;
     align-items: center;
@@ -17,12 +18,13 @@
     box-shadow: 0 5px 10px rgba(0,0,0,0.2);
     }
 
-
+    /*lista que contiene el menu*/
     .nav-links li {
     list-style: none;
     margin: 0 12px;
     }
 
+    /*boton de inicio del menu*/
     .nav-links li a {
     position: relative;
     color: #333;
@@ -32,6 +34,11 @@
     text-decoration: none;
     }
 
+    /*efectos para todas las etiquestas de a
+        que estan en el menu. Aqui se define la animancion
+        de cada link.
+        --------------------------------
+    */
     .nav-links li a:before {
     content: '';
     position: absolute;
@@ -43,6 +50,7 @@
     border-radius: 12px;
     transition: all 0.4s ease;
     }
+
 
     .nav-links li a:hover:before {
     width: 100%;
@@ -75,14 +83,18 @@
     transform: scaleX(1);
     transform-origin: left;
     }
+/*------------------------------------*/
 
+/*contenedor del buscador del menu*/
     .search{
         position: absolute;
         padding: 5px;
         top: 0;
         right: 0;
     }
-
+/*aqui se describen las propiedades de la pequeña
+    caja que se desplega al tocar el buscador: el input
+*/
         .search .input-search {
             width: 0px;
             height: 40px;
@@ -95,6 +107,7 @@
             transition: all 0.6s ease;
         }
 
+/*contenedor que contiene el boton azul del buscador*/
 .btn-search {
     width: 55px;
     height: 55px;
@@ -110,10 +123,15 @@
     cursor: pointer;
 }
 
+/*al hacer hover en el contenedor del todo el buscador;
+    el tamaño del input para buscar se hará mas ancho,
+    el efecto de agrandarse que se ve
+*/
 .search:hover .input-search {
     width: 240px;
 }
 
+/*y mientras se este seleccionado se mantendrá de ese tamaño*/
 .search .input-search:focus {
     width: 240px;
 }

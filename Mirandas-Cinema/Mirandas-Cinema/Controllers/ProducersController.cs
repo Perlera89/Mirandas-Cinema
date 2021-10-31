@@ -22,5 +22,10 @@ namespace Mirandas_Cinema.Controllers
             var producers = await appDb.Producers.ToListAsync();
             return View(producers);
         }
+
+        public IActionResult prueba()
+        {
+            return View();
+        }
     }
 }
