@@ -1,5 +1,5 @@
-﻿<link rel="stylesheet" href="~/css/styles-1/index.css" />
-<link rel="stylesheet" href="~/css/nav-bar.css" />
+﻿<link rel="stylesheet" href="~/css/page/index.css" />
+@*<link rel="stylesheet" href="~/css/root/nav-bar.css" />*@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
 @model IEnumerable<Actor>
 
@@ -16,7 +16,7 @@
 {
         <div class="box">
             <div class="image">
-                <img src="@actor.ProfilePictureURL">
+                <img src="@actor.ProfilePictureURL" alt="@actor.FullName" >
             </div>
             <div class="name_actor">@actor.FullName</div>
             <div class="bio"><p>@actor.Bio</p></div>

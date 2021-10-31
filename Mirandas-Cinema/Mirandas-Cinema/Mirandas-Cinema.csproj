@@ -18,11 +18,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\rsc\Actors\" />
-    <Folder Include="wwwroot\rsc\Cinemas\" />
-    <Folder Include="wwwroot\rsc\Movies\" />
-    <Folder Include="wwwroot\rsc\NewFolder\" />
-    <Folder Include="wwwroot\rsc\Producers\" />
+    <Folder Include="wwwroot\Resources\Actors\" />
+    <Folder Include="wwwroot\Resources\Movies\" />
+    <Folder Include="wwwroot\Resources\Producers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Resources\Cinemas\gold.png" />
+    <None Include="wwwroot\Resources\Cinemas\home.png" />
+    <None Include="wwwroot\Resources\Logos\1.png" />
+    <None Include="wwwroot\Resources\Logos\2.png" />
   </ItemGroup>
 
 </Project>

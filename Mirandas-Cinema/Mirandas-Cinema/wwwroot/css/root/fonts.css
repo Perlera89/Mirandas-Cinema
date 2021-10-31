@@ -1,0 +1,28 @@
+﻿
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@3S00&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aleo:wght@700&display=swap');
+
+:root {
+    --font: #111c34;
+    --subtitle: #02084b;
+    --bg: #dae1e7;
+    --bgtitle: #237bac;
+    --lines: #161616;
+    --doubles: #182c70;
+    --font-family-aleo-subtitle: 'Aleo', serif;
+    --font-family-anton-title: 'Anton', sans-serif;
+    --font-family-roboto-paragraph: 'Roboto', sans-serif;
+}
+
+._title {
+    font-family: 'Aleo', serif;
+}
+
+.subtitle {
+    font-family: var(--font-family-aleo-subtitle);
+}
+
+.paragraph {
+    font-family: var(--font-family-roboto-paragraph)
+}
