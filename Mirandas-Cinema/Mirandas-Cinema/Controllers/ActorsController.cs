@@ -21,7 +21,7 @@ namespace Mirandas_Cinema.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var actors = await service.GetActors();
+            var actors = await service.GetAll();
             return View(actors);
         }
 

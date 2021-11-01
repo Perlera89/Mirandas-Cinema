@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mirandas_Cinema.Data.Base;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Mirandas_Cinema.Models
 {
-    public class Actor
+    public class Actor : IBase
     {
         [Key]
         public int Id { get; set; }
