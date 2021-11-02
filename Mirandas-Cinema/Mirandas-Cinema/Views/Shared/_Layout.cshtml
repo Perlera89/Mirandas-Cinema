@@ -6,6 +6,7 @@
     <title>@ViewData["Title"] - Mirandas-Cinema</title>
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/css/root/nav-bar.css" />
+    <link rel="stylesheet" href="~/css/root/general.css"/>
     <link href="~/css/root/fonts.css" rel="stylesheet" />
     <link href="~/css/root/general.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
@@ -22,7 +23,7 @@
 </head>
 <body >
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 nav-links justify-content-center" style="max-width: 1140px; margin: auto;">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 nav-links justify-content-center col-md-11" style="margin: auto;">
             <div class="container-fluid">
                 <a class="navbar-brand nav-links" asp-area="" asp-controller="Movies" asp-action="Index"><img src="~/resources/logos/2.png" width="100" /></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -57,6 +58,10 @@
                             <i class="bi bi-search"></i>
                         </div>
                     </div>
+
+                </div>
+                <div class="nav-bar">
+                    @await Component.InvokeAsync("ShoppingSummary")
                 </div>
             </div>
         </nav>
@@ -67,8 +72,8 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container nav-links nav-footer" style="display: flex; justify-content: center;">
+    <footer class=" footer text-muted">
+        <div class="container nav-links nav-footer col-md-11" style="display: flex; justify-content: center;">
             &copy; 2021 - Mirandas Cinema
         </div>
     </footer>

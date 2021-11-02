@@ -6,11 +6,11 @@
     ViewData["Title"] = "Movies";
 }
 
-<div class="row nav-links" style="margin: 0 auto 50px; max-width: 1300px;">
+<div class="row nav-links col-md-11 mt-0 ml-auto mr-auto mb-xl-5">
     @foreach (var movie in Model) 
      {
-        <div class="col-md-4 col-xs-6 border-primary mb-3 nav-links">
-            <div class="card mb-3" style="max-width: 540px">
+        <div class="col-md-4 border-primary mb-3 nav-links">
+            <div class="card mb-3" style="max-width: 500px">
                 <div class="row g-0">
                     <div class="col-md-12">
                         <div class="card-header text-white bg-primary">
@@ -23,16 +23,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12 justify-content-center">
-                    <img src="@movie.ImagenURL" alt="@movie.Name" width="100%" style="max-width: 200px;"/>
+                <div class="col-md-11 m-auto">
+                    <img src="@movie.ImagenURL" alt="@movie.Name" width="100%"/>
                 </div>
                 <div class="col-md-12 float-left">
                     <div class="card-body">
                         @*<div style="max-height: 100px; overflow: hidden;"><p class="card-text">@movie.Description</p></div>*@
-                        @*<p class="card-text"><b>Cine:</b> @movie.Cinema.Name</p>
-                        <p class="card-text"><b>Categoria:</b> @movie.MovieCategory</p>*@
-                        <p class="card-text"><b>Fecha de inicio:</b> @movie.StartDate.ToString("dd MMMM yy")</p>
-                        <p class="card-text"><b>Fecha de finalizacion:</b> @movie.EndDate.ToString("dd MMMM yy")</p>
+                        <p class="card-text"><b>Cine:</b> @movie.Cinema.Name</p>
+                        @*@<p class="card-text"><b>Categoria:</b> @movie.MovieCategory</p>*@
+                        <p class="card-text"><b>Inicio:</b> @movie.StartDate.ToString("dd MMMM yy")</p>
+                        <p class="card-text"><b>Finalizacion:</b> @movie.EndDate.ToString("dd MMMM yy")</p>
                         <p class="card-text">
                             <b>Estado: </b>
                             @if (DateTime.Now >= movie.StartDate && DateTime.Now <= movie.EndDate)
@@ -52,8 +52,13 @@
                 <div class="col-md-12">
                     <div class="card-footer">
                         <p class="card-text">
-                            <a class="btn btn-primary text-white float-right"><i class="bi bi-eye-fill"></i> Detalles</a>
-                            <a class="btn btn-success text-white"><i class="bi bi-cart-plus"></i> Agregar (@movie.Price.ToString("c"))</a>
+                            <a class="btn btn-primary text-white float-right">
+                                <i class="bi bi-eye-fill">
+                                </i> Detalles
+                            </a>
+                            <a class="btn btn-success text-white" asp-controller="Orders" asp-action="AddItem" asp-route-id="@movie.Id">
+                                <i class="bi bi-cart-plus"></i> Agregar (@movie.Price.ToString("c"))
+                            </a>&nbsp;
                         </p>
                     </div>
                 </div>

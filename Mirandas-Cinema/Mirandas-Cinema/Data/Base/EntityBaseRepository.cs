@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Mirandas_Cinema.Data.Base
 {
-    public class EntityRepository<T> : IEntity<T> where T : class, IBase, new()
+    public class EntityBaseRepository<T> : IEntityBase<T> where T : class, IBase, new()
     {
         private readonly AppDbContext context;
 
-        public EntityRepository(AppDbContext _context)
+        public EntityBaseRepository(AppDbContext _context)
         {
             context = _context;
         }

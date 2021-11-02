@@ -1,4 +1,5 @@
 ﻿using Mirandas_Cinema.Data;
+using Mirandas_Cinema.Data.Base;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Mirandas_Cinema.Models
 {
-    public class Movie
+    public class Movie : IBase
     {
         [Key]
         public int Id { get; set; }

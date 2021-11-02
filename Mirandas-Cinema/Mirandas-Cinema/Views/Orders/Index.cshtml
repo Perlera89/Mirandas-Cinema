@@ -1,0 +1,49 @@
+﻿<link rel="stylesheet" href="~/css/root/nav-bar.css" />
+@model List<Order>
+
+@{ 
+    ViewData["Title"] = "Listar ordenes";
+}
+
+<div class="row nav-links col-md-11 m-auto">
+    <div class="col-md-8 offset-2">
+        <p class="mt-2 mb-2">
+            <h4>Lista de todos sus pedidos</h4>
+        </p>
+
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Order Id</th>
+                    <th>Peliculas</th>
+                    <th>Total</th>
+                    <th>Usuario</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var order in Model)
+                {
+                <tr>
+                    <td class="align-middle">@order.Id</td>
+                    <td class="align-middle">
+                        <ul style="list-style-type: none;">
+                            @foreach (var movie in order.OrderItems)
+                            {
+                                <li>
+                                    <div class="alert alert-info" role="alert">
+                                        <span class="badge bg-success">@movie.Amount</span> [@movie.Price.ToString("c")] - @movie.Movie.Name
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+                    </td>
+                    <td class="align-middle">
+                        @order.OrderItems.Select(o => o.Movie.Price * o.Amount).Sum().ToString("c")
+                    </td>
+                    <td class="align-middle"> -- </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

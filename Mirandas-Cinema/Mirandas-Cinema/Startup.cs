@@ -1,11 +1,13 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Mirandas_Cinema.Data;
+using Mirandas_Cinema.Data.Cart;
 using Mirandas_Cinema.Data.Repository;
 using Mirandas_Cinema.Data.Services;
 using System;
@@ -35,6 +37,14 @@ namespace Mirandas_Cinema
 
             //Configuracion de servicios
             services.AddScoped<IActors, ActorsRepository>();
+            services.AddScoped<IMovies, MoviesRepository>();
+            services.AddScoped<IOrders, OrdersRepository>();
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped(s => ShoppingCart.GetShoppingCart(s));
+            
+            //Agregar sesion
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,7 +56,7 @@ namespace Mirandas_Cinema
             }
             else
             {
-                app.UseExceptionHandler("/Movies/Error");
+                app.UseExceptionHandler("NotFound");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
@@ -54,6 +64,7 @@ namespace Mirandas_Cinema
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseSession();
 
             app.UseAuthorization();
 

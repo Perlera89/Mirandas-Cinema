@@ -9,7 +9,7 @@ using Mirandas_Cinema.Data.Base;
 
 namespace Mirandas_Cinema.Data.Repository
 {
-    public class ActorsRepository : EntityRepository<Actor>, IActors
+    public class ActorsRepository : EntityBaseRepository<Actor>, IActors
     {
         public ActorsRepository(AppDbContext _context) : base(_context)
         {

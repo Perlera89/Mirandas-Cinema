@@ -876,3 +876,7 @@ C:\Users\Perlera\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinem
 C:\Users\Perlera\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Mirandas-Cinema.pdb
 C:\Users\Perlera\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Mirandas-Cinema.genruntimeconfig.cache
 C:\Users\Perlera\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Mirandas-Cinema.csproj.AssemblyReference.cache
+C:\Users\Perlera\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Orders\ShoppingCart.cshtml.g.cs
+C:\Users\Perlera\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Shared\Components\ShoppingSummary\Default.cshtml.g.cs
+C:\Users\Perlera\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Orders\OrderCompleted.cshtml.g.cs
+C:\Users\Perlera\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Orders\Index.cshtml.g.cs

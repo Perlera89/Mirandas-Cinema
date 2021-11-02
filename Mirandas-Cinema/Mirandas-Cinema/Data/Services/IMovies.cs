@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Mirandas_Cinema.Data.Services
 {
-    public interface IActors : IEntityBase<Actor>
+    public interface IMovies : IEntityBase<Movie>
     {
     }
 }

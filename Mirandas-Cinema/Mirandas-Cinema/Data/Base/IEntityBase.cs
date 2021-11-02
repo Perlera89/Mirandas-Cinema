@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Mirandas_Cinema.Data.Base
 {
-    public interface IEntity<T> where T: class, IBase, new()
+    public interface IEntityBase<T> where T: class, IBase, new()
     {
         Task<IEnumerable<T>> GetAll();
         Task<T> GetById(int id);

@@ -35,5 +35,10 @@ namespace Mirandas_Cinema.Data
         public DbSet<Actor_Movie> Actors_Movies { get; set; }
         public DbSet<Producer> Producers { get; set; }
         public DbSet<Cinema> Cinemas { get; set; }
+        
+        //Relacion de Orders y ShoppingCart
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
     }
 }
