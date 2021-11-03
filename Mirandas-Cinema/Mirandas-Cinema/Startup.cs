@@ -1,7 +1,9 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -10,6 +12,7 @@ using Mirandas_Cinema.Data;
 using Mirandas_Cinema.Data.Cart;
 using Mirandas_Cinema.Data.Repository;
 using Mirandas_Cinema.Data.Services;
+using Mirandas_Cinema.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,9 +45,18 @@ namespace Mirandas_Cinema
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped(s => ShoppingCart.GetShoppingCart(s));
-            
+
+            //Autentificacion y autorizacion
+            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
+            services.AddMemoryCache();
             //Agregar sesion
             services.AddSession();
+            services.AddAuthentication(options =>
+            { 
+                //Autenticacion de cookies
+                options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            });
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -64,7 +76,11 @@ namespace Mirandas_Cinema
             app.UseStaticFiles();
 
             app.UseRouting();
-            app.UseSession();
+            app.UseSession();   
+
+            //Autentificacion y autorizacion
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseAuthorization();
 
@@ -77,6 +93,7 @@ namespace Mirandas_Cinema
 
             //Modelos de semillas
             AppDbInicializer.Seed(app);
+            AppDbInicializer.SeedUsers(app).Wait();
         }
     }
 }
