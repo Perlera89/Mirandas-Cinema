@@ -105,7 +105,7 @@ namespace Mirandas_Cinema.Data
                             Bio = "Katherine McNamara, nombrada una de las 'Breakout Bunch' de Vanity Fair, es una actriz, bailarina, cantante y compositora" +
                             " consumada y acaba de recibir el premio People's Choice Award de 2018 como Mejor Actriz de Televisión Femenina por su papel principal " +
                             "de 'Clary Fray' en la serie Freeform",
-                            ProfilePictureURL = "/resources/actors/katerine-mcNamara.jpg"
+                            ProfilePictureURL = "/resources/actors/katherine-mcNamara.jpg"
 
                         },
                         new Actor()
@@ -304,58 +304,58 @@ namespace Mirandas_Cinema.Data
             }
         }
 
-        public static async Task SeedUsers(IApplicationBuilder app)
-        {
-            using(var servicescope = app.ApplicationServices.CreateScope())
-            {
-                //Roles
-                var manager = servicescope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+        //public static async Task SeedUsers(IApplicationBuilder app)
+        //{
+        //    using(var serviceScope = app.ApplicationServices.CreateScope())
+        //    {
+        //        //Roles
+        //        var manager = serviceScope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
-                if (!await manager.RoleExistsAsync(UserRoles.Admin))
-                    await manager.CreateAsync(new IdentityRole(UserRoles.Admin));
+        //        if (!await manager.RoleExistsAsync(UserRoles.Admin))
+        //            await manager.CreateAsync(new IdentityRole(UserRoles.Admin));
 
-                if (!await manager.RoleExistsAsync(UserRoles.User))
-                    await manager.CreateAsync(new IdentityRole(UserRoles.User));
+        //        if (!await manager.RoleExistsAsync(UserRoles.User))
+        //            await manager.CreateAsync(new IdentityRole(UserRoles.User));
 
-                var userManager = servicescope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+        //        var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
 
-                //Administrador
-                string adminEmail = "admin@mirandas.com";
-                var admin = await userManager.FindByEmailAsync(adminEmail);
+        //        //Administrador
+        //        string adminEmail = "admin@mirandas.com";
+        //        var admin = await userManager.FindByEmailAsync(adminEmail);
 
-                if(admin == null)
-                {
-                    var newAdmin = new ApplicationUser() 
-                    {
-                        FullName = "Admin User",
-                        UserName = "admin-user",
-                        Email = adminEmail,
-                        EmailConfirmed = true
-                    };
+        //        if(admin == null)
+        //        {
+        //            var newAdmin = new ApplicationUser() 
+        //            {
+        //                FullName = "Admin User",
+        //                UserName = "admin-user",
+        //                Email = adminEmail,
+        //                EmailConfirmed = true
+        //            };
 
-                    await userManager.CreateAsync(newAdmin, "admin@1234");
-                    await userManager.AddToRoleAsync(newAdmin, UserRoles.Admin);
-                }
+        //            await userManager.CreateAsync(newAdmin, "admin@1234");
+        //            await userManager.AddToRoleAsync(newAdmin, UserRoles.Admin);
+        //        }
 
-                //Usuario
-                string userEmail = "user@mirandas.com";
-                var user = await userManager.FindByEmailAsync(userEmail);
+        //        //Usuario
+        //        string userEmail = "user@mirandas.com";
+        //        var user = await userManager.FindByEmailAsync(userEmail);
 
-                if (user == null)
-                {
-                    var newUser = new ApplicationUser()
-                    {
-                        FullName = "App User",
-                        UserName = "app-user",
-                        Email = userEmail,
-                        EmailConfirmed = true
-                    };
+        //        if (user == null)
+        //        {
+        //            var newUser = new ApplicationUser()
+        //            {
+        //                FullName = "App User",
+        //                UserName = "app-user",
+        //                Email = userEmail,
+        //                EmailConfirmed = true
+        //            };
 
-                    await userManager.CreateAsync(newUser, "user@1234");
-                    await userManager.AddToRoleAsync(newUser, UserRoles.User);
-                }
+        //            await userManager.CreateAsync(newUser, "user@1234");
+        //            await userManager.AddToRoleAsync(newUser, UserRoles.User);
+        //        }
 
-            }
-        }
+        //    }
+        //}
     }
 }
