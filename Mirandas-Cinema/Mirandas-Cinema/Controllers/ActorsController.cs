@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Mirandas_Cinema.Data;
 using Mirandas_Cinema.Data.Services;
+using Mirandas_Cinema.Data.Static;
 using Mirandas_Cinema.Models;
 using System;
 using System.Collections.Generic;
@@ -10,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace Mirandas_Cinema.Controllers
 {
+    [Authorize(Roles = UserRoles.Admin)]
     public class ActorsController : Controller
     {
         private readonly IActors service;
@@ -19,6 +22,7 @@ namespace Mirandas_Cinema.Controllers
             service = _service;
         }
 
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
             var actors = await service.GetAll();
@@ -45,6 +49,7 @@ namespace Mirandas_Cinema.Controllers
             }
         }
 
+        [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
         {
             var details = await service.GetById(id);

@@ -12,5 +12,6 @@ namespace Mirandas_Cinema.Data.Base
         Task Add(T entity);
         Task Update(int id, T entity);
         Task Delete(int id);
+        Task Search(T entity);
     }
 }

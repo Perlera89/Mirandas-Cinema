@@ -48,5 +48,10 @@ namespace Mirandas_Cinema.Data.Base
 
             await context.SaveChangesAsync();
         }
+
+        public async Task Search(T entity)
+        {
+            await context.Set<T>().FindAsync(entity);
+        }
     }
 }

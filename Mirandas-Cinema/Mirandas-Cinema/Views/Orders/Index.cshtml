@@ -2,7 +2,7 @@
 @model List<Order>
 
 @{ 
-    ViewData["Title"] = "Listar ordenes";
+    ViewData["Title"] = "Ordenes";
 }
 
 <div class="row nav-links col-md-11 m-auto">
@@ -17,7 +17,10 @@
                     <th>Order Id</th>
                     <th>Peliculas</th>
                     <th>Total</th>
-                    <th>Usuario</th>
+                    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+	                {		 
+                        <th>Usuario</th>
+	                }
                 </tr>
             </thead>
             <tbody>
@@ -40,7 +43,10 @@
                     <td class="align-middle">
                         @order.OrderItems.Select(o => o.Movie.Price * o.Amount).Sum().ToString("c")
                     </td>
-                    <td class="align-middle"> -- </td>
+                    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                    {
+                        <td class="align-middle">@order.User.FullName</td>
+                    }
                 </tr>
                 }
             </tbody>

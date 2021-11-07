@@ -1,0 +1,46 @@
+﻿@*<link rel="stylesheet" href="~/css/root/nav-bar.css" />*@
+
+@using Mirandas_Cinema.Data.ViewModels;
+@model LoginViewModel;
+
+@{ 
+    ViewData["Title"] = "Iniciar sesion";
+}
+
+<div class="row nav-links col-md-11 m-auto">
+    <div class="col-md-6 offset-3 mb-5 mt-3">
+        <p>
+            <h3 class="text-center m-4" style="color: #237bac;">Iniciar sesion</h3>
+        </p>
+
+        @if(TempData["Error"] != null)
+        {
+            <div class="col-md-12 alert alert-danger m-auto">
+                <span><b>Lo sentimos! </b>@TempData["Error"]</span>
+            </div>
+        }
+        <div class="row mt-2">
+            <div class="col-md-8 offset-2">
+                <form asp-action="Login">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-group">
+                        <label asp-for="Email" class="control-label"></label>
+                        <input type="email" asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password" class="control-label"></label>
+                        <input type="password" asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input class="btn btn-success float-right" type="submit" value="Iniciar sesion" />
+                        <a class="btn btn-secondary" asp-controller="Movies" asp-action="Index">Cancelar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

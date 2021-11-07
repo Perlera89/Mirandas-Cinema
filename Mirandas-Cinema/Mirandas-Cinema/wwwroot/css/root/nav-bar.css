@@ -87,10 +87,7 @@
 
 /*contenedor del buscador del menu*/
     .search{
-        position: absolute;
         padding: 5px;
-        top: 0;
-        right: 0;
     }
 /*aqui se describen las propiedades de la pequeña
     caja que se desplega al tocar el buscador: el input

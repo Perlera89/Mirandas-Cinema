@@ -1,15 +1,19 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Mirandas_Cinema.Data.Cart;
 using Mirandas_Cinema.Data.Services;
+using Mirandas_Cinema.Data.Static;
 using Mirandas_Cinema.Data.ViewModels;
 using Mirandas_Cinema.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace Mirandas_Cinema.Controllers
 {
+    [Authorize]
     public class OrdersController : Controller
     {
         private readonly IMovies service;
@@ -24,8 +28,9 @@ namespace Mirandas_Cinema.Controllers
 
         public async Task<IActionResult> Index()
         {
-            string userId = "";
-            var orders = await order.GetOrdersUser(userId);
+            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            string userRole = User.FindFirstValue(ClaimTypes.Role);
+            var orders = await order.GetOrdersUser(userId, userRole);
             return View(orders);
         }
 
@@ -69,8 +74,8 @@ namespace Mirandas_Cinema.Controllers
         public async Task<IActionResult> Order()
         {
             var movies = cart.GetShoppingCartItems();
-            string userId = "";
-            string email = "";
+            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            string email = User.FindFirstValue(ClaimTypes.Email);
 
             await order.StoreOrder(movies, userId, email);
             await cart.ClearShoppingCart();

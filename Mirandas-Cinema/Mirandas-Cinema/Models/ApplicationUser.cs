@@ -9,7 +9,7 @@ namespace Mirandas_Cinema.Models
 {
     public class ApplicationUser : IdentityUser
     {
-        [Display(Name = "Full name")]
+        [Display(Name = "Nombre completo")]
         public string FullName { get; set; }
     }
 }

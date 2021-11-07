@@ -91,9 +91,9 @@ namespace Mirandas_Cinema
                     pattern: "{controller=Movies}/{action=Index}/{id?}");
             });
 
-            ////Modelos de semillas
-            //AppDbInicializer.Seed(app);
-            //AppDbInicializer.SeedUsers(app).Wait();
+            //Modelos de semillas
+            AppDbInicializer.Seed(app);
+            AppDbInicializer.SeedUsersAndRoles(app).Wait();
         }
     }
 }

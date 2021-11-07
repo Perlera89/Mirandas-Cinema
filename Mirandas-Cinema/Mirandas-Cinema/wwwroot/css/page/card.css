@@ -1,13 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
 
 ::selection {
     background: #237bac;
     color: #fff;
 }
 
-.container {
-    max-width: 1100px;
+.container-card {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -15,7 +20,7 @@
     padding: 20px;
 }
 
-    .container .box {
+    .container-card .box {
         width: calc(33% - 10px);
         background: #fff;
         display: flex;
@@ -28,21 +33,14 @@
         max-height: 400px;
     }
 
-
-.box .quote i {
-    margin-top: 10px;
-    font-size: 45px;
-    color: #17c0eb
-}
-
-.container .box .image {
-    margin: 10px 0;
-    height: 150px;
-    width: 150px;
-    background: #182c70;
-    padding: 3px;
-    border-radius: 50%;
-}
+        .container-card .box .image {
+            margin: 10px 0;
+            height: 150px;
+            width: 150px;
+            background: #182c70;
+            padding: 3px;
+            border-radius: 50%;
+        }
 
 .box .image img {
     height: 100%;
@@ -52,7 +50,7 @@
     border: 2px solid #fff;
 }
 
-.bio{
+.bio {
     overflow: hidden;
 }
 
@@ -61,7 +59,7 @@
     margin-top: 8px;
     font-size: 16px;
     font-weight: 400;
-    color: #02084b; 
+    color: #02084b;
 }
 
 .box .name_actor {
@@ -91,41 +89,41 @@
         transition: all 0.3s linear;
     }
 
-        .btn .btn-details {
-            border: 2px solid #237bac;
-            color: #237bac;
-        }
+    .btn .btn-details {
+        border: 2px solid #237bac;
+        color: #237bac;
+    }
 
-        .btn .btn-delete {
-            color: #ff0000;
-            border: 2px solid #ff0000;
-        }
+    .btn .btn-delete {
+        color: #ff0000;
+        border: 2px solid #ff0000;
+    }
 
-        .btn .btn-details:hover {
-            background: #237bac;
-            color: #fff;
-        }
+    .btn .btn-details:hover {
+        background: #237bac;
+        color: #fff;
+    }
 
-        .btn .btn-delete:hover {
-            background: #ff0000;
-            color: #fff;
-        }
+    .btn .btn-delete:hover {
+        background: #ff0000;
+        color: #fff;
+    }
 
-        .btn .btn-details, .btn-delete:hover a {
-            color: #fff;
-            text-decoration: none;
-        }
+    .btn .btn-details, .btn-delete:hover a {
+        color: #fff;
+        text-decoration: none;
+    }
 
 
 @media (max-width:1045px) {
-    .container .box {
+    .container-card .box {
         width: calc(50% - 10px);
         margin-bottom: 20px;
     }
 }
 
 @media (max-width:710px) {
-    .container .box {
+    .container-card .box {
         width: 100%;
     }
 }

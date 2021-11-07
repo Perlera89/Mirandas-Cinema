@@ -304,58 +304,57 @@ namespace Mirandas_Cinema.Data
             }
         }
 
-        //public static async Task SeedUsers(IApplicationBuilder app)
-        //{
-        //    using(var serviceScope = app.ApplicationServices.CreateScope())
-        //    {
-        //        //Roles
-        //        var manager = serviceScope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+        public static async Task SeedUsersAndRoles(IApplicationBuilder applicationBuilder)
+        {
+            using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope())
+            {
 
-        //        if (!await manager.RoleExistsAsync(UserRoles.Admin))
-        //            await manager.CreateAsync(new IdentityRole(UserRoles.Admin));
+                //Roles
+                var roleManager = serviceScope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
-        //        if (!await manager.RoleExistsAsync(UserRoles.User))
-        //            await manager.CreateAsync(new IdentityRole(UserRoles.User));
+                if (!await roleManager.RoleExistsAsync(UserRoles.Admin))
+                    await roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
 
-        //        var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+                if (!await roleManager.RoleExistsAsync(UserRoles.User))
+                    await roleManager.CreateAsync(new IdentityRole(UserRoles.User));
 
-        //        //Administrador
-        //        string adminEmail = "admin@mirandas.com";
-        //        var admin = await userManager.FindByEmailAsync(adminEmail);
+                var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
 
-        //        if(admin == null)
-        //        {
-        //            var newAdmin = new ApplicationUser() 
-        //            {
-        //                FullName = "Admin User",
-        //                UserName = "admin-user",
-        //                Email = adminEmail,
-        //                EmailConfirmed = true
-        //            };
+                //manager
+                string adminUserEmail = "admin@mirandas.com";
 
-        //            await userManager.CreateAsync(newAdmin, "admin@1234");
-        //            await userManager.AddToRoleAsync(newAdmin, UserRoles.Admin);
-        //        }
+                var adminUser = await userManager.FindByEmailAsync(adminUserEmail);
+                if (adminUser == null)
+                {
+                    var newAdminUser = new ApplicationUser()
+                    {
+                        FullName = "Admin User",
+                        UserName = "admin-user",
+                        Email = adminUserEmail,
+                        EmailConfirmed = true
+                    };
+                    await userManager.CreateAsync(newAdminUser, "Coding@1234?");
+                    await userManager.AddToRoleAsync(newAdminUser, UserRoles.Admin);
+                }
 
-        //        //Usuario
-        //        string userEmail = "user@mirandas.com";
-        //        var user = await userManager.FindByEmailAsync(userEmail);
 
-        //        if (user == null)
-        //        {
-        //            var newUser = new ApplicationUser()
-        //            {
-        //                FullName = "App User",
-        //                UserName = "app-user",
-        //                Email = userEmail,
-        //                EmailConfirmed = true
-        //            };
+                //User
+                string appUserEmail = "user@mirandas.com";
 
-        //            await userManager.CreateAsync(newUser, "user@1234");
-        //            await userManager.AddToRoleAsync(newUser, UserRoles.User);
-        //        }
-
-        //    }
-        //}
+                var appUser = await userManager.FindByEmailAsync(appUserEmail);
+                if (appUser == null)
+                {
+                    var newAppUser = new ApplicationUser()
+                    {
+                        FullName = "Application User",
+                        UserName = "app-user",
+                        Email = appUserEmail,
+                        EmailConfirmed = true
+                    };
+                    await userManager.CreateAsync(newAppUser, "Coding@1234?");
+                    await userManager.AddToRoleAsync(newAppUser, UserRoles.User);
+                }
+            }
+        }
     }
 }

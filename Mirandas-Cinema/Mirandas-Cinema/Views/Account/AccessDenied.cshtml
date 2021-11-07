@@ -1,0 +1,18 @@
+﻿<link rel="stylesheet" href="~/css/root/nav-bar.css" />
+
+@{
+    ViewData["Title"] = "Access Denied";
+}
+
+<div class="row nav-links col-md-11 m-auto">
+    <div class="col-md-7 offset-3 alert alert-danger text-center" style="margin: 125px auto; padding: 50px;">
+        <h2>No tienes permiso para acceder a la pagina <em>@ViewBag.Url</em></h2>
+        <p>
+            Haga click en el boton para redirigirse a la pagina de inicio
+        </p>
+        <hr />
+        <p>
+            <a asp-controller="Movies" asp-action="Index" class="btn btn-success">Pagina de inicio</a>
+        </p>
+    </div>
+</div>

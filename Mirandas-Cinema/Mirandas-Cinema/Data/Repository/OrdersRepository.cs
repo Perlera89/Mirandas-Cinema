@@ -17,10 +17,14 @@ namespace Mirandas_Cinema.Data.Repository
             context = _context;
         }
 
-        public async Task<List<Order>> GetOrdersUser(string userId)
+        public async Task<List<Order>> GetOrdersUser(string userId, string userRole)
         {
-            var orders = await context.Orders.Include(o => o.OrderItems).ThenInclude(m => m.Movie).
-                Where(o => o.UserId == userId).ToListAsync();
+            var orders = await context.Orders.Include(o => o.OrderItems).ThenInclude(o => o.Movie).Include(o => o.User).ToListAsync();
+
+            if(userRole != "Admin")
+            {
+                orders = orders.Where(o => o.UserId == userId).ToList();
+            }
             return orders;
         }
 
