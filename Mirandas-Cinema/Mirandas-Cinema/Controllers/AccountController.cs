@@ -33,12 +33,12 @@ namespace Mirandas_Cinema.Controllers
 
         public IActionResult Login()
         {
-            var login = new LoginViewModel();
+            var login = new LoginVM();
             return View(login);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login(LoginViewModel login)
+        public async Task<IActionResult> Login(LoginVM login)
         {
             if (!ModelState.IsValid)
             {
@@ -74,12 +74,12 @@ namespace Mirandas_Cinema.Controllers
 
         public IActionResult Register()
         {
-            var register = new RegisterViewModel();
+            var register = new RegisterVM();
             return View(register);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register(RegisterViewModel register)
+        public async Task<IActionResult> Register(RegisterVM register)
         {
             if (!ModelState.IsValid)
             {

@@ -814,3 +814,7 @@ C:\Users\Jose\Desktop\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\
 C:\Users\Jose\Desktop\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Shared\_Identity.cshtml.g.cs
 C:\Users\Jose\Desktop\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Movies\Details.cshtml.g.cs
 C:\Users\Jose\Desktop\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Movies\GestionMovies.cshtml.g.cs
+C:\Users\Perlera\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Movies\Details.cshtml.g.cs
+C:\Users\Perlera\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Movies\GestionMovies.cshtml.g.cs
+C:\Users\Perlera\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Movies\Create.cshtml.g.cs
+C:\Users\Perlera\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Movies\Update.cshtml.g.cs

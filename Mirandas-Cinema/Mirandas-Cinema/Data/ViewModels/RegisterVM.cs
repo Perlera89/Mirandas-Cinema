@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mirandas_Cinema.Data.ViewModels
 {
-    public class RegisterViewModel
+    public class RegisterVM
     {
         [Display(Name = "Nombre completo")]
         [Required(ErrorMessage = "El nombre completo es requerido")]

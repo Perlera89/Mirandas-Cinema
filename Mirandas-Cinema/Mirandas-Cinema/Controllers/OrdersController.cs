@@ -39,7 +39,7 @@ namespace Mirandas_Cinema.Controllers
             var items = cart.GetShoppingCartItems();
             cart.ShoppingCartItems = items;
 
-            var response = new ShoppingCartViewModel() {
+            var response = new ShoppingCartVM() {
                 ShoppingCart = cart,
                 ShoppingTotal = cart.GetShoppingTotal()
             };

@@ -1,95 +1,88 @@
-﻿@model List<Mirandas_Cinema.Models.Movie>
+﻿@model Movie
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalles pelicula";
 }
-<head>
-    <link rel="stylesheet" href="~/css/styles-1/index.css" />
-    <link rel="stylesheet" href="~/css/nav-bar.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-</head>
-<style type="text/css">
-    body div.contenedor_general {
-        margin-top: 3em;
-        margin-bottom: 3em;
-        border: 1px solid gainsboro;
-        border-radius: 14px;
-        padding: 1em;
-        font-size: 12pt;
-        background-color: white;
-    }
-    .btn_success{
-        float:right;
-    }
-    h3{
-        margin-top:1em;
-    }
-</style>
 
-<div class="wow container contenedor_general animate__animated animate__fadeInDown" data-wow-offset="0" data-wow-iteration="1" data-wow-duration="2s">
-    <h3 style="text-align:center;">CONTROL DE PELICULAS</h3>
-    <!--mostrar el formulario de la derecha-->
-    <button class="btn btn_success" type="button" role="button">
-        @Html.ActionLink("Agregar", "GestionMovies")
-    </button>
+<div class="row nav-links col-md-11 mt-0 ml-auto mr-auto mb-xl-5">
+        <div class="col-md-8 m-auto">
+            <div class="card m-auto" style="max-width: 600px">
+                <div class="row g-0">
+                    <div class="col-md-12">
+                        <div class="card-header text-white bg-primary">
+                            <p class="card-text">
+                                <h5 class="card-title">
+                                    @Model.Name
+                                </h5>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src="@Model.ImagenURL" alt="@Model.Name" width="100%" />
+                </div>
+                <div class="col-md-12 float-left">
+                    <div class="card-body">
+                        <div style="max-height: 100px;" class="mb-5"><p class="card-text">@Model.Description</p></div>
+                        <p class="card-text">
+                            <b>Cine:</b>
+                            <a asp-controller="Cinemas" asp-action="Details" asp-route-id="@Model.CinemaId">
+                                @Model.Cinema.Name
+                            </a>
+                        </p>
+                        <p class="card-text">
+                            <b>Productor:</b>
+                            <a asp-controller="Producers" asp-action="Details" asp-route-id="@Model.ProducerId">
+                                @Model.Producer.FullName
+                            </a>
+                        </p>
+                        <p class="card-text"><b>Categoria:</b> @Model.MovieCategory</p>
+                        <p class="card-text"><b>Inicio:</b> @Model.StartDate.ToString("dd MMMM yy")</p>
+                        <p class="card-text"><b>Finalizacion:</b> @Model.EndDate.ToString("dd MMMM yy")</p>
+                        <p class="card-text">
+                            <b>Estado: </b>
+                            @if (DateTime.Now >= Model.StartDate && DateTime.Now <= Model.EndDate)
+                            {
+                                <span class="badge bg-success text-white">Disponible</span>
+                            }
+                            else if (DateTime.Now > Model.EndDate)
+                            {
+                                <span class="badge bg-danger text-white">Expirada</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-primary text-white">Muy pronto</span>
+                            }
+                        </p>
 
-    <table id="movies" class="table table-hover">
-        <!--estilo basio de B... para tablas-->
-        <thead class="thead-dark">
-            <!--clase de bootstrap para dar fondo a los head-->
-            <tr class="fila">
-                <th hidden>Id</th>
-                <th>Nombre</th>
-                <th hidden>Descripcion</th>
-                <th>Cinema</th>
-                <th>Productor</th>
-                <th>Precio</th>
-                <th>Categoria</th>
-                <th>Inicio</th>
-                <th>Finalización</th>
-                <th hidden>Foto</th>
-                <th colspan="2" style="text-align:center;">Acciones</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var i in Model)
-            {
-                <tr>
-                    <td hidden>@i.Id</td>
-                    <th>@i.Name</th>
-                    <td hidden>@i.Description</td>
-                    <td>@i.Cinema.Name</td>
-                    <td>@i.Producer.FullName</td>
-                    <td>@i.Price</td>
-                    <td>@i.MovieCategory</td>
-                    <td>@i.StartDate</td>
-                    <td>@i.EndDate</td>
-                    <td hidden>@i.ImagenURL</td>
-                    <th>
-                        <button type="button" class=" btn btn_details">@Html.ActionLink("Actualizar", "GestionMovies", "Movies", new { id = i.Id, interruptor = 1 })</button>
-                    </th>
-                    <th>
-                        <button type="button" class=" btn btn_delete">@Html.ActionLink("Eliminar", "DeleteMovies", "Movies", new { Id_2 = i.Id })</button>
-                    </th>
-
-                </tr>
-            }
-
-        </tbody>
-    </table>
-
-
+                        <p class="card-text">
+                            <b>Actores:</b>
+                            <hr />
+                            <div class="row">
+                                @foreach (var actor in Model.Actors_Movies)
+                                {
+                                    <div class="col-md-3 column text-center">
+                                        <img class="border-info rounded-circle" src="@actor.Actor.ProfilePictureURL" style="min-width: 100px; max-width: 100px;" />
+                                        <br />
+                                        <a asp-controller="Actors" asp-action="Details" asp-route-id="@actor.Actor.Id">@actor.Actor.FullName</a>
+                                    </div>
+                                }
+                            </div>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="card-footer mb-3">
+                        <p class="card-text">
+                            <a class="btn btn-success text-white float-right" asp-controller="Orders" asp-action="AddItem" asp-route-id="@Model.Id">
+                                <i class="bi bi-cart-plus"></i> Agregar (@Model.Price.ToString("c"))
+                            </a>&nbsp;
+                            <a class="btn btn-primary text-white float-left" asp-action="Index">
+                                </i> Mostrar todos
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
 </div>
-@section scripts{
-
-    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            var tabla = $("#movies").DataTable();
-
-        })
-
-    </script>
-
-}

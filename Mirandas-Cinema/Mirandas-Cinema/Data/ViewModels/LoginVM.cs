@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mirandas_Cinema.Data.ViewModels
 {
-    public class LoginViewModel
+    public class LoginVM
     {
         [Display(Name = "Correo electronico")]
         [Required(ErrorMessage = "El correo electronico es requerido")]

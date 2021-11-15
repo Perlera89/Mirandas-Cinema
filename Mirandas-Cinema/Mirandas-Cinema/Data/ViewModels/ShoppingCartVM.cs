@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mirandas_Cinema.Data.ViewModels
 {
-    public class ShoppingCartViewModel
+    public class ShoppingCartVM
     {
         public ShoppingCart ShoppingCart { get; set; }
         public double ShoppingTotal { get; set; }

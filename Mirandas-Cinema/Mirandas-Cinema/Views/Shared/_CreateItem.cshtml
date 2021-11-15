@@ -2,9 +2,9 @@
 
 @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
 {
-    <div style="position: fixed; right: 25px; bottom: 25px;" class="text-white">
-        <a asp-controller="@Model" asp-action="Create" class="btn btn-success">
-            <i class="bi bi-plus-circle"></i> Nuevo
+    <div style="position: fixed; right: 10px; bottom: 10px;" class="text-white">
+        <a asp-controller="@Model" asp-action="Create" class="btn btn-success rounded-circle">
+            <i class="bi bi-plus" style="font-size:25px"></i>
         </a>
     </div>
 }

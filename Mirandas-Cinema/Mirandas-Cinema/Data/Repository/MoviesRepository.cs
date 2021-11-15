@@ -6,55 +6,117 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Mirandas_Cinema.Data.ViewModels;
 
 namespace Mirandas_Cinema.Data.Repository
 {
     public class MoviesRepository : EntityBaseRepository<Movie>, IMovies
     {
-        public readonly AppDbContext dbContext;
+        public readonly AppDbContext context;
+
         public MoviesRepository(AppDbContext _context) : base(_context)
         {
-            this.dbContext = _context;
-        }
-        public new async Task<IEnumerable<Movie>> GetAll()
-        {
-            return await dbContext.Movies.Include(m => m.Cinema).Include(p => p.Producer).ToListAsync();
-            
-        }
-        public new async Task<Movie> GetById(int id)
-        {
-           return  await dbContext.Movies.Where(x => x.Id == id).FirstOrDefaultAsync();
-            
-        }
-        public new async Task Add(Movie entity)
-        {
-            await dbContext.Movies.AddAsync(entity);
-            await dbContext.SaveChangesAsync();
-        }
-        public new async Task Update(int id, Movie entity)
-        {
-            dbContext.Movies.Update(entity);
-            await dbContext.SaveChangesAsync();
-        }
-        public new async Task Delete(int id)
-        {
-            var consulta = dbContext.Movies.Where(x => x.Id == id).FirstOrDefault();
-            dbContext.Movies.Remove(consulta);
-            await dbContext.SaveChangesAsync();
-        }
-        public new async Task Search(Movie entity)
-        {
-
+            context  = _context;
         }
 
-        public async Task<List<Cinema>> ListOfCinema()
+        public new IEnumerable<Movie> GetAll()
         {
-            return await dbContext.Cinemas.ToListAsync();
+            var movies = context.Movies.Include(p => p.Producer).Include(c => c.Cinema).ToList();
+            return movies;
         }
 
-        public async Task<List<Producer>> ListOfProducer()
+        public async Task AddMovie(MovieVM data)
         {
-            return await dbContext.Producers.ToListAsync();
+            var newMovie = new Movie()
+            {
+                Name = data.Name,
+                Description = data.Description,
+                Price = data.Price,
+                ImagenURL = data.ImagenURL,
+                CinemaId = data.CinemaId,
+                StartDate = data.StartDate,
+                EndDate = data.EndDate,
+                MovieCategory = data.MovieCategory,
+                ProducerId = data.ProducerId
+            };
+
+            await context.Movies.AddAsync(newMovie);
+            await context.SaveChangesAsync();
+
+            //Actores
+            foreach (var actorId in data.Actors)
+            {
+                var actors = new Actor_Movie()
+                {
+                    MovieId = newMovie.Id,
+                    ActorId = actorId
+                };
+
+                await context.Actors_Movies.AddAsync(actors);
+                await context.SaveChangesAsync();
+            }
+        }
+
+        public async Task<Movie> GetMovieById(int id)
+        {
+            var details = await context.Movies
+                .Include(c => c.Cinema)
+                .Include(p => p.Producer)
+                .Include(am => am.Actors_Movies)
+                .ThenInclude(a => a.Actor)
+                .FirstOrDefaultAsync(m => m.Id == id);
+            return details;
+        }
+
+        public async Task<DropDownListVM> GetMovieDropDown()
+        {
+            var response = new DropDownListVM()
+            {
+                Actors = await context.Actors.OrderBy(n => n.FullName).ToListAsync(),
+                Producers = await context.Producers.OrderBy(n => n.FullName).ToListAsync(),
+                Cinemas = await context.Cinemas.OrderBy(c => c.Name).ToListAsync()
+            };
+
+            return response;
+        }
+
+        public async Task UpdateMovie(MovieVM data)
+        { 
+            var getMovie = await context.Movies.FirstOrDefaultAsync(m => m.Id == data.Id);
+
+            if(getMovie != null)
+            {
+                getMovie.Name = data.Name;
+                getMovie.Description = data.Description;
+                getMovie.Price = data.Price;
+                getMovie.ImagenURL = data.ImagenURL;
+                getMovie.CinemaId = data.CinemaId;
+                getMovie.StartDate = data.StartDate;
+                getMovie.EndDate = data.EndDate;
+                getMovie.MovieCategory = data.MovieCategory;    
+                getMovie.ProducerId = data.ProducerId;
+
+                await context.SaveChangesAsync();
+            }
+
+            //Eliminar si existe el actor
+            var existActor = context.Actors_Movies.Where(m => m.MovieId == data.Id).ToList();
+            context.Actors_Movies.RemoveRange(existActor);
+
+            await context.SaveChangesAsync();
+
+            //Actores
+            foreach (var actorId in data.Actors)
+            {
+                var actors = new Actor_Movie()
+                {
+                    MovieId = data.Id,
+                    ActorId = actorId
+                };
+
+                await context.Actors_Movies.AddAsync(actors);
+                await context.SaveChangesAsync();
+            }
         }
     }
 }
