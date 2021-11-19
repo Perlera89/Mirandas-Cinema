@@ -1,0 +1,48 @@
+﻿@media screen and (max-width: 800px) {
+    .contenedor_peliculas_recomendadas .contenedor_carousel {
+        overflow: visible;
+    }
+
+        .contenedor_peliculas_recomendadas .contenedor_carousel .carousel {
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25em;
+        }
+
+    .contenedor_peliculas_recomendadas .indicadores,
+    .contenedor_peliculas_recomendadas .contenedor_pricipal .flecha_izquierda,
+    .contenedor_peliculas_recomendadas .contenedor_pricipal .flecha_derecha {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .contenedor_peliculas_recomendadas .contenedor_carousel {
+        overflow: visible;
+    }
+
+        .contenedor_peliculas_recomendadas .contenedor_carousel .carousel {
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25em;
+        }
+
+    .contenedor_peliculas_recomendadas .indicadores,
+    .contenedor_peliculas_recomendadas .contenedor_pricipal .flecha_izquierda,
+    .contenedor_peliculas_recomendadas .contenedor_pricipal .flecha_derecha,
+    .contenedor_pricipal .pelicula span {
+        display: none;
+    }
+}
+/*pelicula principal*/
+/*@media screen and (max-width: 1200px) {
+    .pelicula_principal .contenedor img {
+        margin-top: -50% !important;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .pelicula_principal .contenedor img {
+        margin-top: -70% !important;
+    }
+}*/

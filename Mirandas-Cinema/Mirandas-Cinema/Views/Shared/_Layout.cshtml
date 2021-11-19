@@ -20,7 +20,7 @@
         }
     </style>
 </head>
-<body >
+<body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 nav-links justify-content-center col-md-12">
             <div class="container-fluid">
@@ -67,19 +67,19 @@
                             </li>
                         }
                         @*<li class="nav-item forward">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Producers" asp-action="prueba"><i class="bi bi-person-workspace"></i> Prueba</a>
-                        </li>*@
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Producers" asp-action="prueba"><i class="bi bi-person-workspace"></i> Prueba</a>
+                            </li>*@
                         <form class="form-inline my-2 my-lg-0" asp-controller="Movies" asp-action="Filter" style="padding-right: 25px; position: absolute; top: 0.4rem; right: 0;">
                             <input name="searchMovie" type="text" class="form-control" placeholder="Buscar pelicula..." aria-label="Recipient's username" aria-describedby="button-addon2">&nbsp;
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="max-width: 42px; border-radius: 25%;"><i class="bi bi-search"></i></button>
                         </form>
                     </ul>
                     @*<div class="search">
-                        <input class="input-search" type="text" placeholder="Buscar pelicula" />
-                        <div class="btn-search">
-                            <i class="bi bi-search"></i>
-                        </div>
-                    </div>*@
+                            <input class="input-search" type="text" placeholder="Buscar pelicula" />
+                            <div class="btn-search">
+                                <i class="bi bi-search"></i>
+                            </div>
+                        </div>*@
                 </div>
                 &nbsp;
                 @* Carrito *@
@@ -87,7 +87,7 @@
                     @await Component.InvokeAsync("ShoppingSummary")
                 </div>
 
-                <partial name="_Identity.cshtml"/>
+                <partial name="_Identity.cshtml" />
             </div>
         </nav>
     </header>
@@ -106,6 +106,12 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <!--Carousel-->
+    <script src="~/js/jsMovies/js_movies_carousel.js" crossorigin="anonymous"></script>
+    <script src="~/js/jsMovies/js_movies_carousel2.js" crossorigin="anonymous"></script>
+    <script src="~/js/jsMovies/js_movies_caroucel3.js" crossorigin="anonymous"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
