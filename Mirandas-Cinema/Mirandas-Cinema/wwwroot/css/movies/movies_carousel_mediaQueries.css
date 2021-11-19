@@ -24,7 +24,7 @@
         .contenedor_peliculas_recomendadas .contenedor_carousel .carousel {
             display: grid !important;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1.25em;
+            gap: 1em;
         }
 
     .contenedor_peliculas_recomendadas .indicadores,

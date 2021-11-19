@@ -1,14 +1,140 @@
 ﻿<link rel="stylesheet" href="~/css/nav-bar.css" />
+<link rel="stylesheet" href="~/css/movies/Movies_carousel.css" />
+<link rel="stylesheet" href="~/css/movies/movies_carousel_mediaQueries.css" />
 
 @model IEnumerable<Movie>
 
 @{
     ViewData["Title"] = "Movies";
 }
+<!--    CAROUSEL    -->
+<!--SOLO EN CINES-->
+<div class="caja_contenedor contenedor_peliculas_recomendadas">
+    <div class="contenedor_titulo_controles">
+        <h3>En emisión</h3>
+        <div class="indicadores indicadores1">
 
+        </div>
+    </div>
+
+    <div class="contenedor_pricipal">
+        <button role="button" id="flecha_izquierda1" class="flecha_izquierda" type="button"><i class="fas fa-angle-left"></i></button>
+
+        <div class="contenedor_carousel contenedor_carousel">
+
+            <div class="carousel carousel1">
+
+
+                @foreach (var item in Model)
+                {
+                    @if (DateTime.Now >= item.StartDate && DateTime.Now <= item.EndDate)
+                    {
+                        <div class="pelicula pelicula1 col-md-2">
+                            <a href="#">
+                                <img src="@item.ImagenURL" alt="pelicula" style="width:100%;" />
+
+                            </a>
+                            <span class="pelicula_nombre">@item.Name</span>
+                        </div>
+                    }
+
+                }
+
+            </div>
+
+        </div>
+
+        <button role="button" id="flecha_derecha1" class="flecha_derecha"><i class="fas fa-angle-right"></i></button>
+    </div>
+</div>
+
+<!--EXPIRARON-->
+<div class="caja_contenedor contenedor_peliculas_recomendadas">
+    <div class="contenedor_titulo_controles">
+        <h3>Expiradas recientemente</h3>
+        <div class="indicadores indicadores2">
+
+        </div>
+    </div>
+
+    <div class="contenedor_pricipal">
+        <button role="button" id="flecha_izquierda2" class="flecha_izquierda" type="button"><i class="fas fa-angle-left"></i></button>
+
+        <div class="contenedor_carousel contenedor_carousel2">
+
+            <div class="carousel carousel2">
+
+
+                @foreach (var item in Model)
+                {
+                    @if (DateTime.Now > item.StartDate && DateTime.Now > item.EndDate)
+                    {
+                        <div class="pelicula pelicula2 col-md-2">
+                            <a href="#">
+                                <img src="@item.ImagenURL" alt="pelicula" style="width:100%;" />
+
+                            </a>
+                            <span class="pelicula_nombre">@item.Name</span>
+                        </div>
+                    }
+
+                }
+
+            </div>
+
+        </div>
+
+        <button role="button" id="flecha_derecha2" class="flecha_derecha"><i class="fas fa-angle-right"></i></button>
+    </div>
+</div>
+
+<!--Futuros estrenos-->
+@if (Model.ToList().Count > 0)
+{
+
+    <div class="caja_contenedor contenedor_peliculas_recomendadas">
+        <div class="contenedor_titulo_controles">
+            <h3>Próximos estrenos</h3>
+            <div class="indicadores indicadores3">
+
+            </div>
+        </div>
+
+        <div class="contenedor_pricipal">
+            <button role="button" id="flecha_izquierda3" class="flecha_izquierda" type="button"><i class="fas fa-angle-left"></i></button>
+
+            <div class="contenedor_carousel contenedor_carousel3">
+
+                <div class="carousel carousel3">
+
+
+                    @foreach (var item in Model)
+                    {
+                        @if ((DateTime.Now < item.StartDate))
+                        {
+                            <div class="pelicula pelicula3 col-md-2">
+                                <a href="#">
+                                    <img src="@item.ImagenURL" alt="pelicula" style="width:100%;" />
+
+                                </a>
+                                <span class="pelicula_nombre">@item.Name</span>
+                            </div>
+                        }
+
+                    }
+
+                </div>
+
+            </div>
+
+            <button role="button" id="flecha_derecha3" class="flecha_derecha"><i class="fas fa-angle-right"></i></button>
+        </div>
+    </div>
+}
+<!--===============================================-->
 <div class="row nav-links col-md-11 mt-0 ml-auto mr-auto mb-xl-5">
-    @foreach (var movie in Model) 
-     {
+    @foreach (var movie in Model)
+    {
         <div class="col-md-4 col-xs-6 border-primary mb-3 nav-links">
             <div class="card m-auto" style="max-width: 500px">
                 <div class="row g-0">
@@ -24,7 +150,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <img src="@movie.ImagenURL" alt="@movie.Name" width="100%"/>
+                    <img src="@movie.ImagenURL" alt="@movie.Name" width="100%" />
                 </div>
                 <div class="col-md-12 float-right">
                     <div class="card-body">
@@ -42,8 +168,9 @@
                             else if (DateTime.Now > movie.EndDate)
                             {
                                 <span class="badge bg-danger text-white">Expirada</span>
-                            } else 
-                            { 
+                            }
+                            else
+                            {
                                 <span class="badge bg-primary text-white">Muy pronto</span>
                             }
                         </p>
@@ -66,5 +193,5 @@
                 </div>
             </div>
         </div>
-     }
+    }
 </div>
