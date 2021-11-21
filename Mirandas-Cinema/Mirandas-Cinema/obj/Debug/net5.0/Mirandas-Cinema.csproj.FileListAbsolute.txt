@@ -1650,3 +1650,7 @@ C:\Users\recin\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\
 C:\Users\recin\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\ref\Mirandas-Cinema.dll
 C:\Users\recin\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Mirandas-Cinema.pdb
 C:\Users\recin\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Mirandas-Cinema.genruntimeconfig.cache
+C:\Users\Jose\Desktop\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Cinemas\Create.cshtml.g.cs
+C:\Users\Jose\Desktop\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Cinemas\Delete.cshtml.g.cs
+C:\Users\Jose\Desktop\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Cinemas\Details.cshtml.g.cs
+C:\Users\Jose\Desktop\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Cinemas\Update.cshtml.g.cs

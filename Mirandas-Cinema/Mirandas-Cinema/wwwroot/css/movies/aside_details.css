@@ -1,0 +1,85 @@
+﻿.contenedor_aside {
+    position: absolute;
+    background: rgba(255,255,255,0.3);
+    width: 18%;
+    border: 1px solid white;
+    border-radius: 15px;
+    padding: 0.5em 0.4em;
+    overflow: hidden;
+    left: -23%;
+    top: 0;
+}
+
+.contenedor_aside_img {
+    display: flex;
+    flex-direction: column !important;
+    align-items: stretch;
+    height: auto;
+    overflow: hidden;
+}
+
+    .contenedor_aside_img a {
+        margin-bottom: 0.3em;
+    }
+
+.m-auto_custome {
+    margin: auto 2.5em auto auto !important;
+    width: 60% !important;
+}
+
+.pelicula_nombre {
+    position: relative;
+    width: 90% !important;
+    left: 10%;
+}
+
+.pelicula_nombre {
+    position: relative;
+    font-size: 12px;
+    color: white;
+    font-weight: 900;
+    background: rgba(0,0,0,0.5);
+    padding: 5px;
+}
+
+.medidas {
+    width: 70%;
+    margin-left: 20%;
+    background: rgba(255,255,255,0.3);
+    border: 1px solid white;
+}
+
+.img_detalles {
+    margin-left: auto;
+    margin-right: auto
+}
+/*=======================*/
+.contenedor_aside_2 {
+    display: none;
+    position: relative;
+    width: 100%;
+    padding: 0.5em;
+    overflow: hidden;
+}
+
+.contenedor_aside_img_2 {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    line-height: 1px;
+    gap: 2px;
+    overflow: hidden;
+}
+
+.card-text {
+    height: auto;
+}
+
+.col-md-8_custome {
+    width: 90%;
+}
+
+.color_pelis_recientes {
+    background-color: rgba(0,0,0,.05);
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+}
