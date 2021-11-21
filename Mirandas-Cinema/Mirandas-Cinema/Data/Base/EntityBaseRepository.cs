@@ -28,6 +28,7 @@ namespace Mirandas_Cinema.Data.Base
             var entity = await context.Set<T>().FirstOrDefaultAsync(e => e.Id == id);
             EntityEntry entityEntry = context.Entry<T>(entity);
             entityEntry.State = EntityState.Deleted;
+             await context.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<T>> GetAll()

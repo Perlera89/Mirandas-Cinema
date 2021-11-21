@@ -7,8 +7,8 @@
 }
 
 
-<div class="row container">
-    <div class="col-md-12">
+<div class="row container navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+    <div class="col-md-12 justify-content-center">
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -32,8 +32,13 @@
                             @Html.DisplayFor(model => cinema.Description)
                         </td>
                         <td class="aling-middle">
-                            <a class="btn btn-primary text-white"><i class="bi bi-pencil-square"> Editar</i></a> |
-                            <a class="btn btn-danger text-white "><i class="bi bi-trash"> Eliminar</i></a>
+                            <button class="btn btn-primary text-white" asp-action="Details" asp-route-id="@cinema.Id"><a asp-action="Details" asp-route-id="@cinema.Id">Detalles</a></button>
+                            @if(User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                                {
+                                    <button class="btn btn-danger text-white" asp-action="Delete" asp-route-id="@cinema.Id"><a asp-action="Delete" asp-route-id="@cinema.Id">Eliminar</a></button>
+                                }
+                            @*<a class="btn btn-primary text-white" asp-action="Details" asp-route-id="@cinema.Id "><i class="bi bi-pencil-square"> Editar</i></a> |
+                            <a class="btn btn-danger text-white " asp-action="Delete" asp-route-id="@cinema.Id"><i class="bi bi-trash"> Eliminar</i></a>*@
                         </td>
                     </tr>
                 }
@@ -41,3 +46,5 @@
         </table>
     </div>
 </div>
+
+@await Html.PartialAsync("_CreateItem", "Cinemas")

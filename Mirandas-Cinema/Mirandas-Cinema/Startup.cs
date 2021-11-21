@@ -42,6 +42,7 @@ namespace Mirandas_Cinema
             services.AddScoped<IActors, ActorsRepository>();
             services.AddScoped<IMovies, MoviesRepository>();
             services.AddScoped<IOrders, OrdersRepository>();
+            services.AddScoped<ICinema, CinemaRepository>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped(s => ShoppingCart.GetShoppingCart(s));
