@@ -53,6 +53,13 @@ namespace Mirandas_Cinema.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
         {
+            /*========= cinco mejores =============*/
+            var movies = await service.GetAll(n => n.Cinema);
+            var cincoMejores = (from t in movies
+                                orderby t.Id descending
+                                select t).Take(5).ToList();
+            ViewBag.peliculasRecientes = cincoMejores;
+
             var details = await service.GetMovieById(id);
 
             return View(details);

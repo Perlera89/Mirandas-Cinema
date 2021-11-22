@@ -3,88 +3,125 @@
     ViewData["Title"] = "Detalles pelicula";
 }
 
-<link rel="stylesheet" href="~/css/movies/aside_details.css"/>
-<link rel="stylesheet" href="~/css/movies/aside_media_queries.css"/>
+<link rel="stylesheet" href="~/css/movies/aside_details.css" />
+<link rel="stylesheet" href="~/css/movies/aside_media_queries.css" />
 
 <div class="row nav-links medidas col-md-11 mt-0 @*ml-auto*@ mr-auto_custome mb-xl-5">
-        <div class="col-md-8 m-auto">
-            <div class="card m-auto" style="max-width: 600px">
-                <div class="row g-0">
-                    <div class="col-md-12">
-                        <div class="card-header text-white bg-primary">
-                            <p class="card-text">
-                                <h5 class="card-title">
-                                    @Model.Name
-                                </h5>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <img src="@Model.ImagenURL" alt="@Model.Name" width="100%" />
-                </div>
-                <div class="col-md-12 float-left">
-                    <div class="card-body">
-                        <div style="max-height: 100px;" class="mb-5"><p class="card-text">@Model.Description</p></div>
-                        <p class="card-text">
-                            <b>Cine:</b>
-                            <a asp-controller="Cinemas" asp-action="Details" asp-route-id="@Model.CinemaId">
-                                @Model.Cinema.Name
-                            </a>
-                        </p>
-                        <p class="card-text">
-                            <b>Productor:</b>
-                            <a asp-controller="Producers" asp-action="Details" asp-route-id="@Model.ProducerId">
-                                @Model.Producer.FullName
-                            </a>
-                        </p>
-                        <p class="card-text"><b>Categoria:</b> @Model.MovieCategory</p>
-                        <p class="card-text"><b>Inicio:</b> @Model.StartDate.ToString("dd MMMM yy")</p>
-                        <p class="card-text"><b>Finalizacion:</b> @Model.EndDate.ToString("dd MMMM yy")</p>
-                        <p class="card-text">
-                            <b>Estado: </b>
-                            @if (DateTime.Now >= Model.StartDate && DateTime.Now <= Model.EndDate)
-                            {
-                                <span class="badge bg-success text-white">Disponible</span>
-                            }
-                            else if (DateTime.Now > Model.EndDate)
-                            {
-                                <span class="badge bg-danger text-white">Expirada</span>
-                            }
-                            else
-                            {
-                                <span class="badge bg-primary text-white">Muy pronto</span>
-                            }
-                        </p>
+    <!----------------------------------------------------------------->
+    <div class="contenedor_aside">
+        <h5>Peliculas recientes</h5>
+        <div class="contenedor_aside_img">
+            @foreach (var i in @ViewBag.peliculasRecientes)
+            {
+                <a asp-action="Details" asp-route-id="@i.Id">
+                    <img src="@i.ImagenURL" alt="Peliculas recientes" style="width:100%;" />
+                    @*<label class="pelicula_nombre" style="bottom:20%!important; max-width:90%;overflow-x:hidden;">@i.Name</label>*@
+                </a>
 
-                        <p class="card-text">
-                            <b>Actores:</b>
-                            <hr />
-                            <div class="row">
-                                @foreach (var actor in Model.Actors_Movies)
-                                {
-                                    <div class="col-md-3 column text-center">
-                                        <img class="border-info rounded-circle" src="@actor.Actor.ProfilePictureURL" style="min-width: 100px; max-width: 100px;" />
-                                        <br />
-                                        <a asp-controller="Actors" asp-action="Details" asp-route-id="@actor.Actor.Id">@actor.Actor.FullName</a>
-                                    </div>
-                                }
-                            </div>
-                        </p>
-                    </div>
-                </div>
+            }
+
+        </div>
+    </div>
+    <!----------------------------------------------------------------->
+    <div class="col-md-8_custome m-auto">
+        <div class="card m-auto" style="max-width: 600px">
+            <div class="row g-0">
                 <div class="col-md-12">
-                    <div class="card-footer mb-3">
+                    <div class="card-header text-white bg-primary">
                         <p class="card-text">
-                            <a class="btn btn-success text-white float-right" asp-controller="Orders" asp-action="AddItem" asp-route-id="@Model.Id">
-                                <i class="bi bi-cart-plus"></i> Agregar (@Model.Price.ToString("c"))
-                            </a>&nbsp;
-                            <a class="btn btn-primary text-white float-left" asp-action="Index">
-                                 Mostrar todos
-                            </a>
+                            <h5 class="card-title">
+                                @Model.Name
+                            </h5>
                         </p>
                     </div>
                 </div>
             </div>
+            <div class="col-md-6 img_detalles">
+                <img src="@Model.ImagenURL" alt="@Model.Name" width="100%" />
+            </div>
+            <div class="col-md-12 float-left">
+                <div class="card-body">
+                    <div @*style="max-height: 100px;"*@ class="mb-5">
+                        <p class="card-text">@Model.Description</p>
+                    </div>
+                    <p class="card-text">
+                        <b>Cine:</b>
+                        <a asp-controller="Cinemas" asp-action="Details" asp-route-id="@Model.CinemaId">
+                            @Model.Cinema.Name
+                        </a>
+                    </p>
+                    <p class="card-text">
+                        <b>Productor:</b>
+                        <a asp-controller="Producers" asp-action="Details" asp-route-id="@Model.ProducerId">
+                            @Model.Producer.FullName
+                        </a>
+                    </p>
+                    <p class="card-text"><b>Categoria:</b> @Model.MovieCategory</p>
+                    <p class="card-text"><b>Inicio:</b> @Model.StartDate.ToString("dd MMMM yy")</p>
+                    <p class="card-text"><b>Finalizacion:</b> @Model.EndDate.ToString("dd MMMM yy")</p>
+                    <p class="card-text">
+                        <b>Estado: </b>
+                        @if (DateTime.Now >= Model.StartDate && DateTime.Now <= Model.EndDate)
+                        {
+                            <span class="badge bg-success text-white">Disponible</span>
+                        }
+                        else if (DateTime.Now > Model.EndDate)
+                        {
+                            <span class="badge bg-danger text-white">Expirada</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-primary text-white">Muy pronto</span>
+                        }
+                    </p>
+
+                    <p class="card-text">
+                        <b>Actores:</b>
+                        <hr />
+                        <div class="row">
+                            @foreach (var actor in Model.Actors_Movies)
+                            {
+                                <div class="col-md-3 column text-center">
+                                    <img class="border-info rounded-circle" src="@actor.Actor.ProfilePictureURL" style="min-width: 100px; max-width: 100px;" />
+                                    <br />
+                                    <a asp-controller="Actors" asp-action="Details" asp-route-id="@actor.Actor.Id">@actor.Actor.FullName</a>
+                                </div>
+                            }
+                        </div>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="card-footer mb-3">
+                    <p class="card-text">
+                        <a class="btn btn-success text-white float-right" asp-controller="Orders" asp-action="AddItem" asp-route-id="@Model.Id">
+                            <i class="bi bi-cart-plus"></i> Agregar (@Model.Price.ToString("c"))
+                        </a>&nbsp;
+                        <a class="btn btn-primary text-white float-left" asp-action="Index">
+                            Mostrar todos
+                        </a>
+                    </p>
+                </div>
+            </div>
+
         </div>
+    </div>
 </div>
+<!--=============================================-->
+<div class="color_pelis_recientes">
+    <div class="contenedor_aside_2">
+        <h5>Peliculas recientes</h5>
+        <div class="contenedor_aside_img_2">
+            @foreach (var i in @ViewBag.peliculasRecientes)
+            {
+                <a asp-action="Details" asp-route-id="@i.Id">
+                    <img src="@i.ImagenURL" alt="Peliculas recientes" style="width:100%;" />
+                    @*<label class="pelicula_nombre" style="bottom:20%!important; max-width:90%;overflow-x:hidden;">@i.Name</label>*@
+                </a>
+
+            }
+        </div>
+    </div>
+</div>
+<!--=============================================-->

@@ -8,6 +8,7 @@
     overflow: hidden;
     left: -23%;
     top: 0;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
 
 .contenedor_aside_img {
@@ -79,7 +80,11 @@
 }
 
 .color_pelis_recientes {
-    background-color: rgba(0,0,0,.05);
+    background-color: rgba(0,0,0,.09);
     padding-left: 0.3em;
     padding-right: 0.3em;
+    margin: 2em 0 4em 0 !important;
+    border: 1px solid gainsboro;
+    border-radius: 15px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
