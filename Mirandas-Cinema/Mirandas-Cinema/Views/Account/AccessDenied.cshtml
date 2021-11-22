@@ -1,18 +1,28 @@
-﻿<link rel="stylesheet" href="~/css/root/nav-bar.css" />
+﻿<link href="~/css/page/completed.css" rel="stylesheet" />
 
 @{
     ViewData["Title"] = "Access Denied";
 }
 
-<div class="row nav-links col-md-11 m-auto">
-    <div class="col-md-7 offset-3 alert alert-danger text-center" style="margin: 125px auto; padding: 50px;">
-        <h2>No tienes permiso para acceder a la pagina <em>@ViewBag.Url</em></h2>
-        <p>
-            Haga click en el boton para redirigirse a la pagina de inicio
-        </p>
-        <hr />
-        <p>
-            <a asp-controller="Movies" asp-action="Index" class="btn btn-success">Pagina de inicio</a>
-        </p>
+<div class="container-page row nav-links col-md-11 m-auto position-absolute">
+    <div class="modali">
+        <div class="top-content bg-danger">
+            <div class="left-text">
+                Advertencia
+            </div>
+            <a class="close-icon text-white" asp-controller="Movies" asp-action="Index"><i class="fas fa-times"></i></a>
+            <div class="fas fa-exclamation-triangle fa-check"></div>
+        </div>
+        <div class="bottom-content">
+            <div class="text">
+                Acceso denegado.
+            </div>
+            <p>
+                No tienes permiso para acceder a la pagina <em class="lead">@ViewBag.Url</em>.
+            </p>
+            <div class="close-btn">
+                <a class="text-white bg-danger" asp-controller="Movies" asp-action="Index">Cerrar</a>
+            </div>
+        </div>
     </div>
 </div>

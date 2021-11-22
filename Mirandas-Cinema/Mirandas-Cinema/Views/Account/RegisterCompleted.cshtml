@@ -1,16 +1,27 @@
-﻿<link rel="stylesheet" href="~/css/root/nav-bar.css" />
+﻿<link href="~/css/page/completed.css" rel="stylesheet" />
 
 @{
     ViewData["Title"] = "Registro exitoso";
 }
-
-<div class="row nav-links col-md-11 m-auto">
-    <div class="col-md-6 offset-3 alert alert-success text-center" style="margin: 140px auto; padding: 50px;">
-        <h2>Registro completado con exito</h2>
-        <p>
-            Ahora puedes iniciar sesion en tu cuenta y comprar nuestras peliculas.
-        </p>
-        <hr />
-        <p>Gracias por registrarse!</p>
+<div class="container-page row nav-links col-md-11 m-auto position-absolute">
+    <div class="modali">
+        <div class="top-content">
+            <div class="left-text">
+                Exito
+            </div>
+            <a class="close-icon text-white" asp-controller="Movies" asp-action="Index"><i class="fas fa-times"></i></a>
+            <div class="icon fas fa-check"></div>
+        </div>
+        <div class="bottom-content">
+            <div class="text">
+                Te has registrado correctamente .
+            </div>
+            <p>
+                Ahora puedes iniciar sesion en tu cuenta y agregar al carrito nuestras peliculas.
+            </p>
+            <div class="close-btn">
+                <a class="text-white" asp-controller="Movies" asp-action="Index">Cerrar</a>
+            </div>
+        </div>
     </div>
 </div>
