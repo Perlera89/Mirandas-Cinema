@@ -13,7 +13,7 @@
         <div class="contenedor_aside_img">
             @foreach (var i in @ViewBag.peliculasRecientes)
             {
-                <a asp-action="Details" asp-route-id="@i.Id">
+                <a asp-action="Details" asp-route-id="@i.Id" class="pelicula_hover">
                     <img src="@i.ImagenURL" alt="Peliculas recientes" style="width:100%;" />
                     @*<label class="pelicula_nombre" style="bottom:20%!important; max-width:90%;overflow-x:hidden;">@i.Name</label>*@
                 </a>
@@ -115,7 +115,7 @@
         <div class="contenedor_aside_img_2">
             @foreach (var i in @ViewBag.peliculasRecientes)
             {
-                <a asp-action="Details" asp-route-id="@i.Id">
+                <a asp-action="Details" asp-route-id="@i.Id" class="pelicula_hover">
                     <img src="@i.ImagenURL" alt="Peliculas recientes" style="width:100%;" />
                     @*<label class="pelicula_nombre" style="bottom:20%!important; max-width:90%;overflow-x:hidden;">@i.Name</label>*@
                 </a>

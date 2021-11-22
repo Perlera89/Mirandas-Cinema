@@ -5,7 +5,7 @@
     border: 1px solid white;
     border-radius: 15px;
     padding: 0.5em 0.4em;
-    overflow: hidden;
+/*    overflow: hidden;*/
     left: -23%;
     top: 0;
     box-shadow: 0 5px 10px rgba(0,0,0,0.2);
@@ -16,7 +16,7 @@
     flex-direction: column !important;
     align-items: stretch;
     height: auto;
-    overflow: hidden;
+/*    overflow: hidden;*/
 }
 
     .contenedor_aside_img a {
@@ -60,7 +60,7 @@
     position: relative;
     width: 100%;
     padding: 0.5em;
-    overflow: hidden;
+/*    overflow: hidden;*/
 }
 
 .contenedor_aside_img_2 {
@@ -68,7 +68,7 @@
     grid-template-columns: repeat(5,1fr);
     line-height: 1px;
     gap: 2px;
-    overflow: hidden;
+/*    overflow: hidden;*/
 }
 
 .card-text {
@@ -87,4 +87,11 @@
     border: 1px solid gainsboro;
     border-radius: 15px;
     box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.pelicula_hover:hover {
+    transition: 0.3s linear all;
+    transform: scale(1.1);
+    transform-origin: center;
+    box-shadow: 5px 5px 5px rgba(0,0,0,.5);
 }
