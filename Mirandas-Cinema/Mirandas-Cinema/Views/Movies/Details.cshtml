@@ -6,9 +6,9 @@
 <link rel="stylesheet" href="~/css/movies/aside_details.css" />
 <link rel="stylesheet" href="~/css/movies/aside_media_queries.css" />
 
-<div class="row nav-links medidas col-md-11 mt-0 @*ml-auto*@ mr-auto_custome mb-xl-5">
+<div class="row nav-links medidas col-md-11 mt-0 @*ml-auto*@ mr-auto_custome mb-xl-5 bg-white">
     <!----------------------------------------------------------------->
-    <div class="contenedor_aside">
+    <div class="contenedor_aside  bg-white">
         <h5>Peliculas recientes</h5>
         <div class="contenedor_aside_img">
             @foreach (var i in @ViewBag.peliculasRecientes)
@@ -17,13 +17,12 @@
                     <img src="@i.ImagenURL" alt="Peliculas recientes" style="width:100%;" />
                     @*<label class="pelicula_nombre" style="bottom:20%!important; max-width:90%;overflow-x:hidden;">@i.Name</label>*@
                 </a>
-
             }
 
         </div>
     </div>
     <!----------------------------------------------------------------->
-    <div class="col-md-8_custome m-auto">
+    <div class="col-md-8_custome m-auto bg-white">
         <div class="card m-auto" style="max-width: 600px">
             <div class="row g-0">
                 <div class="col-md-12">

@@ -1,9 +1,18 @@
-﻿<link rel="stylesheet" href="~/css/nav-bar.css" />
+﻿<link href="~/css/page/not-found.css" rel="stylesheet" />
 
-<div class="row nav-links" style="width: 1140px; height: 570px; margin: auto;">
-    <div class="col-md-6 offset-3">
-        <h1 style="color: #237bac;">El recurso no esta disponible</h1>
-        <hr />
-        <a class="btn btn-success" asp-controller="Movies" asp-action="Index">Pagina Inicio</a>
+<div class="error-page">
+    <div class="content">
+        <h2 class="header" data-text="404">
+            404
+        </h2>
+        <h4 data-text="Opps! Page not found">
+            Pagina no encontrada
+        </h4>
+        <p>
+            Lo sentimos, la página que estás buscando no existe.
+        </p>
+        <div class="btns">
+            <a asp-controller="Movies" asp-action="Index">Regresar</a>
+        </div>
     </div>
 </div>

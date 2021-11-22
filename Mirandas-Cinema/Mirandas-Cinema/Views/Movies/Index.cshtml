@@ -9,7 +9,7 @@
 }
 <!--    CAROUSEL    -->
 <!--SOLO EN CINES-->
-<div class="caja_contenedor contenedor_peliculas_recomendadas">
+<div class="caja_contenedor contenedor_peliculas_recomendadas bg-white">
     <div class="contenedor_titulo_controles">
         <h3>En emisión</h3>
         <div class="indicadores indicadores1">
@@ -49,7 +49,7 @@
 </div>
 
 <!--EXPIRARON-->
-<div class="caja_contenedor contenedor_peliculas_recomendadas">
+<div class="caja_contenedor contenedor_peliculas_recomendadas bg-white">
     <div class="contenedor_titulo_controles">
         <h3>Expiradas recientemente</h3>
         <div class="indicadores indicadores2">
@@ -92,7 +92,7 @@
 @if (Model.ToList().Count > 0)
 {
 
-    <div class="caja_contenedor contenedor_peliculas_recomendadas">
+    <div class="caja_contenedor contenedor_peliculas_recomendadas bg-white">
         <div class="contenedor_titulo_controles">
             <h3>Próximos estrenos</h3>
             <div class="indicadores indicadores3">
@@ -143,7 +143,10 @@
                             <p class="card-text">
                                 <h5 class="card-title">
                                     @movie.Name
-                                    <a class="text-white float-right" asp-action="Update" asp-route-id="@movie.Id"><i class="bi bi-pencil-square"></i></a>
+                                    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                                    {
+                                        <a class="text-white float-right" asp-action="Update" asp-route-id="@movie.Id"><i class="bi bi-pencil-square"></i></a>
+                                    }
                                 </h5>
                             </p>
                         </div>

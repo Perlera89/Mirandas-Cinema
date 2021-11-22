@@ -1,0 +1,127 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+body {
+    font-family: "Poppins", sans-serif;
+    user-select: none;  
+}
+
+.center, .content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#click{
+    display: none;
+}
+
+.click{
+    display: block;
+    width: 160px;
+    height: 50px;
+    background: #27ae60;
+    border: 1px solid #26a65b;
+    color: white;
+    text-align: center;
+    font-size:22px;
+    line-height: 50px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.click:hover{
+    background: #219150;
+}
+
+.content{
+    opacity: 0;
+    visibility: hidden;
+    width: 400px;
+    height: 350px;
+    background: white;
+    border-radius: 3px;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.4);
+    transition: .3s ease-in;
+}
+
+#click:checked ~ .content{
+    opacity: 1;
+    visibility: visible;
+}
+
+.header{
+    height: 68px;
+    background: #27ae60;
+    overflow: hidden;
+    border-radius: 3px 3px 0 0;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.5);
+}
+
+.header h2{
+    color: white;
+    padding-left: 32px;
+    font-weight: normal;
+    font-size: 24px;
+    margin-top: 1rem;
+}
+
+.fa-times{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: #e8f7fc;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.fa-check{
+    font-size: 50px;
+    margin: 30px 0 0 160px;
+    color: #27ae60;
+    font-weight: bold;
+    height: 80px;
+    width: 80px;
+    border: 1px solid #27ae60;
+    text-align: center;
+    padding-top: 13px;
+    border-radius: 100%;
+    box-sizing: border-box;
+}
+
+p{
+    padding-top: 10px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 19px;
+    color: #1a1a1a;
+    text-align: center;
+}
+
+.line{
+    position: absolute;
+    bottom: 60px;
+    width: 100%;
+    height: 1px;
+    background: silver;
+}
+
+.close{
+    position: absolute;
+    bottom: 12px;
+    right: 25px;
+    border: 2px solid #27ae60;
+    border-radius: 3px;
+    color: #219150;
+    padding: 6px 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.close:hover{
+    background: #27ae60;
+    color: white;
+    transition: .5s;
+}
+

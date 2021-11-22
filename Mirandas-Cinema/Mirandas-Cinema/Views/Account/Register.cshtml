@@ -1,54 +1,86 @@
 ﻿@using Mirandas_Cinema.Data.ViewModels;
+<link href="~/css/account/login.css" rel="stylesheet" />
 @model RegisterVM;
 
-@{ 
+@{
     ViewData["Title"] = "Registrarse";
 }
 
-<div class="row nav-links col-md-11 m-auto">
-    <div class="col-md-6 offset-3 mb-5 mt-3">
-        <p>
-            <h3 class="text-center m-4" style="color: #237bac;">Registrarse</h3>
-        </p>
-
-        @if(TempData["Error"] != null)
-        {
-            <div class="col-md-12 alert alert-danger m-auto">
-                <span><b>Lo sentimos! </b>@TempData["Error"]</span>
-            </div>
-        }
-        <div class="row mt-2">
-            <div class="col-md-8 offset-2">
-                <form asp-action="Login">
+<div class="container-login mt-3 mb-5 ml-auto mr-auto">
+    <div class="cover">
+        <div class="front">
+            <img src="/resources/logos/cinemas-register.png" />
+        </div>
+    </div>
+    <div class="forms">
+        <div class="form-content">
+            @* Formulario Register *@
+            <div id="register" class="signup-form">
+                <div class="title">Registrarse</div>
+                <form asp-action="Register">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <div class="form-group">
-                        <label asp-for="FullName" class="control-label"></label>
-                        <input type="text" asp-for="FullName" class="form-control" />
+                    <div class="input-boxes">
+                        <div class="input-box">
+                            <i class="fas fa-user"></i>
+                            <input asp-for="FullName" type="text" placeholder="Escriba su usuario">
+                        </div>
                         <span asp-validation-for="FullName" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label asp-for="Email" class="control-label"></label>
-                        <input type="email" asp-for="Email" class="form-control" />
+                        <div class="input-box">
+                            <i class="fas fa-envelope"></i>
+                            <input asp-for="Email" type="text" placeholder="Escriba su correo">
+                        </div>
                         <span asp-validation-for="Email" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Password" class="control-label"></label>
-                        <input asp-for="Password" class="form-control" />
+                        <div class="input-box">
+                            <i class="fas fa-lock"></i>
+                            <input asp-for="Password" id="password-register" placeholder="Escriba su contraseña">
+                            <span class="show-span span-register float-right"><i class="bi bi-eye-fill"></i></span>
+                        </div>
                         <span asp-validation-for="Password" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="ConfirmPassword" class="control-label"></label>
-                        <input asp-for="ConfirmPassword" class="form-control" />
+                        <div class="input-box">
+                            <i class="fas fa-lock"></i>
+                            <input asp-for="ConfirmPassword" id="password-confirmed" placeholder="Confirme su contraseña">
+                            <span class="show-span span-confirmed float-right"><i class="bi bi-eye-fill"></i></span>
+                        </div>
                         <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <input class="btn btn-success float-right" type="submit" value="Registrarse" asp-action="Register" />
-                        <a class="btn btn-secondary" asp-controller="Movies" asp-action="Index">Cancelar</a>
+                        <div class="button input-box">
+                            <input type="submit" value="Ingresar">
+                        </div>
+                        <div class="texto sign-up-text">Ya tienes una cuenta? <a asp-action="Login" class="back-account">Iniciar sesion</a></div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+@section Scripts{
+    <script>
+        document.querySelector('.input-box .span-register').addEventListener('click', e => {
+            const passwordInput = document.querySelector('#password-register');
+            if (e.target.classList.contains('show')) {
+                e.target.classList.remove('show');
+                passwordInput.type = 'text';
+            } else {
+                e.target.classList.add('show');
+                passwordInput.type = 'password';
+            }
+        });
+    </script>
+    <script>
+        document.querySelector('.input-box .span-confirmed').addEventListener('click', e => {
+            const passwordInput = document.querySelector('#password-confirmed');
+            if (e.target.classList.contains('show')) {
+                e.target.classList.remove('show');
+                passwordInput.type = 'text';
+            } else {
+                e.target.classList.add('show');
+                passwordInput.type = 'password';
+            }
+        });
+    </script>
+    <script>
+        $("#show").click(function () {
+            $("#show").add('<i class="bi bi-eye-slash-fill"></i>');
+        });
+    </script>
+}
