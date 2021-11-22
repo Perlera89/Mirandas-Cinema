@@ -30,7 +30,7 @@
                     @if (DateTime.Now >= item.StartDate && DateTime.Now <= item.EndDate)
                     {
                         <div class="pelicula pelicula1 col-md-2">
-                            <a href="#">
+                            <a asp-action="Details" asp-route-id="@item.Id">
                                 <img src="@item.ImagenURL" alt="pelicula" style="width:100%;" />
 
                             </a>
@@ -70,7 +70,7 @@
                     @if (DateTime.Now > item.StartDate && DateTime.Now > item.EndDate)
                     {
                         <div class="pelicula pelicula2 col-md-2">
-                            <a href="#">
+                            <a asp-action="Details" asp-route-id="@item.Id">
                                 <img src="@item.ImagenURL" alt="pelicula" style="width:100%;" />
 
                             </a>
@@ -101,7 +101,7 @@
         </div>
 
         <div class="contenedor_pricipal">
-            <button role="button" id="flecha_izquierda3" class="flecha_izquierda" type="button"><i class="fas fa-angle-left"></i></button>
+            <button role="button" id="flecha_izquierda3" class="flecha_izquierda flecha_izquierda3" type="button"><i class="fas fa-angle-left"></i></button>
 
             <div class="contenedor_carousel contenedor_carousel3">
 
@@ -113,7 +113,7 @@
                         @if ((DateTime.Now < item.StartDate))
                         {
                             <div class="pelicula pelicula3 col-md-2">
-                                <a href="#">
+                                <a asp-action="Details" asp-route-id="@item.Id">
                                     <img src="@item.ImagenURL" alt="pelicula" style="width:100%;" />
 
                                 </a>

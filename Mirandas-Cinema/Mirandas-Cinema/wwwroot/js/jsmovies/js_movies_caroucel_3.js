@@ -1,4 +1,4 @@
-﻿const fila3 = document.querySelector('.contenedor_carousel3 .carousel3');
+﻿  const fila3 = document.querySelector('.carousel3');
 const pelicula3 = document.querySelectorAll('.pelicula3');
 
 const flechaIzquierda3 = document.getElementById('flecha_izquierda3');
@@ -45,6 +45,23 @@ for (let i = 0; i < numeroPaginas3; i++) {
         e.target.classList.add('activo');
     });
 }
+function Desactivar() {
+    const numeroPeliculas3 = Math.ceil(pelicula3.length);
+    /*----carousel 3----*/
+    if (numeroPeliculas3 <= 5) {
+        flechaIzquierda3.classList.add('desactivar');
+        flechaDerecha3.classList.add('desactivar');
+        document.querySelector('.indicadores3').classList.add('desactivar');
+    }
+    else {
+        flechaIzquierda3.classList.remove('desactivar');
+        flechaDerecha3.classList.remove('desactivar');
+        document.querySelector('.indicadores3').classList.remove('desactivar');
+    }
+
+}
+Desactivar();
+
 //hover
 
 pelicula3.forEach((pelicula3) => {

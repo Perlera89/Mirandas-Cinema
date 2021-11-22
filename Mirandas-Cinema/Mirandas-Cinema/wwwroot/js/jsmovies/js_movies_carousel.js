@@ -1,4 +1,4 @@
-﻿const fila = document.querySelector('.contenedor_carousel1 .carousel1');
+﻿const fila = document.querySelector('.carousel1');
 const pelicula = document.querySelectorAll('.pelicula1');
 
 const flechaIzquierda = document.getElementById('flecha_izquierda1');
@@ -21,7 +21,7 @@ flechaIzquierda.addEventListener('click', () => {
     fila.scrollLeft -= fila.offsetWidth;
     const indicadorActivo = document.querySelector('.indicadores1 .activo');
     //preguntando si hay un elemento a la derecha
-    if (indicadorActivo.previousSibling) {
+    if (indicadorActivo.previousSibling != false) {
         indicadorActivo.previousSibling.classList.add('activo');
         indicadorActivo.classList.remove('activo');
     }
@@ -45,6 +45,23 @@ for (let i = 0; i < numeroPaginas; i++) {
         e.target.classList.add('activo');
     });
 }
+
+
+function Desactivar() {
+    const numeroPeliculas = Math.ceil(pelicula.length);
+    /*----carousel 1----*/
+    if (numeroPeliculas <= 5) {
+        flechaIzquierda.classList.add('desactivar');
+        flechaDerecha.classList.add('desactivar');
+        document.querySelector('.indicadores1').classList.add('desactivar');
+    }
+    else {
+        flechaIzquierda.classList.remove('desactivar');
+        flechaDerecha.classList.remove('desactivar');
+        document.querySelector('.indicadores1').classList.remove('desactivar');
+    }
+}
+Desactivar();
 //hover
 
 pelicula.forEach((pelicula) => {

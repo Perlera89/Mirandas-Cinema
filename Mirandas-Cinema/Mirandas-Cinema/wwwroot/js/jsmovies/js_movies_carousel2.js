@@ -1,4 +1,4 @@
-﻿const fila2 = document.querySelector('.contenedor_carousel2 .carousel2');
+﻿const fila2 = document.querySelector('.carousel2');
 const pelicula2 = document.querySelectorAll('.pelicula2');
 
 const flechaIzquierda2 = document.getElementById('flecha_izquierda2');
@@ -45,6 +45,22 @@ for (let i = 0; i < numeroPaginas2; i++) {
         e.target.classList.add('activo');
     });
 }
+
+function Desactivar() {
+    const numeroPeliculas2 = Math.ceil(pelicula2.length);
+    /*----carousel 2----*/
+    if (numeroPeliculas2 <= 5) {
+        flechaIzquierda2.classList.add('desactivar');
+        flechaDerecha2.classList.add('desactivar');
+        document.querySelector('.indicadores2').classList.add('desactivar');
+    }
+    else {
+        flechaIzquierda2.classList.remove('desactivar');
+        flechaDerecha2.classList.remove('desactivar');
+        document.querySelector('.indicadores2').classList.remove('desactivar');
+    }
+}
+Desactivar();
 //hover
 
 pelicula2.forEach((pelicula2) => {

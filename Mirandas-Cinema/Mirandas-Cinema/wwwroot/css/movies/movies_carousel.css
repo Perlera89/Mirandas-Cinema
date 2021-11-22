@@ -125,3 +125,7 @@
     left: 10%;
     overflow: hidden;
 }
+
+.desactivar{
+    display:none;
+}
