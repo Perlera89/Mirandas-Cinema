@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="~/css/root/nav-bar.css" />
     <link href="~/css/root/fonts.css" rel="stylesheet" />
     <link href="~/css/root/general.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/footer/footer.css"/>
+    <link rel="stylesheet" href="~/css/footer/footer_mediaQueries.css" />
 
     <style type="text/css">
         body {
@@ -93,9 +95,38 @@
         </main>
     </div>
 
-    <footer class=" footer text-muted">
-        <div class="container nav-links nav-footer col-md-12 justify-content-center">
-            &copy; 2021 - Mirandas Cinema
+    <footer class="footer text-muted  nav-links  col-sm-12  nav-footer container justify-content-center contenedor_principal_footer">
+        <div class="contenedor_footer">
+            <div class="contenedor_nombre_empresa">
+                <label class="footer_nombre_empresa">MIRANDA'S<br /> CINEMA</label>
+                <a asp-action="Index" asp-controller="Movies">
+                    <img src="~/resources/logos/1.png" width="92" />
+                </a>
+            </div>
+            <div class="footer_caja contenedor_footer_info">
+                <ul class="footer_info">
+                    <li><label>Contáctanos:</label></li>
+                    <li> <label class="text-center">Teléfono: 7738 - 8082</label></li>
+                    <li><label><a class="text-muted text-center" href="mailto:cinema@mirandas.com">Email: cinema@mirandas.com</a></label></li>
+                </ul>
+            </div>
+
+            <div class="footer_caja footer_redes">
+                <label>Siguenos en:</label>
+                <a href="#">
+                    <img src="~/resources/redes/facebook.gif" width="36" />
+                </a>
+                <a href="#">
+                    <img src="~/resources/redes/twitter.gif" width="36" />
+                </a>
+            </div>
+        </div>
+        <div style="border:1px solid gainsboro;width:100%;margin-bottom:0.5em;"></div>
+        <div class="footer_legal_info">
+            <p class="text-center">&copy; 2021 - Mirandas Cinema   </p>
+            <a class="text-muted text-center" href="https://www.privacypolicies.com/live/2a17def5-a250-42b9-b04d-9300683620a3">
+                Condiciones de servicio
+            </a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
