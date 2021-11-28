@@ -1,15 +1,14 @@
-﻿<link rel="stylesheet" href="~/css/root/nav-bar.css" />
-@using Mirandas_Cinema.Data.ViewModels;
+﻿@using Mirandas_Cinema.Data.ViewModels;
 @model ShoppingCartVM
 
 @{
     ViewData["Title"] = "Resumen carrito";
 }
 
-<div class="row nav-links col-md-11" style="margin: auto;">
+<div class="row nav-links col-md-11 m-auto container-page ">
     <div class="col-md-8 offset-2" style="margin-bottom: 20px;">
         <div class="text-center" style="margin: 50px 0;">
-            <h2 style="color: #237bac;">Resumen de su carrito</h2>
+            <h3 class="title color-doubles">Resumen de su carrito</h3>
         </div>
 
         <table class="table table-hover">
@@ -58,11 +57,8 @@
 
             </div>
             <div>
-                <a class="btn btn-success float-left" asp-controller="Movies" asp-action="Index">Agregar mas</a> &nbsp;
+                <a class="btn btn-success float-left" asp-controller="Movies" asp-action="Index">Agregar</a> &nbsp;
             </div>
-            @*<div>
-                    <a class="btn btn-primary float-right" asp-action="Order">Completar orden</a>
-                </div>*@
         </div>
 
     </div>
@@ -102,7 +98,7 @@
            //Ejectuar el pago
            onAuthorize: function (data, actions) {
                return actions.payment.execute().then(function () {
-                   var url = '@Url.Action("Order", "Orders", new { })';
+                   var url = '@Url.Action("Order", "Orders", new {})';
                    window.location.href = url;
                });
            }

@@ -1,8 +1,23 @@
-﻿
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@3S00&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@3S00&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Aleo:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aleo:wght@300&family=Passion+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Passion+One&display=swap');
+
+
+* {
+    font-family: 'Poppins',sans-serif;
+}
+
+body {
+    background-image: url('/resources/logos/mirandas-wallpaper.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #ddebee;
+    font-family: 'Poppins',sans-serif;
+}
 
 :root {
     --font: #111c34;
@@ -11,19 +26,54 @@
     --bgtitle: #237bac;
     --lines: #161616;
     --doubles: #182c70;
-    --font-family-aleo-subtitle: 'Aleo', serif;
-    --font-family-anton-title: 'Anton', sans-serif;
-    --font-family-roboto-paragraph: 'Roboto', sans-serif;
+    --font-family-anton-title: 'Aleo', serif;
+    --font-family-aleo-subtitle: 'Roboto', sans-serif;
+    --font-family-roboto-paragraph: 'Poppins',sans-serif;
 }
 
-._title {
-    font-family: 'Aleo', serif;
+.color-font {color: var(--font);}
+.bg-font {background: var(--font);}
+
+.color-subtitle{color: var(--subtitle);}
+.bg-subtitle {color: var(--subtitle);}
+
+.color-bg {color: var(--bg);}
+.bg-bg {background: var(--bg);}
+
+.color-bgtitle {color: var(--bgtitle);}
+.bg-bgtitle{background: var(--bgtitle);}
+
+.color-lines{color: var(--lines);}
+.bg-lines{background: var(--lines);}
+
+.color-doubles {color: var(--doubles);}
+.bg-doubles {background: var(--doubles);}
+
+.title {
+    font-family: 'Poppins',sans-serif;
+    font-weight: 600;
 }
 
 .subtitle {
-    font-family: var(--font-family-aleo-subtitle);
+    font-family: 'Poppins',sans-serif;
+    font-weight: 500;
 }
 
 .paragraph {
-    font-family: var(--font-family-roboto-paragraph)
+    font-family: 'Poppins',sans-serif;
+    font-weight: 400;
+}
+
+.not-results {
+    font-family: var(--font-family-aleo-title);
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: 400;
+    text-align: center;
+    margin: 11rem auto;
+    color: #02084b;
+}
+
+.container-page {
+    min-height: 27.5rem;
 }

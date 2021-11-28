@@ -105,6 +105,8 @@ namespace Mirandas_Cinema.Data.Cart
             context.ShoppingCartItems.RemoveRange(movies);
 
             await context.SaveChangesAsync();
+
+            ShoppingCartItems = new List<ShoppingCartItem>();
         }
     }
 }

@@ -6,7 +6,7 @@
     ViewData["Title"] = "Registrarse";
 }
 
-<div class="container-login mt-3 mb-5 ml-auto mr-auto">
+<div class="container-login mt-3 mb-auto ml-auto mr-auto">
     <div class="cover">
         <div class="front">
             <img src="/resources/logos/cinemas-register.png" />
@@ -33,19 +33,19 @@
                         <div class="input-box">
                             <i class="fas fa-lock"></i>
                             <input asp-for="Password" id="password-register" placeholder="Escriba su contraseña">
-                            <span class="show-span span-register float-right"><i class="bi bi-eye-fill"></i></span>
+                            <span class="show-span span-register float-right d-none"><i class="bi bi-eye-fill"></i></span>
                         </div>
                         <span asp-validation-for="Password" class="text-danger"></span>
                         <div class="input-box">
                             <i class="fas fa-lock"></i>
                             <input asp-for="ConfirmPassword" id="password-confirmed" placeholder="Confirme su contraseña">
-                            <span class="show-span span-confirmed float-right"><i class="bi bi-eye-fill"></i></span>
+                            <span class="show-span span-confirmed float-right d-none"><i class="bi bi-eye-fill"></i></span>
                         </div>
                         <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                         <div class="button input-box">
                             <input type="submit" value="Ingresar">
                         </div>
-                        <div class="texto sign-up-text">Ya tienes una cuenta? <a asp-action="Login" class="back-account">Iniciar sesion</a></div>
+                        <div class="texto sign-up-text">Ya tienes una cuenta? <a asp-action="Login" class="back-account subtitle text-decoration-none">Iniciar sesion</a></div>
                     </div>
                 </form>
             </div>

@@ -16,7 +16,7 @@
         <div class="form-content">
             @* Formulario Login *@
             <div class="login-form">
-                <div class="title">Iniciar sesion</div>
+                <div class="title font-weight-bold">Iniciar sesion</div>
                 <form asp-action="Login">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="input-boxes">
@@ -28,15 +28,15 @@
                         <div class="input-box">
                             <i class="fas fa-lock"></i>
                             <input asp-for="Password" type="password" id="password" name="password" placeholder="Escriba su contraseña" />
-                            <span id="show" class="show-span float-right"><i class="bi bi-eye-fill"></i></span>
+                            <span id="show" class="show-span float-right d-none"><i class="bi bi-eye-fill"></i></span>
                             <br />
                         </div>
                         <span asp-validation-for="Password" class="text-danger"></span>
                         <div class="texto mt-3"><a href="#">Has olvidado tu contraseña?</a></div>
                         <div class="button input-box">
-                            <input type="submit" value="Ingresar">
+                            <input class="subtitle" type="submit" value="Ingresar">
                         </div>
-                        <div class="texto sign-up-text">No tienes una cuenta? <a asp-action="Register" class="back-account">Registrarse</a></div>
+                        <div class="texto sign-up-text">No tienes una cuenta? <a asp-action="Register" class="back-account subtitle text-decoration-none">Registrarse</a></div>
                     </div>
                 </form>
             </div>

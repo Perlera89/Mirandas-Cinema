@@ -1,13 +1,15 @@
-﻿@model List<Order>
+﻿<link href="~/css/root/fonts.css" rel="stylesheet" />
+
+@model List<Order>
 
 @{ 
     ViewData["Title"] = "Ordenes";
 }
 
-<div class="row nav-links col-md-11 mb-5 ml-auto mr-auto">
+<div class="row nav-links col-md-11 ml-auto mr-auto container-page">
     <div class="col-md-8 offset-2">
-        <p class="mt-2 mb-2">
-            <h4 style="color: #237bac;">Lista de todos los pedidos</h4>
+        <p>
+            <h3 class="title color-doubles text-center mb-5">Lista de todos los pedidos</h3>
         </p>
 
         <table class="table table-hover">

@@ -1,4 +1,12 @@
 ﻿/*=============estilos basicos para algunos contenedores============*/
+body {
+    background-image: url('/resources/logos/mirandas-wallpaper.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: black;
+}
 .caja_contenedor {
     background: #fff;
     padding: 0.8rem 15px;
@@ -148,3 +156,7 @@
             border: 2px solid #fff;
         }
 /*==============================================*/
+
+.container-page {
+    min-height: 27.5rem;
+}

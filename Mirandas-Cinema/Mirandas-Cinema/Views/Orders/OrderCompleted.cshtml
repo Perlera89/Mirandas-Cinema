@@ -3,24 +3,24 @@
 @{
     ViewData["Title"] = "Orden exitosa";
 }
-<div class="container-page row nav-links col-md-11 m-auto position-absolute">
+<div class="container-page row nav-links col-md-11 mr-auto ml-auto mb-5">
     <div class="modali">
         <div class="top-content bg-success">
-            <div class="left-text">
+            <div class="left-text subtitle">
                 Exito
             </div>
             <a class="close-icon text-white" asp-controller="Movies" asp-action="Index"><i class="fas fa-times"></i></a>
             <div class="icon fas fa-check"></div>
         </div>
         <div class="bottom-content">
-            <div class="text">
+            <div class="text title">
                 Tu orden se ha realizado con exito
             </div>
-            <p>
+            <p class="paragraph">
                 Puedes consultar todos tus pedidos en la sección de ordenes de tu perfil.
             </p>
             <div class="close-btn">
-                <a class="text-white" asp-controller="Movies" asp-action="Index">Cerrar</a>
+                <a class="text-white subtitle" asp-controller="Movies" asp-action="Index">Cerrar</a>
             </div>
         </div>
     </div>

@@ -43,27 +43,37 @@ namespace Mirandas_Cinema.Controllers
         }
 
         [AllowAnonymous]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchInvalid)
         {
+            ViewBag.searchInvalid = searchInvalid;
             var movies = await service.GetAll(n => n.Cinema);
+
             return View(movies);
         }
 
         [AllowAnonymous]
         public async Task<IActionResult> Filter(string searchMovie)
         {
-            var movies = await service.GetAll();
+            var movies = await service.GetAll(n => n.Cinema, n => n.Producer);
 
             if (!string.IsNullOrEmpty(searchMovie))
             {
-                var filter = movies.Where(m => m.Name.Contains(searchMovie) 
-                    || m.Description.Contains(searchMovie) 
-                    || m.Cinema.Name.Contains(searchMovie) 
-                    || m.Producer.FullName.Contains(searchMovie)).ToList();
+                //var filter = movies.Where(m => m.Name.ToLower().Contains(searchMovie.ToLower())
+                //    || m.Description.ToLower().Contains(searchMovie.ToLower())
+                //    || m.Producer.FullName.ToLower().Contains(searchMovie.ToLower())).ToList();
+
+                var filter = movies.Where(m => string.Equals(m.Name, searchMovie,
+                    StringComparison.CurrentCultureIgnoreCase) || string.Equals(m.Description, searchMovie,
+                    StringComparison.CurrentCultureIgnoreCase) || string.Equals(m.Producer.FullName, searchMovie,
+                    StringComparison.CurrentCultureIgnoreCase)).ToList();
+
+                if (filter.Count == 0)
+                {
+                    await Index("No se encontraron resultados...");
+                }
 
                 return View("Index", filter);
             }
-
             return View("Index", movies);
         }
 

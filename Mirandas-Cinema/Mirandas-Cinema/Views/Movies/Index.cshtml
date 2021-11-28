@@ -1,5 +1,4 @@
-﻿<link rel="stylesheet" href="~/css/nav-bar.css" />
-<link rel="stylesheet" href="~/css/movies/Movies_carousel.css" />
+﻿<link rel="stylesheet" href="~/css/movies/Movies_carousel.css" />
 <link rel="stylesheet" href="~/css/movies/movies_carousel_mediaQueries.css" />
 
 @model IEnumerable<Movie>
@@ -9,110 +8,29 @@
 }
 <!--    CAROUSEL    -->
 <!--SOLO EN CINES-->
-<div class="caja_contenedor contenedor_peliculas_recomendadas bg-white">
-    <div class="contenedor_titulo_controles">
-        <h3>En emisión</h3>
-        <div class="indicadores indicadores1">
-
-        </div>
-    </div>
-
-    <div class="contenedor_pricipal">
-        <button role="button" id="flecha_izquierda1" class="flecha_izquierda" type="button"><i class="fas fa-angle-left"></i></button>
-
-        <div class="contenedor_carousel contenedor_carousel">
-
-            <div class="carousel carousel1">
-
-
-                @foreach (var item in Model)
-                {
-                    @if (DateTime.Now >= item.StartDate && DateTime.Now <= item.EndDate)
-                    {
-                        <div class="pelicula pelicula1 col-md-2">
-                            <a asp-action="Details" asp-route-id="@item.Id">
-                                <img src="@item.ImagenURL" alt="pelicula" style="width:100%;" />
-
-                            </a>
-                            <span class="pelicula_nombre">@item.Name</span>
-                        </div>
-                    }
-
-                }
-
-            </div>
-
-        </div>
-
-        <button role="button" id="flecha_derecha1" class="flecha_derecha"><i class="fas fa-angle-right"></i></button>
-    </div>
-</div>
-
-<!--EXPIRARON-->
-<div class="caja_contenedor contenedor_peliculas_recomendadas bg-white">
-    <div class="contenedor_titulo_controles">
-        <h3>Expiradas recientemente</h3>
-        <div class="indicadores indicadores2">
-
-        </div>
-    </div>
-
-    <div class="contenedor_pricipal">
-        <button role="button" id="flecha_izquierda2" class="flecha_izquierda" type="button"><i class="fas fa-angle-left"></i></button>
-
-        <div class="contenedor_carousel contenedor_carousel2">
-
-            <div class="carousel carousel2">
-
-
-                @foreach (var item in Model)
-                {
-                    @if (DateTime.Now > item.StartDate && DateTime.Now > item.EndDate)
-                    {
-                        <div class="pelicula pelicula2 col-md-2">
-                            <a asp-action="Details" asp-route-id="@item.Id">
-                                <img src="@item.ImagenURL" alt="pelicula" style="width:100%;" />
-
-                            </a>
-                            <span class="pelicula_nombre">@item.Name</span>
-                        </div>
-                    }
-
-                }
-
-            </div>
-
-        </div>
-
-        <button role="button" id="flecha_derecha2" class="flecha_derecha"><i class="fas fa-angle-right"></i></button>
-    </div>
-</div>
-
-<!--Futuros estrenos-->
 @if (Model.ToList().Count > 0)
 {
-
     <div class="caja_contenedor contenedor_peliculas_recomendadas bg-white">
         <div class="contenedor_titulo_controles">
-            <h3>Próximos estrenos</h3>
-            <div class="indicadores indicadores3">
+            <h3 class="title">En emisión</h3>
+            <div class="indicadores indicadores1">
 
             </div>
         </div>
 
         <div class="contenedor_pricipal">
-            <button role="button" id="flecha_izquierda3" class="flecha_izquierda flecha_izquierda3" type="button"><i class="fas fa-angle-left"></i></button>
+            <button role="button" id="flecha_izquierda1" class="flecha_izquierda" type="button"><i class="fas fa-angle-left"></i></button>
 
-            <div class="contenedor_carousel contenedor_carousel3">
+            <div class="contenedor_carousel contenedor_carousel">
 
-                <div class="carousel carousel3">
+                <div class="carousel carousel1">
 
 
                     @foreach (var item in Model)
                     {
-                        @if ((DateTime.Now < item.StartDate))
+                        @if (DateTime.Now >= item.StartDate && DateTime.Now <= item.EndDate)
                         {
-                            <div class="pelicula pelicula3 col-md-2">
+                            <div class="pelicula pelicula1 col-md-2">
                                 <a asp-action="Details" asp-route-id="@item.Id">
                                     <img src="@item.ImagenURL" alt="pelicula" style="width:100%;" />
 
@@ -127,74 +45,160 @@
 
             </div>
 
-            <button role="button" id="flecha_derecha3" class="flecha_derecha"><i class="fas fa-angle-right"></i></button>
+            <button role="button" id="flecha_derecha1" class="flecha_derecha"><i class="fas fa-angle-right"></i></button>
         </div>
     </div>
 }
-<!--===============================================-->
-<div class="row nav-links col-md-11 mt-0 ml-auto mr-auto mb-xl-5">
-    @foreach (var movie in Model)
+
+    <!--EXPIRARON-->
+    @if (Model.ToList().Count > 0)
     {
-        <div class="col-md-4 col-xs-6 border-primary mb-3 nav-links">
-            <div class="card m-auto" style="max-width: 500px">
-                <div class="row g-0">
-                    <div class="col-md-12">
-                        <div class="card-header text-white bg-primary">
+        <div class="caja_contenedor contenedor_peliculas_recomendadas bg-white">
+            <div class="contenedor_titulo_controles">
+                <h3 class="title">Expiradas recientemente</h3>
+                <div class="indicadores indicadores2">
+
+                </div>
+            </div>
+
+            <div class="contenedor_pricipal">
+                <button role="button" id="flecha_izquierda2" class="flecha_izquierda" type="button"><i class="fas fa-angle-left"></i></button>
+
+                <div class="contenedor_carousel contenedor_carousel2">
+
+                    <div class="carousel carousel2">
+
+
+                        @foreach (var item in Model)
+                        {
+                            @if (DateTime.Now > item.StartDate && DateTime.Now > item.EndDate)
+                            {
+                                <div class="pelicula pelicula2 col-md-2">
+                                    <a asp-action="Details" asp-route-id="@item.Id">
+                                        <img src="@item.ImagenURL" alt="pelicula" style="width:100%;" />
+
+                                    </a>
+                                    <span class="pelicula_nombre">@item.Name</span>
+                                </div>
+                            }
+
+                        }
+
+                    </div>
+
+                </div>
+
+                <button role="button" id="flecha_derecha2" class="flecha_derecha"><i class="fas fa-angle-right"></i></button>
+            </div>
+        </div>
+    }
+
+    <!--Futuros estrenos-->
+    @if (Model.ToList().Count > 0)
+    {
+
+        <div class="caja_contenedor contenedor_peliculas_recomendadas bg-white">
+            <div class="contenedor_titulo_controles">
+                <h3 class="title">Próximos estrenos</h3>
+                <div class="indicadores indicadores3">
+
+                </div>
+            </div>
+
+            <div class="contenedor_pricipal">
+                <button role="button" id="flecha_izquierda3" class="flecha_izquierda flecha_izquierda3" type="button"><i class="fas fa-angle-left"></i></button>
+
+                <div class="contenedor_carousel contenedor_carousel3">
+
+                    <div class="carousel carousel3">
+
+
+                        @foreach (var item in Model)
+                        {
+                            @if ((DateTime.Now < item.StartDate))
+                            {
+                                <div class="pelicula pelicula3 col-md-2">
+                                    <a asp-action="Details" asp-route-id="@item.Id">
+                                        <img src="@item.ImagenURL" alt="pelicula" style="width:100%;" />
+
+                                    </a>
+                                    <span class="pelicula_nombre">@item.Name</span>
+                                </div>
+                            }
+
+                        }
+
+                    </div>
+
+                </div>
+
+                <button role="button" id="flecha_derecha3" class="flecha_derecha"><i class="fas fa-angle-right"></i></button>
+            </div>
+        </div>
+    }
+    <!--===============================================-->
+    <div class="row nav-links col-md-11 mt-0 ml-auto mr-auto mb-xl-5">
+        <div class="not-results">@ViewBag.searchInvalid</div>
+        @foreach (var movie in Model)
+        {
+            <div class="col-md-4 col-xs-6 border-primary mb-3 nav-links">
+                <div class="card m-auto" style="max-width: 500px">
+                    <div class="row g-0">
+                        <div class="col-md-12">
+                            <div class="card-header text-white bg-bgtitle">
+                                <p class="card-text">
+                                    <h5 class="card-title subtitle">
+                                        @movie.Name
+                                        @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                                        {
+                                            <a class="text-white float-right" asp-action="Update" asp-route-id="@movie.Id"><i class="bi bi-pencil-square"></i></a>
+                                        }
+                                    </h5>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="@movie.ImagenURL" alt="@movie.Name" width="100%" />
+                    </div>
+                    <div class="col-md-12 float-right paragraph">
+                        <div class="card-body">
+                            <p class="card-text"><b>Cine:</b> @movie.Cinema.Name</p>
+                            <p class="card-text"><b>Inicio:</b> @movie.StartDate.ToString("dd MMMM yy")</p>
+                            <p class="card-text"><b>Finalizacion:</b> @movie.EndDate.ToString("dd MMMM yy")</p>
                             <p class="card-text">
-                                <h5 class="card-title">
-                                    @movie.Name
-                                    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
-                                    {
-                                        <a class="text-white float-right" asp-action="Update" asp-route-id="@movie.Id"><i class="bi bi-pencil-square"></i></a>
-                                    }
-                                </h5>
+                                <b>Estado: </b>
+                                @if (DateTime.Now >= movie.StartDate && DateTime.Now <= movie.EndDate)
+                                {
+                                    <span class="badge bg-success text-white">Disponible</span>
+                                }
+                                else if (DateTime.Now > movie.EndDate)
+                                {
+                                    <span class="badge bg-danger text-white">Expirada</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-primary text-white">Muy pronto</span>
+                                }
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card-footer">
+                            <p class="card-text">
+                                <a class="btn btn-outline-primary float-right" asp-action="Details" asp-route-id="@movie.Id">
+                                    <i class="bi bi-eye-fill">
+                                    </i> Detalles
+                                </a>
+                                <a class="btn btn-success text-white @((DateTime.Now > movie.EndDate) ? "disabled" : "")" asp-controller="Orders" asp-action="AddItem" asp-route-id="@movie.Id">
+                                    <i class="bi bi-cart-plus"></i> Agregar (@movie.Price.ToString("c"))
+                                </a>&nbsp;
+
+                                @await Html.PartialAsync("_CreateItem", "Movies")
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <img src="@movie.ImagenURL" alt="@movie.Name" width="100%" />
-                </div>
-                <div class="col-md-12 float-right">
-                    <div class="card-body">
-                        @*<div style="max-height: 100px; overflow: hidden;"><p class="card-text">@movie.Description</p></div>*@
-                        <p class="card-text"><b>Cine:</b> @movie.Cinema.Name</p>
-                        @*@<p class="card-text"><b>Categoria:</b> @movie.MovieCategory</p>*@
-                        <p class="card-text"><b>Inicio:</b> @movie.StartDate.ToString("dd MMMM yy")</p>
-                        <p class="card-text"><b>Finalizacion:</b> @movie.EndDate.ToString("dd MMMM yy")</p>
-                        <p class="card-text">
-                            <b>Estado: </b>
-                            @if (DateTime.Now >= movie.StartDate && DateTime.Now <= movie.EndDate)
-                            {
-                                <span class="badge bg-success text-white">Disponible</span>
-                            }
-                            else if (DateTime.Now > movie.EndDate)
-                            {
-                                <span class="badge bg-danger text-white">Expirada</span>
-                            }
-                            else
-                            {
-                                <span class="badge bg-primary text-white">Muy pronto</span>
-                            }
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="card-footer">
-                        <p class="card-text">
-                            <a class="btn btn-primary text-white float-right" asp-action="Details" asp-route-id="@movie.Id">
-                                <i class="bi bi-eye-fill">
-                                </i> Detalles
-                            </a>
-                            <a class="btn btn-success text-white" asp-controller="Orders" asp-action="AddItem" asp-route-id="@movie.Id">
-                                <i class="bi bi-cart-plus"></i> Agregar (@movie.Price.ToString("c"))
-                            </a>&nbsp;
-
-                            @await Html.PartialAsync("_CreateItem", "Movies")
-                        </p>
-                    </div>
-                </div>
             </div>
-        </div>
-    }
-</div>
+        }
+    </div>

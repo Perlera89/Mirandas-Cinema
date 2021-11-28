@@ -94,7 +94,7 @@
             <div class="col-md-12">
                 <div class="card-footer mb-3">
                     <p class="card-text">
-                        <a class="btn btn-success text-white float-right" asp-controller="Orders" asp-action="AddItem" asp-route-id="@Model.Id">
+                        <a class="btn btn-success text-white float-right @((DateTime.Now > Model.EndDate) ? "disabled" : "")" asp-controller="Orders" asp-action="AddItem" asp-route-id="@Model.Id">
                             <i class="bi bi-cart-plus"></i> Agregar (@Model.Price.ToString("c"))
                         </a>&nbsp;
                         <a class="btn btn-primary text-white float-left" asp-action="Index">

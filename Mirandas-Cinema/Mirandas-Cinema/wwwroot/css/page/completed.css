@@ -1,18 +1,5 @@
-﻿@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
-
-* {
-    font-family: 'Poppins',sans-serif;
-}
-
-body {
-    text-align: center;
-}
-
-.container-page {
-    position: absolute;
-    top: 15%;
-    bottom: 15%;
-    left: 4%;
+﻿.container-page-1 {
+    height: 20rem;
 }
 
 .modali {
@@ -20,7 +7,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 400px;
+    width: 500px;
     transition: bottom 0.4s, opacity 0.4s;
     box-shadow: 0px 0px 15px rgba(0,0,0,0.3);
     background: white;

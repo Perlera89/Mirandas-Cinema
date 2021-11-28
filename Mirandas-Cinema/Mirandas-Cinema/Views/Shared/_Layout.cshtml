@@ -11,21 +11,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="~/css/root/nav-bar.css" />
-    <link href="~/css/root/fonts.css" rel="stylesheet" />
     <link href="~/css/root/general.css" rel="stylesheet" />
+    <link href="~/css/root/fonts.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/footer/footer.css"/>
     <link rel="stylesheet" href="~/css/footer/footer_mediaQueries.css" />
 
-    <style type="text/css">
-        body {
-            background-image: url('/resources/logos/mirandas-wallpaper.jpg');
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
-            background-color: #ddebee;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -37,7 +27,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between" style="position: relative;">
-                    <ul class="navbar-nav flex-grow-1 nav-links" style="position: relative;">
+                    <ul class="navbar-nav flex-grow-1 nav-links subtitle" style="position: relative;">
                         <li class="nav-item forward">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Movies" asp-action="Index"><i class="bi bi-house-door"></i> Inicio</a>
                         </li>
@@ -73,7 +63,7 @@
                                 </div>
                             </li>
                         }
-                        <form class="form-inline my-2 my-lg-0" asp-controller="Movies" asp-action="Filter" style="padding-right: 25px; position: absolute; top: 0.4rem; right: 0;">
+                        <form class="form-inline my-2 my-lg-0" asp-controller="Movies" asp-action="Filter" style="padding-right: 25px; position: absolute; top: 0.3rem; right: 0;">
                             <input name="searchMovie" type="text" class="form-control" placeholder="Buscar pelicula..." aria-label="Recipient's username" aria-describedby="button-addon2">&nbsp;
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="max-width: 42px; border-radius: 25%;"><i class="bi bi-search"></i></button>
                         </form>
@@ -95,7 +85,7 @@
         </main>
     </div>
 
-    <footer class="footer text-muted  nav-links  col-sm-12  nav-footer container justify-content-center contenedor_principal_footer">
+    <footer class="footer text-muted nav-links col-sm-12 nav-footer container justify-content-center contenedor_principal_footer">
         <div class="contenedor_footer">
             <div class="contenedor_nombre_empresa">
                 <label class="footer_nombre_empresa">MIRANDA'S<br /> CINEMA</label>
@@ -105,14 +95,14 @@
             </div>
             <div class="footer_caja contenedor_footer_info">
                 <ul class="footer_info">
-                    <li><label>Contáctanos:</label></li>
+                    <li><label class="subtitle">Contáctanos:</label></li>
                     <li> <label class="text-center">Teléfono: 7738 - 8082</label></li>
-                    <li><label><a class="text-muted text-center" href="mailto:cinema@mirandas.com">Email: cinema@mirandas.com</a></label></li>
+                    <li><label><a class="text-muted text-center" href="mailto:cinemas@miranda.com">Email: cinemas@mirandas.com</a></label></li>
                 </ul>
             </div>
 
             <div class="footer_caja footer_redes">
-                <label>Siguenos en:</label>
+                <label class="subtitle">Siguenos en:</label>
                 <a href="#">
                     <img src="~/resources/redes/facebook.gif" width="36" />
                 </a>
@@ -124,7 +114,7 @@
         <div style="border:1px solid gainsboro;width:100%;margin-bottom:0.5em;"></div>
         <div class="footer_legal_info">
             <p class="text-center">&copy; 2021 - Mirandas Cinema   </p>
-            <a class="text-muted text-center" href="https://www.privacypolicies.com/live/2a17def5-a250-42b9-b04d-9300683620a3">
+            <a class="text-muted text-center text-decoration-none" href="https://www.privacypolicies.com/live/2a17def5-a250-42b9-b04d-9300683620a3">
                 Condiciones de servicio
             </a>
         </div>

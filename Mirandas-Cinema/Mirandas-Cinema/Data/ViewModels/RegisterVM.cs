@@ -17,6 +17,7 @@ namespace Mirandas_Cinema.Data.ViewModels
         public string Email { get; set; }
 
         [Display(Name = "Contraseña")]
+        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$", ErrorMessage = "Mínimo ocho caracteres, al menos una letra mayúscula, una letra minúscula, un número y un carácter especial.")]
         [DataType(DataType.Password)]
         [Required(ErrorMessage = "La Contraseña es requerida")]
         public string Password { get; set; }
