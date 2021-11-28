@@ -10,6 +10,7 @@ namespace Mirandas_Cinema.Data.Services
 {
     public interface IMovies : IEntityBase<Movie>
     {
+        List<Movie> GetMovies();
         Task<Movie> GetMovieById(int id);
         Task<DropDownListVM> GetMovieDropDown();
         Task AddMovie(MovieVM data);

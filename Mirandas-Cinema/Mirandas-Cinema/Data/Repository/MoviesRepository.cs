@@ -19,9 +19,24 @@ namespace Mirandas_Cinema.Data.Repository
             context  = _context;
         }
 
-        public new IEnumerable<Movie> GetAll()
+        Movie movies = new Movie();
+        public List<Movie> GetMovies()
         {
             var movies = context.Movies.Include(p => p.Producer).Include(c => c.Cinema).ToList();
+            //var seleccionDatos = (from t in movies
+            //             select new
+            //             {
+            //                 t.Id,
+            //                 t.Name,
+            //                 t.Description,
+            //                 Cinemas = t.Cinema.Name,
+            //                 Producers = t.Producer.FullName,
+            //                 t.Price,
+            //                 t.MovieCategory,
+            //                 t.StartDate,
+            //                 t.EndDate,
+            //                 t.ImagenURL
+            //             }).ToList();
             return movies;
         }
 
@@ -118,5 +133,6 @@ namespace Mirandas_Cinema.Data.Repository
                 await context.SaveChangesAsync();
             }
         }
+
     }
 }

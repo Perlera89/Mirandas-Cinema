@@ -22,7 +22,24 @@ namespace Mirandas_Cinema.Controllers
 
         public MoviesController(AppDbContext _context, IMovies _service)
         {
+            context = _context;
             service = _service;
+        }
+
+        public ActionResult ControlMovies()
+        {
+            var peliculas = service.GetMovies();
+            return View(peliculas);
+        }
+
+        public ActionResult ControlMovie(int interruptor)
+        {
+            string url = "";
+            if (interruptor == 0)
+            {
+                url = "/Movies/Create";
+            }
+            return Redirect(url);
         }
 
         [AllowAnonymous]
@@ -91,7 +108,7 @@ namespace Mirandas_Cinema.Controllers
             }
 
             await service.AddMovie(movie);
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(ControlMovies));
         }
 
         public async Task<IActionResult> Update(int id)
@@ -142,7 +159,12 @@ namespace Mirandas_Cinema.Controllers
             }
 
             await service.UpdateMovie(movie);
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(ControlMovies));
+        }
+        public async Task<ActionResult> DeleteMovies(int Id_2)
+        {
+            await service.Delete(Id_2);
+            return RedirectToAction(nameof(ControlMovies));
         }
     }
 }

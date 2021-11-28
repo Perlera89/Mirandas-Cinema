@@ -1,0 +1,92 @@
+﻿@model List<Mirandas_Cinema.Models.Movie>
+
+@{ ViewData["Title"] = "Details"; }
+<head>
+    <link rel="stylesheet" href="~/css/root/nav-bar.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+</head>
+<style type="text/css">
+    body div.contenedor_general {
+        margin-top: 3em;
+        margin-bottom: 3em;
+        border: 1px solid gainsboro;
+        border-radius: 14px;
+        padding: 1em;
+        font-size: 12pt;
+        background-color: white;
+    }
+
+    .btn_success {
+        float: right;
+    }
+
+    h3 {
+        margin-top: 1em;
+    }
+</style>
+
+<div class="wow0 contenedor_general animate__animated animate__fadeInDown" data-wow-offset="0" data-wow-iteration="1" data-wow-duration="2s">
+    <h3 style="text-align:center;">CONTROL DE PELICULAS</h3>
+    <!--mostrar el formulario de la derecha-->
+    <button class="btn btn_success" type="button" role="button">
+        @Html.ActionLink("Agregar", "ControlMovie")
+    </button>
+
+    <table id="movies" class="table table-hover">
+        <!--estilo basio de B... para tablas-->
+        <thead class="thead-dark">
+            <!--clase de bootstrap para dar fondo a los head-->
+            <tr class="fila">
+                <th hidden>Id</th>
+                <th>Nombre</th>
+                <th hidden>Descripcion</th>
+                <th>Cinema</th>
+                <th>Productor</th>
+                <th>Precio</th>
+                <th>Categoria</th>
+                <th>Inicio</th>
+                <th>Finalización</th>
+                <th hidden>Foto</th>
+                <th colspan="2" style="text-align:center;">Acciones</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var i in Model)
+            {
+                <tr>
+                    <td hidden>@i.Id</td>
+                    <th>@i.Name</th>
+                    <td hidden>@i.Description</td>
+                    <td>@i.Cinema.Name</td>
+                    <td>@i.Producer.FullName</td>
+                    <td>@i.Price</td>
+                    <td>@i.MovieCategory</td>
+                    <td>@i.StartDate</td>
+                    <td>@i.EndDate</td>
+                    <td hidden>@i.ImagenURL</td>
+                    <th>
+                        <button type="button" class=" btn btn_details">@Html.ActionLink("Actualizar", "Update", "Movies", new { id = i.Id})</button>
+                    </th>
+                    <th>
+                        <button type="button" class=" btn btn_delete">@Html.ActionLink("Eliminar", "DeleteMovies", "Movies", new { Id_2 = i.Id })</button>
+                    </th>
+
+                </tr>
+              }
+
+        </tbody>
+    </table>
+
+
+</div>
+@section scripts{
+
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var tabla = $("#movies").DataTable();
+        });
+    </script>
+
+}

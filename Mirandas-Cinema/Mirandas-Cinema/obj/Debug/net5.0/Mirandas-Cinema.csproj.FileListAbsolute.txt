@@ -1658,3 +1658,4 @@ C:\Users\Perlera\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinem
 C:\Users\Perlera\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Cinemas\Details.cshtml.g.cs
 C:\Users\Perlera\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Cinemas\Update.cshtml.g.cs
 C:\Users\Jose\Desktop\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Mirandas-Cinema.csproj.AssemblyReference.cache
+C:\Users\Jose\Desktop\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Movies\ControlMovies.cshtml.g.cs
