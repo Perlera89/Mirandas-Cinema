@@ -2073,3 +2073,4 @@ C:\Users\Perlera89\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cin
 C:\Users\Perlera89\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\ref\Mirandas-Cinema.dll
 C:\Users\Perlera89\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Mirandas-Cinema.pdb
 C:\Users\Perlera89\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Mirandas-Cinema.genruntimeconfig.cache
+C:\Users\recin\Desktop\Programas en desarrollo\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Movies\ControlMovies.cshtml.g.cs
