@@ -8,7 +8,7 @@
 }
 <!--    CAROUSEL    -->
 <!--SOLO EN CINES-->
-@if (Model.ToList().Count > 0)
+@if (@ViewBag.EnCines == true)
 {
     <div class="caja_contenedor contenedor_peliculas_recomendadas bg-white">
         <div class="contenedor_titulo_controles">
@@ -51,7 +51,7 @@
 }
 
     <!--EXPIRARON-->
-    @if (Model.ToList().Count > 0)
+    @if (@ViewBag.Expiraron == true)
     {
         <div class="caja_contenedor contenedor_peliculas_recomendadas bg-white">
             <div class="contenedor_titulo_controles">
@@ -94,7 +94,7 @@
     }
 
     <!--Futuros estrenos-->
-    @if (Model.ToList().Count > 0)
+    @if (@ViewBag.FuturosEstrenos == true)
     {
 
         <div class="caja_contenedor contenedor_peliculas_recomendadas bg-white">

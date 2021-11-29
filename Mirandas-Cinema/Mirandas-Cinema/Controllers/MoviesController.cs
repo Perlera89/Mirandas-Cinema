@@ -43,10 +43,20 @@ namespace Mirandas_Cinema.Controllers
         }
 
         [AllowAnonymous]
-        public async Task<IActionResult> Index(string searchInvalid)
+        public async Task<IActionResult> Index(string searchInvalid, List<Movie> filter)
         {
-            ViewBag.searchInvalid = searchInvalid;
             var movies = await service.GetAll(n => n.Cinema);
+            FiltrarMoviesCaroucel(movies.ToList());
+
+            //para no mostrar los caroucel si no hay resultados
+            if (searchInvalid != null && filter.Count == 0)
+            {
+                movies = filter;
+                ViewBag.searchInvalid = searchInvalid;
+                FiltrarMoviesCaroucel(filter);
+
+                return View(filter);
+            }
 
             return View(movies);
         }
@@ -67,9 +77,11 @@ namespace Mirandas_Cinema.Controllers
                     StringComparison.CurrentCultureIgnoreCase) || string.Equals(m.Producer.FullName, searchMovie,
                     StringComparison.CurrentCultureIgnoreCase)).ToList();
 
+                FiltrarMoviesCaroucel(filter);
+
                 if (filter.Count == 0)
                 {
-                    await Index("No se encontraron resultados...");
+                    await Index("No se encontraron resultados...", filter);
                 }
 
                 return View("Index", filter);
@@ -87,20 +99,49 @@ namespace Mirandas_Cinema.Controllers
             //Accion
             if (!categoria.Equals(""))
             {
-                //var filter = movies.Where(m => m.Name.ToLower().Contains(searchMovie.ToLower())
-                //    || m.Description.ToLower().Contains(searchMovie.ToLower())
-                //    || m.Producer.FullName.ToLower().Contains(searchMovie.ToLower())).ToList();
-
                 var filter = movies.Where(m => m.MovieCategory.GetHashCode()==Convert.ToInt32(categoria)).ToList();
+
+                FiltrarMoviesCaroucel(filter);
 
                 if (filter.Count == 0)
                 {
-                    await Index("No se encontraron resultados...");
+                    await Index("No se encontraron resultados...", filter);
                 }
 
                 return View("Index", filter);
             }
             return View("Index", movies);
+        }
+
+        //metodo para hacer un filtro en los carouceles y no mostrarlos si en un caroucel no hay peliculas
+        public void FiltrarMoviesCaroucel(List<Movie> filter)
+        {
+            ViewBag.EnCines = false;
+            var consulta1 = (from t in filter
+                             where DateTime.Now >= t.StartDate && DateTime.Now <= t.EndDate
+                             select t).ToList();
+
+            ViewBag.Expiraron = false;
+            var consulta2 = (from t in filter
+                             where DateTime.Now > t.StartDate && DateTime.Now > t.EndDate
+                             select t).ToList();
+
+            ViewBag.FuturosEstrenos = false;
+            var consulta3 = (from t in filter
+                             where DateTime.Now < t.StartDate
+                             select t).ToList();
+            if (consulta1.Count > 0)
+            {
+                ViewBag.EnCines = true;
+            }
+            if (consulta2.Count > 0)
+            {
+                ViewBag.Expiraron = true;
+            }
+            if (consulta3.Count > 0)
+            {
+                ViewBag.FuturosEstrenos = true;
+            }
         }
 
         [AllowAnonymous]
