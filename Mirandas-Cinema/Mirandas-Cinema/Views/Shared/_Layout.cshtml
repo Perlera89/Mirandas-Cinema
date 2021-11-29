@@ -10,24 +10,30 @@
     <link rel="shortcut icon" href="~/icono.ico" width="32px">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="~/css/root/nav-bar.css" />
+    <link rel="stylesheet" href="~/css/root/nav-bar-1.css" />
+    <link rel="stylesheet" href="~/css/root/nav-bar_queries-1.css" />
     <link href="~/css/root/general.css" rel="stylesheet" />
     <link href="~/css/root/fonts.css" rel="stylesheet" />
-    <link rel="stylesheet" href="~/css/footer/footer.css"/>
+    <link rel="stylesheet" href="~/css/footer/footer.css" />
     <link rel="stylesheet" href="~/css/footer/footer_mediaQueries.css" />
+
 
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 nav-links justify-content-center col-md-12">
             <div class="container-fluid">
+                <!--Logo-->
                 <a class="navbar-brand nav-links" asp-area="" asp-controller="Movies" asp-action="Index"><img src="~/resources/logos/2.png" width="100" /></a>
+
+                <!--boton para pantallas pequeñas-->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between" style="position: relative;">
-                    <ul class="navbar-nav flex-grow-1 nav-links subtitle" style="position: relative;">
+                    <ul class="navbar-nav flex-grow-1 nav-links subtitle querie_column" style="position: relative;">
+
                         <li class="nav-item forward">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Movies" asp-action="Index"><i class="bi bi-house-door"></i> Inicio</a>
                         </li>
@@ -46,7 +52,7 @@
                                 <a class="dropdown-item" href="#"><i class="bi bi-tag"></i> Animacion</a>
                             </div>
                         </li>
-                        </li>
+                        
 
                         @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
                         {
@@ -60,10 +66,11 @@
                                     <a class="dropdown-item" asp-controller="Actors" asp-action="Index"><i class="bi bi-headset"></i> Actores</a>
                                     <a class="dropdown-item" asp-controller="Cinemas" asp-action="Index"><i class="bi bi-camera-reels"></i> Cines</a>
                                     <a class="dropdown-item" asp-controller="Producers" asp-action="Index"><i class="bi bi-person-square"></i> Productores</a>
+                                    <a class="dropdown-item" asp-controller="Movies" asp-action="ControlMovies"><i class="bi bi-person-square"></i> Movies</a>
                                 </div>
                             </li>
                         }
-                        <form class="form-inline my-2 my-lg-0" asp-controller="Movies" asp-action="Filter" style="padding-right: 25px; position: absolute; top: 0.3rem; right: 0;">
+                        <form class="form-inline my-2 my-lg-0 navbar_form" asp-controller="Movies" asp-action="Filter">
                             <input name="searchMovie" type="text" class="form-control" placeholder="Buscar pelicula..." aria-label="Recipient's username" aria-describedby="button-addon2">&nbsp;
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="max-width: 42px; border-radius: 25%;"><i class="bi bi-search"></i></button>
                         </form>
@@ -79,13 +86,14 @@
             </div>
         </nav>
     </header>
+
     <div class="container-fluid">
-        <main role="main" class="pb-5">
+        <main role="main" class="pb-5" style=" margin-bottom: 14em !important;">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="footer text-muted nav-links col-sm-12 nav-footer container justify-content-center contenedor_principal_footer">
+    <footer class="footer text-muted nav-links col-sm-12 nav-footer container justify-content-center contenedor_principal_footer" style="position:absolute;">
         <div class="contenedor_footer">
             <div class="contenedor_nombre_empresa">
                 <label class="footer_nombre_empresa">MIRANDA'S<br /> CINEMA</label>

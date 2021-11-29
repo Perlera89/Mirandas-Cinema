@@ -387,7 +387,6 @@ C:\Users\Jose\Desktop\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\
 C:\Users\Jose\Desktop\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\ref\Mirandas-Cinema.dll
 C:\Users\Jose\Desktop\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Mirandas-Cinema.pdb
 C:\Users\Jose\Desktop\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Mirandas-Cinema.genruntimeconfig.cache
-C:\Users\Jose\Desktop\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Producers\prueba.cshtml.g.cs
 C:\Users\Perlera\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\Perlera\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\bin\Debug\net5.0\appsettings.json
 C:\Users\Perlera\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\bin\Debug\net5.0\Mirandas-Cinema.exe

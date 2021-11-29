@@ -2,6 +2,7 @@
 
 @if (!User.Identity.IsAuthenticated)
 {
+<div class="navbar_botones">
     @* Login *@
     <a class="btn btn-success my-2 my-sm-0 nav-item forward mr-1" asp-controller="Account" asp-action="Login">
         <i class="bi bi-person-circle"></i> Login
@@ -11,6 +12,7 @@
     <a class="btn btn-primary my-2 my-sm-0 nav-item forward" asp-controller="Account" asp-action="Register">
         <i class="bi bi-person-plus"></i> Register
     </a>
+</div>
 }
 
 else

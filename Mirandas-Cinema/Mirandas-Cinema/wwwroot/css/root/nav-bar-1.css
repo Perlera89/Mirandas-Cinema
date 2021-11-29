@@ -132,3 +132,11 @@
 .search .input-search:focus {
     width: 240px;
 }
+.navbar_form {
+    position: absolute !important;
+    right:1%;
+}
+.navbar_botones {
+    display: flex;
+    flex-direction: row;
+}

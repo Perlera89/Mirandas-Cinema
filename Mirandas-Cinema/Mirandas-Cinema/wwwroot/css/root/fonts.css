@@ -28,7 +28,7 @@ body {
     --doubles: #182c70;
     --font-family-anton-title: 'Aleo', serif;
     --font-family-aleo-subtitle: 'Roboto', sans-serif;
-    --font-family-roboto-paragraph: 'Poppins',sans-serif;
+    --font-family-roboto-paragraph: 'Poppins',sans-serif;0
 }
 
 .color-font {color: var(--font);}

@@ -2,6 +2,7 @@
     position: absolute;
     background: rgba(255,255,255,0.3);
     width: 18%;
+    max-width:150px;
     border: 1px solid white;
     border-radius: 15px;
     padding: 0.5em 0.4em;
