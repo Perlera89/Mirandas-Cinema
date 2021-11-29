@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\recin\\Documents\\GitHub\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema.csproj": {}
+    "C:\\Users\\Jose\\Desktop\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema.csproj": {}
   },
   "projects": {
-    "C:\\Users\\recin\\Documents\\GitHub\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema.csproj": {
+    "C:\\Users\\Jose\\Desktop\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\recin\\Documents\\GitHub\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema.csproj",
+        "projectUniqueName": "C:\\Users\\Jose\\Desktop\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema.csproj",
         "projectName": "Mirandas-Cinema",
-        "projectPath": "C:\\Users\\recin\\Documents\\GitHub\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema.csproj",
-        "packagesPath": "C:\\Users\\recin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\recin\\Documents\\GitHub\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema\\obj\\",
+        "projectPath": "C:\\Users\\Jose\\Desktop\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema.csproj",
+        "packagesPath": "C:\\Users\\Jose\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jose\\Desktop\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\recin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jose\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

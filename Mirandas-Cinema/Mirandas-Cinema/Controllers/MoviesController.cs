@@ -77,6 +77,32 @@ namespace Mirandas_Cinema.Controllers
             return View("Index", movies);
         }
 
+        //Categorias del menu
+
+        [AllowAnonymous]
+        public async Task<IActionResult> Categorias(string categoria)
+        {
+            var movies = await service.GetAll(n => n.Cinema, n => n.Producer);
+
+            //Accion
+            if (!categoria.Equals(""))
+            {
+                //var filter = movies.Where(m => m.Name.ToLower().Contains(searchMovie.ToLower())
+                //    || m.Description.ToLower().Contains(searchMovie.ToLower())
+                //    || m.Producer.FullName.ToLower().Contains(searchMovie.ToLower())).ToList();
+
+                var filter = movies.Where(m => m.MovieCategory.GetHashCode()==Convert.ToInt32(categoria)).ToList();
+
+                if (filter.Count == 0)
+                {
+                    await Index("No se encontraron resultados...");
+                }
+
+                return View("Index", filter);
+            }
+            return View("Index", movies);
+        }
+
         [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
         {

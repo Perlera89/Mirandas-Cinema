@@ -8,9 +8,9 @@ namespace Mirandas_Cinema.Data
     public enum MovieCategory
     {
         Action = 1,
-        Comedy,
-        Romance,
-        Horror,
-        Cartoon
+        Comedy = 2,
+        Romance = 3,
+        Horror = 4,
+        Cartoon = 5
     }
 }
