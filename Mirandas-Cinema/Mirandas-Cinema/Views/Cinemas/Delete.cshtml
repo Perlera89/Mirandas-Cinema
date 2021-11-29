@@ -1,41 +1,53 @@
 ﻿<link rel="stylesheet" href="~/css/nav-bar.css" />
+<link  rel="stylesheet" href="~/css/page/deleteCinema.css"/>
 @model Cinema
 
 @{
     ViewData["Title"] = "Eliminar Cinema";
 }
 <div class="row nav-links" style="margin: 0 auto 55px; width: 1140px;">
-    <div style="margin: 1rem auto; padding: 50px; border: 3px dashed #e1e1e1; border-radius: 15px;" class="col-md-8 offset-0 ">
+    <div style="margin: 1rem auto; padding: 50px; border: 3px dashed #e1e1e1; border-radius: 15px;" class="col-md-10 offset-0 ">
         <p>
             <h2 class="nav-links col-md-12 offset-0 justify-content-center"><span class="text-danger">Eliminar a&nbsp;</span>@Model.Name</h2>
         </p>
-        <div>
-            <div class="col-md-12 offset-0">
-                <div class="form-group text-center">
-                    <img id="PicturePreview" class="border-info rounded-circle" style="max-width:150px" />
-                </div>
-                <div class="form-group">
-                    <label asp-for="Logo" class="control-label"></label>
-                    <input asp-for="Logo" class="form-control" readonly />
-                </div>
-                <div class="form-group">
-                    <label asp-for="Name" class="control-label"></label>
-                    <input asp-for="Name" class="form-control" readonly />
-                </div>
-                <div class="form-group">
-                    <label asp-for="Description" class="control-label"></label>
-                    <textarea asp-for="Description" class="form-control" readonly style="max-height: 200px; height: 100px; min-height: 100px;"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <form asp-action="Delete">
-                        <input type="hidden" asp-for="Id" />
-                        <input type="submit" value="Confirmar" class="btn btn-danger float-right" asp-for="Id" />
-                    </form>
-                    <a class="btn btn-secondary" asp-action="Index">Regresar</a>
-                </div>
+        <div class="image-box">
+            <div class="form-group text-center">
+                <img id="PicturePreview" class="border-info rounded-circle" style="max-width:150px" />
             </div>
         </div>
+        <div>
+            <form>
+                @*<a class="=btn btn-secondary" asp-action="Index" style="position:absolute; bottom:80px; left: 30px; ">Regresar</a>*@
+                <div class="card">
+                    <div class="form align-items-center">
+                        <h1>Registro de Cinema</h1>
+                        <div class="grupo">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input asp-for="Logo" type="text" required readonly class="form-control"><span class="barra"></span>
+                            <label asp-for="Logo"></label>
+
+                        </div>
+                        <div class="grupo">
+                            <input asp-for="Name" type="text"  required readonly><span class="barra"></span>
+                            <label for="" asp-for="Name"></label>
+                            
+                        </div>
+                        <div class="grupo">
+                            <textarea class="form-control" asp-for="Description" type="text"  required readonly style="max-height:200px; height: 100px; min-height:200px;"><span class="barra"></span>></textarea> 
+                            <label for="" asp-for="Description"></label>                            
+                        </div>
+                        <div>
+                            <input type="hidden" asp-for="Id" />
+                            <button type="submit" value="Confirmar" class="btn btn-danger float-right" asp-for="Id" >Confirmar</button>
+                        </div>
+                        <div>
+                            <a class="btn btn-secondary" asp-action="Index">Regresar</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
     </div>
 </div>
 

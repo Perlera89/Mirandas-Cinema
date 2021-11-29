@@ -1,4 +1,5 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
 :root {
     --colorTextos: #b2b6c0;
 }
@@ -9,21 +10,21 @@
     margin: 0;
     padding: 0px;
     box-sizing: border-box;
-    font-family:'Poppins',sans-serif;
-   /* height:650px;
+    font-family: 'Poppins',sans-serif;
+    /* height:650px;
     display:flex;
     justify-content:center;
     align-items:center;*/
 }
 
 .card {
-    width: 50%;
+    width: 100%;
     height: auto;
-    margin: 80px;
-    left:270px;
-    display:inline-flex;
-    align-content:center;
-    align-items:center;
+    margin: 20px;
+    left: -10px;
+    display: inline-flex;
+    align-content: center;
+    align-items: center;
     padding: 60px 50px 20px 50px;
     border-radius: 6px;
     overflow: hidden;
@@ -34,7 +35,6 @@
 
     .card:hover {
         box-shadow: 5px 5px 20px rgba(0,0,0, 0.4);
-       
     }
 
 
@@ -115,11 +115,11 @@ button {
     background: royalblue;
     border: none;
     display: block;
-    width: 80%;
+    /*width: 20%;*/
     margin: 10px auto;
     color: white;
     height: 40px;
-    font-size: 12px;
+    font-size: 20px;
     cursor: pointer;
 }
 
