@@ -2907,3 +2907,4 @@ C:\Users\recin\Desktop\diseño del delete\Mirandas-Cinema\Mirandas-Cinema\Mirand
 C:\Users\recin\Desktop\diseño del delete\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\ref\Mirandas-Cinema.dll
 C:\Users\recin\Desktop\diseño del delete\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Mirandas-Cinema.pdb
 C:\Users\recin\Desktop\diseño del delete\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Mirandas-Cinema.genruntimeconfig.cache
+C:\Users\Jose\Desktop\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Producers\prueba.cshtml.g.cs
