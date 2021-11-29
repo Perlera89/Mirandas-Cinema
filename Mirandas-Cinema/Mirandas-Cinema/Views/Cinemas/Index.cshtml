@@ -23,10 +23,10 @@
                     <p>@cinema.Description</p>
                 </div>
                 <div class="bottom">
-                    <button class="btn btn-primary " asp-action="Details" asp-route-id="@cinema.Id"><a class="text-white" asp-action="Details" asp-route-id="@cinema.Id">Detalles</a></button>
+                    <button class="btn btn-primary text-decoration-none " asp-action="Details" asp-route-id="@cinema.Id"><a class="text-white" asp-action="Details" asp-route-id="@cinema.Id">Detalles</a></button>
                     @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
                     {
-                        <button class="btn btn-danger" asp-action="Delete" asp-route-id="@cinema.Id"><a class="text-white" asp-action="Delete" asp-route-id="@cinema.Id">Eliminar</a></button>
+                        <button class="btn btn-danger text-decoration-none" asp-action="Delete" asp-route-id="@cinema.Id"><a class="text-white" asp-action="Delete" asp-route-id="@cinema.Id">Eliminar</a></button>
                     }
                 </div>
 

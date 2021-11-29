@@ -16,7 +16,6 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-color: #ddebee;
-    font-family: 'Poppins',sans-serif;
 }
 
 :root {
@@ -72,8 +71,4 @@ body {
     text-align: center;
     margin: 11rem auto;
     color: #02084b;
-}
-
-.container-page {
-    min-height: 27.5rem;
 }

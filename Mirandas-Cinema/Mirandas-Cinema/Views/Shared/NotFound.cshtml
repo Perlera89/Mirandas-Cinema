@@ -1,18 +1,22 @@
 ﻿<link href="~/css/page/not-found.css" rel="stylesheet" />
 
-<div class="error-page">
+@{
+    ViewData["Title"] = "No disponible";
+}
+
+<div class="error-page mb-xl-5 rounded">
     <div class="content">
-        <h2 class="header" data-text="404">
+        <h2 class="header title" data-text="404">
             404
         </h2>
-        <h4 data-text="Opps! Page not found">
+        <h4 data-text="Opps! Pagina no encontrada" class="title">
             Pagina no encontrada
         </h4>
-        <p>
+        <p class="paragraph">
             Lo sentimos, la página que estás buscando no existe.
         </p>
         <div class="btns">
-            <a asp-controller="Movies" asp-action="Index">Regresar</a>
+            <a asp-controller="Movies" asp-action="Index" class="subtitle">Regresar</a>
         </div>
     </div>
 </div>
