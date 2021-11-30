@@ -2,7 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Mirandas_Cinema.Data;
+using Mirandas_Cinema.Data.Services;
 using Mirandas_Cinema.Data.Static;
+using Mirandas_Cinema.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,24 +15,97 @@ namespace Mirandas_Cinema.Controllers
     [Authorize(Roles = UserRoles.Admin)]
     public class ProducersController : Controller
     {
-        private readonly AppDbContext appDb;
+        private readonly IProducer iproducers;
 
-        public ProducersController(AppDbContext _appDb)
+        public ProducersController(IProducer _producers)
         {
-            appDb = _appDb;
+            iproducers = _producers;
         }
 
         [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
-            var producers = await appDb.Producers.ToListAsync();
-            return View(producers);
+            var cinemas = await iproducers.GetAll();
+            return View(cinemas);
+        }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            var deleteDetails = await iproducers.GetById(id);
+            if (deleteDetails == null)
+                return View("NoyFound");
+            else
+                return View(deleteDetails);
+        }
+        [HttpPost, ActionName("Delete")]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var delete = await iproducers.GetById(id);
+            if (delete == null) return View("NotFound");
+
+            await iproducers.Delete(id);
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create([Bind("ProfilePictureURL, FullName, Bio")] Producer producer)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(producer);
+            }
+            else
+            {
+                await iproducers.Add(producer);
+                return RedirectToAction(nameof(Index));
+            }
         }
 
         [AllowAnonymous]
-        public IActionResult prueba()
+        public async Task<IActionResult> Details(int id)
         {
-            return View();
+            var details = await iproducers.GetById(id);
+
+            if (details == null)
+            {
+                return View("NotFound");
+            }
+            else
+            {
+                return View(details);
+            }
+
+        }
+
+        public async Task<IActionResult> Edits(int id)
+        {
+
+            var updateDetails = await iproducers.GetById(id);
+
+            if (updateDetails == null)
+                return View("NotFound");
+            else
+                return View(updateDetails);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edits(int id, [Bind("Id, ProfilePictureURL, FullName, Bio")] Producer producer)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(producer);
+            }
+
+            else
+            {
+                await iproducers.Update(id, producer);
+                return RedirectToAction(nameof(Index));
+            }
         }
     }
 }
