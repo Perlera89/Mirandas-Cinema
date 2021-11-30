@@ -1,10 +1,13 @@
-﻿<link rel="stylesheet" href="~/css/page/CreateCinema.css"/>
-<link  rel="stylesheet" href="~/css/root/nav-bar.css"/>
+﻿<link rel="stylesheet" href="~/css/page/CreateCinema.css" />
+<link rel="stylesheet" href="~/css/root/nav-bar.css" />
 
 @model Cinema
+@{
+    ViewData["Title"] = "Crear Cinema";
+}
 
-<div class="justify-content-center" style="position:relative">
-    <div class="content">
+<div class="row nav-links align-content-center" style="margin:50px auto 80px; position:relative">
+    <div class=" col-md-10 offset-0">
         <div class="image-box">
             <div class="form-group text-center">
                 <img id="PicturePreview" class="border-info rounded-circle " style="max-width:200px" />
@@ -41,7 +44,7 @@
     </div>
 </div>
 
-@section Scripts{ 
+@section Scripts{
     <script>
         $(document).ready(function () {
             var img = document.getElementById('PicturePreview');

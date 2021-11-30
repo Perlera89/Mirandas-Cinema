@@ -3745,3 +3745,7 @@ C:\Users\Ari Soriano\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-C
 C:\Users\Ari Soriano\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Producers\Delete.cshtml.g.cs
 C:\Users\Ari Soriano\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Producers\Details.cshtml.g.cs
 C:\Users\Ari Soriano\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Producers\Edits.cshtml.g.cs
+C:\Users\recin\Desktop\diseño del update\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Producers\Create.cshtml.g.cs
+C:\Users\recin\Desktop\diseño del update\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Producers\Delete.cshtml.g.cs
+C:\Users\recin\Desktop\diseño del update\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Producers\Details.cshtml.g.cs
+C:\Users\recin\Desktop\diseño del update\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Producers\Edits.cshtml.g.cs
