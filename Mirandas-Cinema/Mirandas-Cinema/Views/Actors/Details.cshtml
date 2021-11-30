@@ -1,10 +1,11 @@
-﻿@model Actor
+﻿<link rel="stylesheet" href="~/css/page/detailCinema.css" />
+@model Actor
 
 @{
     ViewData["Title"] = "Detalles Actor";
 }
-<div class="row nav-links" style="margin: 0 auto 55px; width: 1140px;">
-    <div style="margin: 1rem auto; padding: 50px; border: 3px dashed #e1e1e1; border-radius: 15px;" class="col-md-8 offset-0 ">
+<div class="container-form justify-content-center" style="margin: 0 auto 55px; width: 1140px;">
+    <div class="col-md-8 offset-0 ">
         <p>
             <h2 class="nav-links col-md-12 offset-0 justify-content-center">Detalles de @Model.FullName</h2>
         </p>
@@ -13,18 +14,29 @@
                 <div class="form-group text-center">
                     <img id="PicturePreview" class="border-info rounded-circle" style="max-width:150px" />
                 </div>
-                <div class="form-group">
-                    <label asp-for="ProfilePictureURL" class="control-label"></label>
-                    <input asp-for="ProfilePictureURL" class="form-control" readonly />
-                </div>
-                <div class="form-group">
-                    <label asp-for="FullName" class="control-label"></label>
-                    <input asp-for="FullName" class="form-control" readonly />
-                </div>
-                <div class="form-group">
-                    <label asp-for="Bio" class="control-label"></label>
-                    <textarea asp-for="Bio" class="form-control" readonly style="max-height: 200px; height: 100px; min-height: 100px;"></textarea>
-                </div>
+                <form>
+                    <div class="card">
+                        <div class="form align-items-center">
+                            <h1>Registro de Cinema</h1>
+                            <div class="grupo">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <input asp-for="ProfilePictureURL" type="text" required class="form-control"><span class="barra"></span>
+                                <label asp-for="ProfilePictureURL"></label>
+
+                            </div>
+                            <div class="grupo">
+                                <input asp-for="FullName" type="text" required><span class="barra"></span>
+                                <label for="" asp-for="FullName"></label>
+
+                            </div>
+                            <div class="grupo">
+                                <textarea class="form-control" asp-for="Bio" type="text" required style="max-height:200px; height: 100px; min-height:200px;"><span class="barra"></span>></textarea>
+                                <label for="" asp-for="Bio"></label>
+                            </div>
+
+                        </div>
+                    </div>
+                </form>
 
                 @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
                 {

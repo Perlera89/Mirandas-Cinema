@@ -1,4 +1,4 @@
-﻿<link rel="stylesheet" href="~/css/page/create.css" />
+﻿<link rel="stylesheet" href="~/css/page/UpdateCinema.css" />
 <link rel="stylesheet" href="~/css/root/nav-bar.css" />
 @model Actor
 
@@ -12,29 +12,32 @@
             <div class="form-group text-center">
                 <img id="PicturePreview" class="border-info rounded-circle" style="max-width:200px" />
             </div>
-            
+
         </div>
         <form asp-action="Update">
-            <a class="btn btn-secondary" asp-action="Index" style="position: absolute; bottom: 20px; left: 20px;">Regresar</a>
-            <div class="topic">Actualizar Actor</div>
-            <div asp-validation-summary="ModelOnly" class="text-danger">
-            </div>
-            <div class="input-box">
+            <div class="card">
+                <div class="form align-items-center">
+                    <h1>Registro de Cinema</h1>
+                    <div class="grupo">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input asp-for="ProfilePictureURL" type="text" required><span class="barra"></span>
+                        <label asp-for="ProfilePictureURL"></label>
 
-                <input asp-for="ProfilePictureURL" type="text" placeholder="Foto de perfil">
-                <p asp-validation-for="ProfilePictureURL" class="text-danger"></p>
-            </div>
-            <div class="input-box">
+                    </div>
+                    <div class="grupo">
+                        <input asp-for="FullName" type="text" required><span class="barra"></span>
+                        <label for="" asp-for="FullName"></label>
 
-                <input asp-for="FullName" type="text" placeholder="Nombre completo">
-                <div asp-validation-for="FullName" class="text-danger"></div>
-            </div>
-            <div class="input-box">
-                <input asp-for="Bio" type="text" placeholder="Biografia">
-                <p asp-validation-for="Bio" class="text-danger"></p>
-            </div>
-            <div class="input-box">
-                <input type="submit" value="Actualizar">
+                    </div>
+                    <div class="grupo">
+                        <textarea class="form-control" asp-for="Bio" type="text" required style="max-height:200px; height: 100px; min-height:200px;"><span class="barra"></span>></textarea>
+                        <label for="" asp-for="Bio"></label>
+                    </div>
+                    <a class="btn btn-secondary" asp-action="Index" style="position: absolute; bottom: 20px; left: 20px;">Regresar</a>
+                    <div>
+                        <input style="position:absolute; bottom:20px; right:20px" class="btn btn-success" id="btnActualizar" type="submit" value="Actualizar">
+                    </div>
+                </div>
             </div>
         </form>
     </div>
