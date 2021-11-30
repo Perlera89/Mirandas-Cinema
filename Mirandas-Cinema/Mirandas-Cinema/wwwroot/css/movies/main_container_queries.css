@@ -1,0 +1,83 @@
+﻿@media screen and (max-width:1330px) {
+    .container_main_index {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 1em;
+    }
+
+    .boton_tarjeta {
+        margin-bottom: 0.3em;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:1240px) {
+    .container_main_index {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 3em;
+    }
+
+    .boton_tarjeta {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:1150px) {
+    .container_main_index {
+        display: grid;
+        gap: 1em;
+    }
+
+    .boton_tarjeta {
+        margin-bottom: 0.3em;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:1020px) {
+    .container_main_index {
+        display: grid;
+        gap: 0.5em;
+    }
+
+    .boton_tarjeta {
+        margin-bottom: 0.3em;
+    }
+}
+
+@media screen and (max-width:940px) {
+    .container_main_index {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 4em;
+    }
+
+    .boton_tarjeta {
+        margin-bottom: 0.3em;
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:885px) {
+    .container_main_index {
+        display: grid;
+        gap: 0.5em;
+        margin-bottom: 18em;
+    }
+
+    .boton_tarjeta {
+        margin-bottom: 0.3em;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:585px) {
+    .container_main_index {
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap: 1em;
+        margin-bottom: 25em;
+    }
+
+}

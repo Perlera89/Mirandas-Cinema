@@ -69,6 +69,11 @@ body {
     line-height: 1.5;
     font-weight: 400;
     text-align: center;
-    margin: 11rem auto;
+    margin: 7rem auto;
     color: #02084b;
+}
+.no_resultados {
+    padding: 2em 0;
+    margin-bottom: 17em;
+    border-radius: 15px;
 }

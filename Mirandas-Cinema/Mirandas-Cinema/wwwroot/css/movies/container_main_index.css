@@ -1,0 +1,40 @@
+﻿.container_main_index {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    padding: 1em;
+    border-radius: 15px;
+    gap: 1em;
+}
+
+.container_one_index {
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+    padding: 1em;
+    border-radius: 12px;
+}
+
+    .container_one_index:hover {
+        box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+        /*        transform:scale(1.005);*/
+    }
+
+.container_titulo {
+    padding: 0.5em;
+    border-radius: 7px;
+}
+
+.titulo {
+    position: relative;
+    margin: 0;
+}
+
+.botones_tarjeta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.boton_tarjeta {
+    margin-bottom: 0.3em;
+    width: 90%;
+}
