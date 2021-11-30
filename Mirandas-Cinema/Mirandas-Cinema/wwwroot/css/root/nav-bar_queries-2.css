@@ -32,3 +32,8 @@
         vertical-align: middle;
     }
 }
+@media screen and (max-width:570px) {
+    .navbar-expand-sm .navbar-nav {
+        margin:1em;
+    }
+}
