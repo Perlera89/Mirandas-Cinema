@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "807LnnRKt7/8scwB3Xqcp2N5lZ0LNgi0d0BJWD1ZGfQAiCHrgOBtCnWTD9RRedDSd+qV9fceBabFUiEEJ6ND7Q==",
+  "dgSpecHash": "a6b9Ybd8zprq4uOsTK6h32uAmOJU1KQXGXtM/OdeR2pgK63CuC3Q8W397uqpUT0RKZKsH4GKD+j6Hr1LIVB2iQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\recin\\Desktop\\diseño del update\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema.csproj",
+  "projectFilePath": "C:\\Users\\recin\\Documents\\GitHub\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\recin\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\recin\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.6\\microsoft.aspnetcore.cryptography.internal.5.0.6.nupkg.sha512",
