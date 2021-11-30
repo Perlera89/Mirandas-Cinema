@@ -149,10 +149,14 @@ namespace Mirandas_Cinema.Controllers
         {
             /*========= cinco mejores =============*/
             var movies = await service.GetAll(n => n.Cinema);
-            var cincoMejores = (from t in movies
-                                orderby t.Id descending
-                                select t).Take(5).ToList();
-            ViewBag.peliculasRecientes = cincoMejores;
+            var cuatroRecientes = (from t in movies
+                                   orderby t.Id descending
+                                   select t).Take(4).ToList();
+            ViewBag.peliculasRecientes = cuatroRecientes;
+            var seisRecientes = (from t in movies
+                                 orderby t.Id descending
+                                 select t).Take(6).ToList();
+            ViewBag.peliculasRecientes2 = seisRecientes;
 
             var details = await service.GetMovieById(id);
 
@@ -238,9 +242,9 @@ namespace Mirandas_Cinema.Controllers
             await service.UpdateMovie(movie);
             return RedirectToAction(nameof(ControlMovies));
         }
-        public async Task<ActionResult> DeleteMovies(int Id_2)
+        public async Task<ActionResult> DeleteMovies(int id)
         {
-            await service.Delete(Id_2);
+            await service.Delete(id);
             return RedirectToAction(nameof(ControlMovies));
         }
     }

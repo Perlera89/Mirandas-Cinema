@@ -1,31 +1,42 @@
 ﻿
-@media screen and (max-Width:900px) {
+@media screen and (max-Width:1000px) {
 
-    .contenedor_aside {
+    .aside_main_container {
         display: none;
     }
 
     .medidas {
         width: 90% !important;
         margin: auto;
-        margin-left: 5% !important;
     }
 
     .contenedor_aside_2 {
         display: initial !important;
+    }
+
+    .color_pelis_recientes {
+        background-color: rgba(0,0,0,.09);
+        padding: 1em;
+        margin: 1em auto 4em auto !important;
+        border: 1px solid gainsboro;
+        border-radius: 15px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        width: 80%;
+    }
+}
+
+@media screen and (max-Width:770px) {
+    .color_pelis_recientes {
+        margin-bottom: 20em !important;
     }
 }
 
 @media screen and (max-Width:600px) {
     .contenedor_aside_img_2 {
         display: grid;
-        grid-template-columns: repeat(4,1fr) !important;
+        grid-template-columns: repeat(3,1fr) !important;
         line-height: 1px !important;
         gap: 2px;
-        /*           display:flex;
-           justify-content:space-between;
-           flex-flow:row wrap;*/
-
         overflow: hidden;
     }
 }
@@ -36,13 +47,10 @@
         grid-template-columns: repeat(2,1fr) !important;
         line-height: 1px !important;
         gap: 2px;
-        /*           display:flex;
-           justify-content:space-between;
-           flex-flow:row wrap;*/
-
         overflow: hidden;
     }
-    .color_pelis_recientes{
-        margin-bottom:6em !important;
+
+    .color_pelis_recientes {
+        margin-bottom: 25em !important;
     }
 }

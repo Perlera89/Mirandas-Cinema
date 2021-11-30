@@ -30,7 +30,7 @@
                     {
                         @if (DateTime.Now >= item.StartDate && DateTime.Now <= item.EndDate)
                         {
-                            <div class="pelicula pelicula1 col-md-2">
+                            <div class="pelicula pelicula1">
                                 <a asp-action="Details" asp-route-id="@item.Id">
                                     <img src="@item.ImagenURL" alt="pelicula" style="width:100%;" />
 
@@ -73,7 +73,7 @@
                         {
                             @if (DateTime.Now > item.StartDate && DateTime.Now > item.EndDate)
                             {
-                                <div class="pelicula pelicula2 col-md-2">
+                                <div class="pelicula pelicula2">
                                     <a asp-action="Details" asp-route-id="@item.Id">
                                         <img src="@item.ImagenURL" alt="pelicula" style="width:100%;" />
 
@@ -117,7 +117,7 @@
                         {
                             @if ((DateTime.Now < item.StartDate))
                             {
-                                <div class="pelicula pelicula3 col-md-2">
+                                <div class="pelicula pelicula3">
                                     <a asp-action="Details" asp-route-id="@item.Id">
                                         <img src="@item.ImagenURL" alt="pelicula" style="width:100%;" />
 
@@ -152,6 +152,8 @@
                                         @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
                                         {
                                             <a class="text-white float-right" asp-action="Update" asp-route-id="@movie.Id"><i class="bi bi-pencil-square"></i></a>
+                                            <a class="text-white float-right" asp-action="DeleteMovies" asp-controller="Movies" asp-route-id="@movie.Id"><i class="fas fa-trash-alt"></i></a>
+
                                         }
                                     </h5>
                                 </p>
