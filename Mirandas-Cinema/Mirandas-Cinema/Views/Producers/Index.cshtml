@@ -1,39 +1,28 @@
-﻿<link rel="stylesheet" href="~/css/styles-1/index.css" />
-<link rel="stylesheet" href="~/css/nav-bar.css" />
-<link href="~/css/page/IndexCinemas.css" rel="stylesheet" />
+﻿<link rel="stylesheet" href="~/css/page/card.css" />
 @model IEnumerable<Producer>
 
 @{
     ViewData["Title"] = "Productores";
 }
 
-
-<div class="container">
+<div class="container-card mb-5">
     @foreach (var producer in Model)
     {
-        <div class="card">
-            <figure>
-                <img src="@producer.ProfilePictureURL">
-            </figure>
-            <div class="contenido">
-                <div class="nameCinema">
-                    <h3>@producer.FullName</h3>f
-                </div>
-                <div class="bio">
-                    <p>@producer.Bio</p>
-                </div>
-                <div class="bottom">
-                    <button class="btn btn-primary text-decoration-none " asp-action="Details" asp-route-id="@producer.Id"><a class="text-white" asp-action="Details" asp-route-id="@producer.Id">Detalles</a></button>
-                    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
-                    {
-                        <button class="btn btn-danger text-decoration-none" asp-action="Delete" asp-route-id="@producer.Id"><a class="text-white" asp-action="Delete" asp-route-id="@producer.Id">Eliminar</a></button>
-                    }
-                </div>
-
+        <div class="box">
+            <div class="image">
+                <img src="@producer.ProfilePictureURL" alt="@producer.FullName">
+            </div>
+            <div class="name_actor">@producer.FullName</div>
+            <div class="bio"><p>@producer.Bio</p></div>
+            <div class="btn">
+                <button class="btn-details" asp-action="Details" asp-route-id="@producer.Id"><a asp-action="Details" asp-route-id="@producer.Id">Detalles</a></button>
+                @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                {
+                    <button class="btn-delete" asp-action="Delete" asp-route-id="@producer.Id"><a asp-action="Delete" asp-route-id="@producer.Id">Eliminar</a></button>
+                }
             </div>
         </div>
     }
-
-
 </div>
-@await Html.PartialAsync("_CreateItem", "Producers")
+
+@await Html.PartialAsync("_CreateItem", "Actors")
