@@ -189,7 +189,7 @@ namespace Mirandas_Cinema.Controllers
             }
 
             await service.AddMovie(movie);
-            return RedirectToAction(nameof(ControlMovies));
+            return RedirectToAction(nameof(Index));
         }
 
         public async Task<IActionResult> Update(int id)

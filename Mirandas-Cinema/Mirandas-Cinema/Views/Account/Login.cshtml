@@ -16,7 +16,13 @@
         <div class="form-content">
             @* Formulario Login *@
             <div class="login-form">
-                <div class="title font-weight-bold">Iniciar sesion</div>
+                <div class="title font-weight-bold mb-1">Iniciar sesion</div>
+                @if(TempData["Error"] != null)
+            {
+                <div class="col-md-12 alert alert-danger">
+                    <span><b>Lo sentimos!</b> - @TempData["Error"] </span>
+                </div>
+            }
                 <form asp-action="Login">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="input-boxes">
