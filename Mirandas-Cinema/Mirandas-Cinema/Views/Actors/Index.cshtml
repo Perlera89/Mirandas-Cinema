@@ -18,7 +18,8 @@
                 <button class="btn-details" asp-action="Details" asp-route-id="@actor.Id"><a asp-action="Details" asp-route-id="@actor.Id">Detalles</a></button>
                 @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
                 {
-                    <button class="btn-delete" asp-action="Delete" asp-route-id="@actor.Id"><a asp-action="Delete" asp-route-id="@actor.Id">Eliminar</a></button>
+                    <button class="btn-danger bg-danger text-white" asp-action="Delete" asp-route-id="@actor.Id">
+                        <a  asp-action="Delete" asp-route-id="@actor.Id">Eliminar</a></button>
                 }
             </div>
         </div>
