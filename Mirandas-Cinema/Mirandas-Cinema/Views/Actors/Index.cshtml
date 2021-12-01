@@ -1,38 +1,28 @@
-﻿<link rel="stylesheet" href="~/css/page/IndexCinemas.css">
-<link rel="stylesheet" href="~/css/nav-bar.css" />
-<link rel="stylesheet" href="~/css/styles-1/index.css" />
+﻿<link rel="stylesheet" href="~/css/page/card.css" />
 @model IEnumerable<Actor>
 
 @{
     ViewData["Title"] = "Actores";
 }
 
-<div class="container">
+<div class="container-card mb-5">
     @foreach (var actor in Model)
     {
-        <div class="card">
-            <figure>
-                <img src="@actor.ProfilePictureURL">
-            </figure>
-            <div class="contenido">
-                <div class="nameCinema">
-                    <h3>@actor.FullName</h3>
-                </div>
-                <div class="bio">
-                    <p>@actor.Bio</p>
-                </div>
-                <div class="bottom">
-                    <button class="btn btn-primary text-decoration-none " asp-action="Details" asp-route-id="@actor.Id"><a class="text-white" asp-action="Details" asp-route-id="@actor.Id">Detalles</a></button>
-                    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
-                    {
-                        <button class="btn btn-danger text-decoration-none" asp-action="Delete" asp-route-id="@actor.Id"><a class="text-white" asp-action="Delete" asp-route-id="@actor.Id">Eliminar</a></button>
-                    }
-                </div>
-
+        <div class="box">
+            <div class="image">
+                <img src="@actor.ProfilePictureURL" alt="@actor.FullName">
+            </div>
+            <div class="name_actor">@actor.FullName</div>
+            <div class="bio"><p>@actor.Bio</p></div>
+            <div class="btn">
+                <button class="btn-details" asp-action="Details" asp-route-id="@actor.Id"><a asp-action="Details" asp-route-id="@actor.Id">Detalles</a></button>
+                @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                {
+                    <button class="btn-delete" asp-action="Delete" asp-route-id="@actor.Id"><a asp-action="Delete" asp-route-id="@actor.Id">Eliminar</a></button>
+                }
             </div>
         </div>
     }
 </div>
 
 @await Html.PartialAsync("_CreateItem", "Actors")
-

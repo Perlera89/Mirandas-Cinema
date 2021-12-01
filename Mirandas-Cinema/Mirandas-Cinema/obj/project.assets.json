@@ -6532,19 +6532,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Perlera89\\.nuget\\packages\\": {}
+    "C:\\Users\\recin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Perlera89\\Documents\\GitHub\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema.csproj",
+      "projectUniqueName": "C:\\Users\\recin\\Documents\\GitHub\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema.csproj",
       "projectName": "Mirandas-Cinema",
-      "projectPath": "C:\\Users\\Perlera89\\Documents\\GitHub\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema.csproj",
-      "packagesPath": "C:\\Users\\Perlera89\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Perlera89\\Documents\\GitHub\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema\\obj\\",
+      "projectPath": "C:\\Users\\recin\\Documents\\GitHub\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema.csproj",
+      "packagesPath": "C:\\Users\\recin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\recin\\Documents\\GitHub\\Mirandas-Cinema\\Mirandas-Cinema\\Mirandas-Cinema\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Perlera89\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\recin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
