@@ -5,17 +5,46 @@
 @{
     ViewData["Title"] = "Crear Actor";
 }
+<style type="text/css">
+    .card {
+        width: 90%;
+        height: auto;
+        display: inline-flex;
+        align-content: center;
+        align-items: center;
+        padding: 3em;
+        margin: auto;
+        left: 0px;
+        border-radius: 6px;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0px 1px 10px rgba(0,0,0, 0.2);
+        transition: all 400ms ease;
+    }
+    .formulario {
+        margin: 1em;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction:column;
+    }
+    .container_main {
+        margin: auto;
+        border-radius: 15px;
+        max-width: 900px;
+        margin-bottom:18em;
+    }
+</style>
 
-<div class="row nav-links align-content-center" style="margin: 50px auto 80px; position: relative">
-    <div class="col-md-10 offset-0">
+<div class="row align-content-center bg-white col-md-8 container_main" >
+    <div class="col-md-12 offset-0">
         <div class="image-box">
             <div class="form-group text-center">
                 <img id="PicturePreview" class="border-info rounded-circle " style="max-width:200px" />
             </div>
 
         </div>
-        <form asp-action="Create">
-            <a class="=btn btn-secondary" asp-action="Index" style="position:absolute; bottom:80px; left: 30px; ">Regresar</a>
+        <form class="formulario" asp-action="Create">
             <div class="card">
                 <div class="form align-items-center">
                     <h1>Registro Actores</h1>
@@ -40,6 +69,7 @@
                     </div>
                 </div>
             </div>
+            <a class="btn btn-secondary" style="width:max-content;margin: 0.3em 0 0.3em 2.5em;" asp-action="Index">Regresar</a>
         </form>
     </div>
 </div>
