@@ -9,6 +9,8 @@ namespace Mirandas_Cinema.Data.ViewModels
     public class RegisterVM
     {
         [Display(Name = "Nombre completo")]
+        [MinLength(4, ErrorMessage = " El mínimo de caracteres es 4 ")]
+        [MaxLength(50, ErrorMessage = " El máximo de caracteres es 50 ")]
         [Required(ErrorMessage = "El nombre completo es requerido")]
         public string FullName { get; set; }
 
