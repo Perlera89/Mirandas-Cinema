@@ -240,12 +240,12 @@ namespace Mirandas_Cinema.Controllers
             }
 
             await service.UpdateMovie(movie);
-            return RedirectToAction(nameof(ControlMovies));
+            return RedirectToAction(nameof(Index));
         }
         public async Task<ActionResult> DeleteMovies(int id)
         {
             await service.Delete(id);
-            return RedirectToAction(nameof(ControlMovies));
+            return RedirectToAction(nameof(Index));
         }
     }
 }

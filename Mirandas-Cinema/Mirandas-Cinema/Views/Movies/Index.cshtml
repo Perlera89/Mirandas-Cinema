@@ -203,7 +203,7 @@
                                 </i> Detalles
                             </a>
                             <a class="btn btn-success text-white @((DateTime.Now > movie.EndDate) ? "disabled" : "") boton_tarjeta" asp-controller="Orders" asp-action="AddItem" asp-route-id="@movie.Id">
-                                <i class="bi bi-cart-plus"></i> Agregar (@movie.Price.ToString("c"))
+                                <i class="bi bi-cart-plus"></i> Añadir (@movie.Price.ToString("c"))
                             </a>&nbsp;
 
                             @await Html.PartialAsync("_CreateItem", "Movies")

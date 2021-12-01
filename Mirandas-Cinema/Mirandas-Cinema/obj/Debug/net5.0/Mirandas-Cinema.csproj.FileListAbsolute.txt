@@ -2046,10 +2046,8 @@ C:\Users\Perlera89\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cin
 C:\Users\Perlera89\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Cinemas\Details.cshtml.g.cs
 C:\Users\Perlera89\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Cinemas\Index.cshtml.g.cs
 C:\Users\Perlera89\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Cinemas\Update.cshtml.g.cs
-C:\Users\Perlera89\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Movies\ControlMovies.cshtml.g.cs
 C:\Users\Perlera89\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Movies\Create.cshtml.g.cs
 C:\Users\Perlera89\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Movies\Details.cshtml.g.cs
-C:\Users\Perlera89\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Movies\GestionMovies.cshtml.g.cs
 C:\Users\Perlera89\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Movies\Index.cshtml.g.cs
 C:\Users\Perlera89\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Movies\Update.cshtml.g.cs
 C:\Users\Perlera89\Documents\GitHub\Mirandas-Cinema\Mirandas-Cinema\Mirandas-Cinema\obj\Debug\net5.0\Razor\Views\Orders\Index.cshtml.g.cs
