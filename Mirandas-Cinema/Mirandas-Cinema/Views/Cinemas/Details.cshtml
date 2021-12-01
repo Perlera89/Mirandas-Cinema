@@ -21,17 +21,17 @@
                             <h1>Registro de Cinema</h1>
                             <div class="grupo">
                                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                                <input asp-for="Logo" type="text" required class="form-control"><span class="barra"></span>
+                                <input asp-for="Logo" type="text" required readonly class="form-control"><span class="barra"></span>
                                 <label asp-for="Logo"></label>
 
                             </div>
                             <div class="grupo">
-                                <input asp-for="Name" type="text" required><span class="barra"></span>
+                                <input asp-for="Name" type="text" required readonly><span class="barra"></span>
                                 <label for="" asp-for="Name"></label>
 
                             </div>
                             <div class="grupo">
-                                <textarea class="form-control" asp-for="Description" type="text" required style="max-height:200px; height: 100px; min-height:200px;"><span class="barra"></span>></textarea>
+                                <textarea class="form-control" asp-for="Description" type="text" required readonly style="max-height:200px; height: 100px; min-height:200px;"><span class="barra"></span>></textarea>
                                 <label for="" asp-for="Description"></label>
                             </div>
 
