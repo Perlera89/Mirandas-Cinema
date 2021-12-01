@@ -6,8 +6,8 @@
     ViewData["Title"] = "Actualizar Cinema";
 }
 
-<div class="row nav-links justify-content-center" style="position: relative;">
-    <div class="content">
+<div class="row nav-links justify-content-center" style="position: relative; width:90%;max-width:1400px; margin:auto;">
+    <div class="content" style="width:90%;">
         <div class="image-box">
             <div class="form-group text-center">
                 <img id="PicturePreview" class="border-info rounded-circle" style="max-width:200px" />
@@ -33,9 +33,9 @@
                         <textarea class="form-control" asp-for="Description" type="text" required style="max-height:200px; height: 100px; min-height:200px;"><span class="barra"></span>></textarea>
                         <label for="" asp-for="Description"></label>
                     </div>
-                    <a class="btn btn-secondary" asp-action="Index" style="position: absolute; bottom: 20px; left: 20px;">Regresar</a>
                     <div>
-                        <input style="position:absolute; bottom:20px; right:20px" class="btn btn-success" id="btnActualizar" type="submit" value="Actualizar">
+                        <a class="btn btn-secondary float-left" asp-action="Index" style="">Regresar</a>
+                        <input style="" class="btn btn-success float-right" id="btnActualizar" type="submit" value="Actualizar">
                     </div>
                 </div>
             </div>

@@ -5,10 +5,10 @@
     ViewData["Title"] = "Detalles Actor";
 }
 
-<div class="row nav-links justify-content-center" style="margin: 0 auto 55px; width: 1140px;">
-    <div  class="col-md-8 offset-0 ">
+<div class="row nav-links justify-content-center" style="margin: 0 auto 55px; width: 90%; max-width: 1400px;">
+    <div  class="col-md-10 offset-0 ">
         <p>
-            <h2 class="nav-links col-md-12 offset-0 justify-content-center">Detalles de @Model.Name</h2>
+            <h2 class="nav-links col-md-11 offset-0 justify-content-center" style="margin:0 auto;">Detalles de @Model.Name</h2>
         </p>
         <div>
             <div class="col-md-12 offset-0">
@@ -38,16 +38,17 @@
                         </div>
                     </div>
                 </form>
-
-                @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
-                {
+                <div>
+                    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                    {
+                        <div class="form-group">
+                            <a class="btn btn-success float-right" asp-action="Update" asp-route-id="@Model.Id">Actualizar</a>
+                        </div>
+                    }
                     <div class="form-group">
-                        <a class="btn btn-success float-right" asp-action="Update" asp-route-id="@Model.Id">Actualizar</a>
-                    </div>
-                }
-                <div class="form-group">
 
-                    <a class="btn btn-secondary" asp-action="Index">Mostrar todos</a>
+                        <a class="btn btn-secondary float-left" asp-action="Index">Mostrar todos</a>
+                    </div>
                 </div>
             </div>
         </div>
