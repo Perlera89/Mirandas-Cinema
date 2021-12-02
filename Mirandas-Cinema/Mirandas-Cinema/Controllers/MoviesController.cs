@@ -160,6 +160,9 @@ namespace Mirandas_Cinema.Controllers
 
             var details = await service.GetMovieById(id);
 
+            if (details == null)
+                return View("NotFound");
+
             return View(details);
         }
 
