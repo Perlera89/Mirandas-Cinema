@@ -16,6 +16,7 @@ namespace Mirandas_Cinema.Data.ViewModels
 
         [Display(Name = "Correo electronico")]
         [Required(ErrorMessage = "El correo electronico es requerido")]
+        [RegularExpression(@"^[_a-z0-9-]+(.[_a-z0-9-]+)@[a-z0-9-]+(.[a-z0-9-]+)(.[a-z]{2,4})$", ErrorMessage = "Correo incorrecto")]
         public string Email { get; set; }
 
         [Display(Name = "Contraseña")]
